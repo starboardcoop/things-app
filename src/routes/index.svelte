@@ -27,7 +27,8 @@
 </div>
 <div class="pa-8 grey lighten-4" style="min-height: 90vh;">
 	<Container class="d-flex flex-column align-center justify-center">
-		<Card class="mb-8" style="max-width: 32rem;">
+		<Card class="mb-8" style="max-width: 32rem; overflow: hidden;">
+			<img src="/downtown.jpg" alt="Providence, Rhode Island" />
 			<CardText>
 				<div class="text--primary text-h5 mb-4">We want to launch Rhode Island's first Library of Things.</div>
 				<div class="text--primary text-body-1">
@@ -35,6 +36,9 @@
 					Ladders, power tools, board games, cooking supplies, you name it.
 				</div>
 			</CardText>
+			<CardActions>
+				<a href="https://en.wikipedia.org/wiki/Library_of_Things" target="_blank"><Button text class="deep-purple-text">Wikipedia</Button></a>
+			</CardActions>
 		</Card>
 		<Card style="max-width: 32rem;">
 			<CardText>
