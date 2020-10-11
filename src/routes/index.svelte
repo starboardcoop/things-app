@@ -51,7 +51,8 @@
 				</div>
 			</CardText>
 			<CardActions>
-				<Button text class="deep-purple-text" on:click={openDialog}>Join the Co-op</Button>
+				<Button text on:click={openDialog} class="deep-purple-text">Stay Informed</Button>
+				<Button text disabled>Join the Co-op</Button>
 			</CardActions>
 			<Dialog bind:active={dialogOpen}>
 				<div class="pa-4">Hi, neighbor!</div>
