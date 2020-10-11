@@ -23,7 +23,7 @@
 		<Card style="max-width: 32rem;">
 			<CardText>
 				<div class="text--primary text-h5 mb-4">As a member of the Library, you co-own the Things.</div>
-				<div class="text--primary">
+				<div class="text--primary text-body-1">
 					The <strong>Providence Library of Things</strong> will be a cooperative (co-op), 
 					meaning that the members are the owners. This means that if you join, you have a stake in its success. 
 					It also means you never pay rent to borrow anything. 
