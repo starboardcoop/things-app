@@ -1,7 +1,7 @@
 {
-  "name": "TODO",
-  "description": "TODO",
-  "version": "0.0.1",
+  "name": "Things",
+  "description": "The gateway to your Library of Things.",
+  "version": "0.1.0-alpha",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build --legacy",
