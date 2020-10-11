@@ -4,8 +4,15 @@
 		Card, 
 		CardText, 
 		CardActions, 
-		Button
+		Button,
+		Dialog
 	} from 'svelte-materialify/src';
+
+	let dialogOpen = false;
+
+	function openDialog() {
+		dialogOpen = true;
+	}
 </script>
 
 <svelte:head>
@@ -18,8 +25,17 @@
 		<h1 class="text-h1">Library of Things</h1>
 	</Container>
 </div>
-<div class="pa-8 deep-purple lighten-4" style="min-height: 90vh;">
-	<Container class="d-flex justify-center">
+<div class="pa-8 grey lighten-4" style="min-height: 90vh;">
+	<Container class="d-flex flex-column align-center justify-center">
+		<Card class="mb-8" style="max-width: 32rem;">
+			<CardText>
+				<div class="text--primary text-h5 mb-4">We want to launch Rhode Island's first Library of Things.</div>
+				<div class="text--primary text-body-1">
+					A <strong>Library of Things</strong> is just like a regular library, but for everything else.
+					Ladders, power tools, board games, cooking supplies, you name it.
+				</div>
+			</CardText>
+		</Card>
 		<Card style="max-width: 32rem;">
 			<CardText>
 				<div class="text--primary text-h5 mb-4">As a member of the Library, you co-own the Things.</div>
@@ -31,8 +47,11 @@
 				</div>
 			</CardText>
 			<CardActions>
-				<Button text class="deep-purple-text">Join the Co-op</Button>
+				<Button text class="deep-purple-text" on:click={openDialog}>Join the Co-op</Button>
 			</CardActions>
+			<Dialog bind:active={dialogOpen}>
+				<div class="pa-4">Hi, neighbor!</div>
+			</Dialog>
 		</Card>
 	</Container>
 </div>

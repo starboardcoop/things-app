@@ -6,7 +6,7 @@
 	<slot></slot>
 	<Footer padless class="deep-purple theme--dark justify-center">
 		<div class="pa-2 text-center" style="width:100%">
-			<b>PVD Library of Things</b>
+			2020 <b>Providence Library of Things</b>
 		</div>
 	</Footer>
 </MaterialApp>
