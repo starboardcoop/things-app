@@ -1,6 +1,8 @@
 <script>
 	import { 
-		Container
+		Container,
+		Card,
+		CardTitle
 	} from 'svelte-materialify/src';
 </script>
 
@@ -25,5 +27,22 @@
 	<Container style="max-width: 36rem;">
 		<h2>Use Things when you need them.</h2>
 		<p class="mt-8">Become a co-owning member and never pay to use a Thing.</p>
+	</Container>
+</section>
+
+<section class="pa-8 grey darken-1 black-text">
+	<Container style="max-width: 36rem;">
+		<Card>
+			<CardTitle>Impact Driver</CardTitle>
+		</Card>
+		<Card>
+			<CardTitle>Ladder</CardTitle>
+		</Card>
+		<Card>
+			<CardTitle>Steam Cleaner</CardTitle>
+		</Card>
+		<Card>
+			<CardTitle>Projector</CardTitle>
+		</Card>
 	</Container>
 </section>
