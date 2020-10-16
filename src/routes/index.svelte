@@ -20,3 +20,10 @@
 		</Container>
 	</Container>
 </section>
+
+<section class="pa-8 yellow darken-1 black-text">
+	<Container style="max-width: 36rem;">
+		<h2>Use Things when you need them.</h2>
+		<p class="mt-8">Become a co-owning member and never pay to use a Thing.</p>
+	</Container>
+</section>
