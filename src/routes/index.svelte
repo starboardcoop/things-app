@@ -1,3 +1,12 @@
+<script context="module">
+	export async function preload() {
+	   	const res = await this.fetch(`https://starboardcoop-things-api.glitch.me/things`);
+		const data = await res.json();
+
+		return data;
+	}
+</script>
+
 <script>
 	import { 
 		Container,
@@ -7,6 +16,8 @@
 		Checkbox,
 		Button
 	} from 'svelte-materialify/src';
+
+	export let things = [];
 </script>
 
 <svelte:head>
@@ -35,18 +46,11 @@
 
 <section class="pa-8 grey darken-1 black-text">
 	<Container style="max-width: 36rem;">
-		<Card>
-			<CardTitle>Impact Driver</CardTitle>
-		</Card>
-		<Card>
-			<CardTitle>Ladder</CardTitle>
-		</Card>
-		<Card>
-			<CardTitle>Steam Cleaner</CardTitle>
-		</Card>
-		<Card>
-			<CardTitle>Projector</CardTitle>
-		</Card>
+		{#each things as thing}
+			<Card>
+				<CardTitle>{thing.name}</CardTitle>
+			</Card>		
+		{/each}
 	</Container>
 </section>
 
