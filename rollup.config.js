@@ -17,7 +17,16 @@ const onwarn = (warning, onwarn) =>
 	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
 	onwarn(warning);
 
+const production = !process.env.ROLLUP_WATCH;
 const preprocess = sveltePreprocess({
+	sourceMap: !production,
+	postcss: {
+		plugins: [
+			require("tailwindcss"),
+			require("autoprefixer"),
+			require("postcss-nesting")
+		],
+	},
 	scss: {
 		includePaths: ["theme"],
 	}

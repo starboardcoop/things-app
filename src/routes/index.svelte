@@ -12,6 +12,7 @@
 		Container,
 		Card,
 		CardTitle,
+		CardSubtitle,
 		TextField,
 		Checkbox,
 		Button
@@ -26,7 +27,7 @@
 
 <section class="pa-8 grey darken-4 white-text" style="min-height: 100vh;">
 	<Container class="text-center">
-		<h1 class="font-weight-bold">pvd<span class="yellow-text text-darken-1">:</span>things</h1>
+		<h1 class="font-weight-bold">pvd<span class="yellow-text text-darken-1">:</span><a href="/#things" class="text-decoration-none white-text">things</a></h1>
 		<Container class="pa-8 mt-8" style="max-width: 36rem;">
 			<h3 class="mb-8 font-weight-bold">Own Things Together!</h3>
 			<p>
@@ -44,12 +45,14 @@
 	</Container>
 </section>
 
-<section class="pa-8 grey darken-1 black-text">
+<section id="things" class="pa-8 grey darken-1 black-text">
 	<Container style="max-width: 36rem;">
 		{#each things as thing}
-			<Card>
-				<CardTitle>{thing.name}</CardTitle>
-			</Card>		
+		<Card style="max-width:350px; overflow:hidden;">
+			<img style="max-width:350px; object-fit:cover;" src={thing.img} alt={thing.name}/>
+			<CardTitle>{thing.name}</CardTitle>
+			<CardSubtitle>{thing.description}</CardSubtitle>
+		  </Card>
 		{/each}
 	</Container>
 </section>
