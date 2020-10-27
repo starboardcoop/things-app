@@ -26,9 +26,6 @@ const preprocess = sveltePreprocess({
 			require("autoprefixer"),
 			require("postcss-nesting")
 		],
-	},
-	scss: {
-		includePaths: ["theme"],
 	}
 });
 
