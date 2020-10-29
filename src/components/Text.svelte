@@ -2,15 +2,15 @@
     export let center = false;
     export let italic = false;
     export let large = false;
-    export let subtle = false;
+    export let dark = false;
 </script>
 
 <div
     class:center 
     class:italic 
     class:large 
-    class:subtle 
-    class="text-md text-gray-800"
+    class:dark 
+    class="text-md text-gray-300"
 >
     <slot />
 </div>
@@ -28,7 +28,7 @@
         @apply text-2xl;
     }
 
-    div.subtle {
-        @apply text-gray-500;
+    div.dark {
+        @apply text-gray-800;
     }
 </style>

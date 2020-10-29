@@ -14,7 +14,7 @@ module.exports = {
       "./src/**/*.svelte",
       // may also want to include base index.html
     ],
-    enabled: production // disable purge in dev
+   // enabled: production // disable purge in dev
   },
   theme: {
     extend: {

@@ -1,13 +1,14 @@
 <script>
 	import Layout from "../components/Layout.svelte";
+	import Text from "../components/Text.svelte";
 </script>
 
 <Layout>
 	<slot></slot>
-	<footer class="bg-yellow-300 justify-center">
-		<div class="text-gray-800 text-center" style="width:100%">
+	<footer class="bg-primary justify-center">
+		<Text dark center>
 			2020 <b>Providence Library of Things</b>
-		</div>
+		</Text>
 	</footer>
 </Layout>
 

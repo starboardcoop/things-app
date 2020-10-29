@@ -15,6 +15,7 @@
 	import Column from "../components/Column.svelte";
 	import Container from "../components/Container.svelte";
 	import Grid from "../components/Grid.svelte";
+	import Text from "../components/Text.svelte";
 
 	export let things = [];
 </script>
@@ -25,40 +26,30 @@
 
 <Column>
 	<Container>
-		<h1 class="text-4xl text-white">pvd<span class="text-primary">:</span>things</h1>
+		<h1 class="text-6xl text-white">pvd<span class="text-primary">:</span>things</h1>
+	</Container>
+	<Container>
+		<Title center color="primary">Own Things Together!</Title>
+		<Text center>
+			<span class="font-bold">For those things you only need once in a while, why not share them?</span>
+				As a member of the Providence Library of Things, you will have access to loads of useful things without ever paying the full price.
+		</Text>
+	</Container>
+	<Container bg="primary">
+		<Title italic>The best things in life are Things.</Title>
+		<Text dark>Become a co-owning member and never pay to use a Thing.</Text>
 	</Container>
 	<Container>
 		<Grid>
-			<!-- {#each things as thing}
+			{#each things as thing}
 				<Card>
 					<Image src={thing.img} alt={thing.name}/>
 					<Container>
-						<Title>{thing.name}</Title>
+						<Title bold>{thing.name}</Title>
 						<Subtitle>{thing.description}</Subtitle>
 					</Container>
 				</Card>
-			{/each} -->
-			<Card>
-				<!-- <Image src={thing.img} alt={thing.name}/> -->
-				<Container>
-					<Title>bsbsbs</Title>
-					<Subtitle>bsbsbs</Subtitle>
-				</Container>
-			</Card>
-			<Card>
-				<!-- <Image src={thing.img} alt={thing.name}/> -->
-				<Container>
-					<Title>bsbsbs</Title>
-					<Subtitle>bsbsbs</Subtitle>
-				</Container>
-			</Card>
-			<Card>
-				<!-- <Image src={thing.img} alt={thing.name}/> -->
-				<Container>
-					<Title>bsbsbs</Title>
-					<Subtitle>bsbsbs</Subtitle>
-				</Container>
-			</Card>
+			{/each}
 		</Grid>
 	</Container>
 </Column>
