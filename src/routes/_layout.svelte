@@ -1,11 +1,15 @@
-<main>
+<script>
+	import Layout from "../components/Layout.svelte";
+</script>
+
+<Layout>
 	<slot></slot>
 	<footer class="bg-yellow-300 justify-center">
-		<div class="pa-2 black-text text-center" style="width:100%">
+		<div class="text-gray-800 text-center" style="width:100%">
 			2020 <b>Providence Library of Things</b>
 		</div>
 	</footer>
-</main>
+</Layout>
 
 <style global lang="postcss">
 
