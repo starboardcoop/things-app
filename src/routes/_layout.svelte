@@ -1,15 +1,16 @@
 <script>
-	import { MaterialApp, Footer } from 'svelte-materialify/src';
+	import Layout from "../components/Layout.svelte";
+	import Text from "../components/Text.svelte";
 </script>
 
-<MaterialApp>
+<Layout>
 	<slot></slot>
-	<Footer padless class="yellow darken-1 theme--dark justify-center">
-		<div class="pa-2 black-text text-center" style="width:100%">
+	<footer class="bg-primary justify-center">
+		<Text dark center>
 			2020 <b>Providence Library of Things</b>
-		</div>
-	</Footer>
-</MaterialApp>
+		</Text>
+	</footer>
+</Layout>
 
 <style global lang="postcss">
 
