@@ -1,29 +1,3 @@
-<script>
-    export let bold = false;
-    export let italic = false;
-    export let center = false;
-    export let color = "inherit";
-</script>
-
-<h2 
-    class:bold
-    class:italic
-    class:center   
-    class={`text-2xl md:text-3xl text-${color}`}
->
+<h1 class="text-5xl md:text-6xl text-white">
     <slot />
-</h2>
-
-<style>
-    .bold {
-        @apply font-bold;
-    }
-
-    .italic {
-        @apply italic;
-    }
-
-    .center {
-        @apply text-center;
-    }
-</style>
+</h1>
