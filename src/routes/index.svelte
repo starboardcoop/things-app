@@ -57,6 +57,8 @@
 	<Container>
 		<Title center color="primary">Ready to co-own Things?</Title>
 		<Text center>The Providence Library of Things hasn't launched just yet, but it will soon.<br>Join our waiting list and help us start up!</Text>
-		<Button primary>Join</Button>
+		<Button primary>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSdfEBlxZzN-MR7IoxKO4cxJ_-QqTMjlOQsssmYYdYfyjwH8NQ/viewform?usp=sf_link" target="__blank" rel="nofollow">Join</a>
+		</Button>
 	</Container>
 </Column>
