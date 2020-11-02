@@ -1,3 +1,3 @@
-<div class="text-xl font-bold text-gray-500">
+<h3 class="text-xl font-bold text-gray-500">
     <slot />
-</div>
+</h3>

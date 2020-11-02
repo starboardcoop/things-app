@@ -16,6 +16,7 @@
 	import Container from "../components/Container.svelte";
 	import Grid from "../components/Grid.svelte";
 	import Text from "../components/Text.svelte";
+	import Button from "../components/Button.svelte";
 
 	export let things = [];
 </script>
@@ -32,7 +33,8 @@
 		<Title center color="primary">Own Things Together!</Title>
 		<Text center>
 			<span class="font-bold">For those things you only need once in a while, why not share them?</span>
-				As a member of the Providence Library of Things, you will have access to loads of useful things without ever paying the full price.
+			<br />
+			As a member of the Providence Library of Things, you will have access to loads of useful things without ever paying the full price.
 		</Text>
 	</Container>
 	<Container bg="primary">
@@ -51,5 +53,10 @@
 				</Card>
 			{/each}
 		</Grid>
+	</Container>
+	<Container>
+		<Title center color="primary">Ready to co-own Things?</Title>
+		<Text center>The Providence Library of Things hasn't launched just yet, but it will soon.<br>Join our waiting list and help us start up!</Text>
+		<Button primary>Join</Button>
 	</Container>
 </Column>

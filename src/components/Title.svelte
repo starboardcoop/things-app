@@ -5,23 +5,25 @@
     export let color = "inherit";
 </script>
 
-<div 
+<h2 
     class:bold
     class:italic
     class:center   
-    class={`text-2xl text-${color}`}
+    class={`text-2xl md:text-3xl text-${color}`}
 >
     <slot />
-</div>
+</h2>
 
 <style>
-    div.bold {
+    .bold {
         @apply font-bold;
     }
-    div.italic {
+
+    .italic {
         @apply italic;
     }
-    div.center {
+
+    .center {
         @apply text-center;
     }
 </style>
