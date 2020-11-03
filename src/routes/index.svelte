@@ -34,7 +34,6 @@ import Spacer from "../components/Spacer.svelte";
 		<div>
 			<Heading center color="primary">Own Things Together!</Heading>
 			<Spacer/>
-
 			<Text center>
 				<span class="font-bold">For those things you only need once in a while, why not share them?</span>
 				<br />
