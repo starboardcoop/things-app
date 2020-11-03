@@ -8,24 +8,28 @@
 </script>
 
 <script>
+	import Head from "../components/Head.svelte";
 	import Card from "../components/Card.svelte"
 	import Image from "../components/Image.svelte"
 	import Title from "../components/Title.svelte";
 	import Heading from "../components/Heading.svelte"
-	import Subheading from "../components/Subheading.svelte"
 	import Column from "../components/Column.svelte";
 	import Container from "../components/Container.svelte";
 	import Grid from "../components/Grid.svelte";
 	import Text from "../components/Text.svelte";
 	import Button from "../components/Button.svelte";
-import Spacer from "../components/Spacer.svelte";
+	import Spacer from "../components/Spacer.svelte";
 
 	export let things = [];
 </script>
 
-<svelte:head>
-	<title>Providence Library of Things</title>
-</svelte:head>
+<Head 
+	title="Providence Library of Things"
+	description="A member-owned co-op for sharing those things you need once in a while."
+	keywords="things, tools, tool rentals, equipment, cooperative, Providence, Rhode Island"
+	twitterHandle="@pvdthings"
+	url="https://pvdthings.coop"
+/>
 
 <Container>
 	<Column>
