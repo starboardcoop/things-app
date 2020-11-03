@@ -14,13 +14,18 @@
 
 <style global lang="postcss">
 
-	/* only apply purgecss on utilities, per Tailwind docs */
-	/* purgecss start ignore */
 	@tailwind base;
 	@tailwind components;
-	/* purgecss end ignore */
   
 	@tailwind utilities;
+
+	html {
+		font-family: 'Noto Serif', serif;
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Roboto Mono', monospace;
+	}
   
   </style>
   
