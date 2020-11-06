@@ -20,7 +20,28 @@
 	import Button from "../components/Button.svelte";
 	import Spacer from "../components/Spacer.svelte";
 
+	import { onMount } from 'svelte';
+
 	export let things = [];
+	
+	onMount(()=> {
+		let node = document.getElementById("thing");
+		const interval = setInterval(() => {
+			node.textContent = loopThingName();
+		}, 3000);
+
+		return () => clearInterval(interval);
+	});
+
+	let i = 0;
+	function loopThingName(){
+		if (i > things.length - 1){
+			i = 0;
+			return `things`
+		}
+		else
+			return things[i++].name.toLowerCase();
+	};
 </script>
 
 <Head 
@@ -33,7 +54,9 @@
 
 <Container>
 	<Column>
-		<Title>pvd<span class="text-primary">:</span>things</Title>
+		<Title>
+			pvd<span class="text-primary">: <Spacer/></span><span id="thing">things</span>
+		</Title>
 		<Spacer/>
 		<div>
 			<Heading center color="primary">Own Things Together!</Heading>
