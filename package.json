@@ -32,6 +32,7 @@
     "sapper": "^0.28.0",
     "svelte": "^3.17.3",
     "svelte-preprocess": "^4.5.2",
+    "svelte-typewriter": "^2.3.1",
     "tailwindcss": "^1.9.6"
   }
 }

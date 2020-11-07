@@ -8,6 +8,7 @@
 </script>
 
 <script>
+	import Typewriter from 'svelte-typewriter'
 	import Head from "../components/Head.svelte";
 	import Card from "../components/Card.svelte"
 	import Image from "../components/Image.svelte"
@@ -20,28 +21,8 @@
 	import Button from "../components/Button.svelte";
 	import Spacer from "../components/Spacer.svelte";
 
-	import { onMount } from 'svelte';
-
 	export let things = [];
-	
-	onMount(()=> {
-		let node = document.getElementById("thing");
-		const interval = setInterval(() => {
-			node.textContent = loopThingName();
-		}, 3000);
 
-		return () => clearInterval(interval);
-	});
-
-	let i = 0;
-	function loopThingName(){
-		if (i > things.length - 1){
-			i = 0;
-			return `things`
-		}
-		else
-			return things[i++].name.toLowerCase();
-	};
 </script>
 
 <Head 
@@ -55,7 +36,12 @@
 <Container>
 	<Column>
 		<Title>
-			pvd<span class="text-primary">: <Spacer/></span><span id="thing">things</span>
+			<span class="text-primary">pvd<span class="text-white">:</span>things</span><Spacer/>
+				<Typewriter loop>
+					{#each things as thing}
+						<Text>{thing.name.toLowerCase()}</Text>
+					{/each}
+				</Typewriter>
 		</Title>
 		<Spacer/>
 		<div>
