@@ -8,6 +8,7 @@
 </script>
 
 <script>
+	import Typewriter from 'svelte-typewriter'
 	import Head from "../components/Head.svelte";
 	import Card from "../components/Card.svelte"
 	import Image from "../components/Image.svelte"
@@ -19,8 +20,10 @@
 	import Text from "../components/Text.svelte";
 	import Button from "../components/Button.svelte";
 	import Spacer from "../components/Spacer.svelte";
+	import Row from "../components/Row.svelte";
 
 	export let things = [];
+
 </script>
 
 <Head 
@@ -33,20 +36,34 @@
 
 <Container>
 	<Column>
-		<Title>pvd<span class="text-primary">:</span>things</Title>
+		<Title>
+			pvd<span class="text-primary">:</span>things
+		</Title>
 		<Spacer/>
 		<div>
 			<Heading center color="primary">Own Things Together!</Heading>
 			<Spacer/>
 			<Text center>
 				<span class="font-bold">For those things you only need once in a while, why not share them?</span>
-				<br />
+				<br/>
 				As a member of the Providence Library of Things, you will have access to loads of useful things without ever paying the full price.
 			</Text>
 		</div>
 		<Spacer/>
 		<Container bg="primary">
-			<Heading italic>The best things in life are Things.</Heading>
+			<Row>
+				<Heading>&gt;</Heading>
+				<Heading italic>
+					<Typewriter interval={50} loop>
+						<div>The best things in life are Things.</div>
+						<div>Audio Equipment</div>
+						<div>Cleaning Tools</div>
+						<div>Musical Instruments</div>
+						<div>Cooking Supplies</div>
+						<div>Any Thing.</div>
+					</Typewriter>
+				</Heading>
+			</Row>
 			<Text dark>Become a co-owning member and never pay to use a Thing.</Text>
 		</Container>
 		<Grid>
