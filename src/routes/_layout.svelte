@@ -13,19 +13,15 @@
 </Layout>
 
 <style global lang="postcss">
-
 	@tailwind base;
 	@tailwind components;
-  
 	@tailwind utilities;
 
-	html {
+	:root {
 		font-family: 'Noto Serif', serif;
 	}
 	
 	h1, h2, h3, h4, h5, h6 {
 		font-family: 'Roboto Mono', monospace;
 	}
-  
-  </style>
-  
+</style>
