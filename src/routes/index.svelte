@@ -72,7 +72,7 @@
 					<Image src={thing.img} alt={thing.name}/>
 					<Container>
 						<Heading bold>{thing.name}</Heading>
-						<Text dark>{thing.description}</Text>
+						<Text dark>{thing.category}</Text>
 					</Container>
 				</Card>
 			{/each}
