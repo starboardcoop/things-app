@@ -74,6 +74,11 @@
 						<Heading bold>{thing.name}</Heading>
 						<Text dark>{thing.category}</Text>
 					</Container>
+					<div slot="modal">
+						<div class="bg-red-300 fixed z-10 inset-0 h-screen w-screen" hidden>
+							<p>Hello, world!</p>
+						</div>
+					</div>
 				</Card>
 			{/each}
 		</Grid>
