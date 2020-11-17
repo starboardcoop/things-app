@@ -30,9 +30,9 @@
 	title="Providence Library of Things"
 	description="A member-owned co-op for sharing those things you need once in a while."
 	keywords="things, tools, tool rentals, equipment, cooperative, Providence, Rhode Island"
-	image="pvd-pixels.jpg"
+	image="https://pvdthings.netlify.app/pvd-pixels.jpg"
 	twitterHandle="@pvdthings"
-	url="https://pvdthings.coop"
+	url="https://pvdthings.netlify.app"
 />
 
 <Container>
