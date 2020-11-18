@@ -21,6 +21,7 @@
 	import Button from "../components/Button.svelte";
 	import Spacer from "../components/Spacer.svelte";
 	import Row from "../components/Row.svelte";
+	import Modal from '../components/Modal.svelte';
 
 	export let things = [];
 
@@ -75,9 +76,9 @@
 						<Text dark>{thing.category}</Text>
 					</Container>
 					<div slot="modal">
-						<div class="bg-red-300 fixed z-10 inset-0 h-screen w-screen" hidden>
+						<Modal>
 							<p>Hello, world!</p>
-						</div>
+						</Modal>
 					</div>
 				</Card>
 			{/each}
