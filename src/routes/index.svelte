@@ -75,6 +75,7 @@
 						<Text dark>{thing.category}</Text>
 					</Container>
 					<div slot="modal">
+						<p>{thing.name} is under the {thing.category} category.</p>
 						<p>Retail price: $250</p>
 					</div>
 				</Card>
