@@ -72,7 +72,7 @@
 					<Image src={thing.img} alt={thing.name}/>
 					<Container>
 						<Heading bold>{thing.name}</Heading>
-						<Text dark>{thing.category}</Text>
+						<Text dark small>{thing.category}</Text>
 					</Container>
 					<div slot="modal">
 						<p>{thing.name} is under the {thing.category} category.</p>

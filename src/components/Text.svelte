@@ -2,6 +2,7 @@
     export let center = false;
     export let italic = false;
     export let bold = false;
+    export let small = false;
     export let large = false;
     export let dark = false;
 </script>
@@ -9,6 +10,7 @@
 <div
     class:center 
     class:italic
+    class:small
     class:bold
     class:large 
     class:dark 
@@ -28,6 +30,10 @@
 
     div.bold {
         @apply font-bold;
+    }
+
+    div.small {
+        @apply text-xs;
     }
 
     div.large {
