@@ -1,15 +1,15 @@
-<script>
-    export let featured = false;
-</script>
-
-<div class:featured class="inline-block overflow-hidden bg-white flex flex-col space-y-2 rounded-sm shadow-md transform hover:scale-105 duration-200">
-    <slot />
+<div class="bg-white rounded border-2 border-black solid">
+    <div class="p-4">
+      <slot />
+    </div>
 </div>
 
 <style>
-    div.featured {
-        @apply rounded-b-md;
-        @apply border-t-4;
-        @apply border-primary;
+    .solid {
+        box-shadow: 2px 2px 0 #000000;
+    }
+
+    .solid:hover {
+        box-shadow: 4px 4px 0 #000000;
     }
 </style>
