@@ -12,7 +12,7 @@
     class:bold
     class:large 
     class:dark 
-    class="text-md text-gray-300"
+    class="text-md text-gray-800"
 >
     <slot />
 </div>

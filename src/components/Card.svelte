@@ -1,7 +1,5 @@
 <div class="bg-white rounded border-2 border-black solid">
-    <div class="p-4">
-      <slot />
-    </div>
+    <slot />
 </div>
 
 <style>
