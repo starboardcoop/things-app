@@ -9,7 +9,7 @@
     class:bold
     class:italic
     class:center   
-    class={`text-lg md:text-2xl lg:text-2xl text-${color}`}
+    class={`text-lg md:text-xl text-${color}`}
 >
     <slot />
 </h2>
