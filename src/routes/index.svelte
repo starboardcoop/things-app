@@ -74,9 +74,12 @@
 						<Heading bold>{thing.name}</Heading>
 						<Text dark small>{thing.category}</Text>
 					</Container>
-					<div slot="modal">
-						<p>{thing.name} is under the {thing.category} category.</p>
-						<p>Retail price: $250</p>
+					<div class="flex flex-col space-y-5" slot="modal">
+						<Heading bold>pvd:thing</Heading>
+						<Heading dark bold>{thing.name}</Heading>
+						<Text dark>Available: {thing.available}</Text>
+						<Text dark>Retail price: {thing.price}</Text>
+						<Text dark small>{thing.category}</Text>
 					</div>
 				</Card>
 			{/each}
