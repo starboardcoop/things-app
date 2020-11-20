@@ -73,8 +73,8 @@
 					<Card>
 						<Image src={thing.img} alt={thing.name} />
 						<Container>
-							<Heading bold>{thing.name}</Heading>
-							<Text dark>{thing.description}</Text>
+							<Heading caps bold>{thing.name}</Heading>
+							<Text>{thing.category}</Text>
 						</Container>
 					</Card>
 				{/each}
