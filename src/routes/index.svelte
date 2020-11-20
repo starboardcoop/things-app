@@ -85,8 +85,8 @@
 		</Column>
 	</Container>
 	<Spacer />
-	<div class="text-center">
-		<Heading center color="primary">Ready to co-own Things?</Heading>
+	<Container bg="indigo-400">
+		<Heading center>Ready to co-own Things?</Heading>
 		<Text center>
 			The Providence Library of Things hasn't launched just yet, but it
 			will soon.<br />Join our waiting list and help us start up!
@@ -98,6 +98,6 @@
 				target="__blank"
 				rel="nofollow">Join us!</a>
 		</Button>
-	</div>
+	</Container>
 	<Spacer />
 </Column>
