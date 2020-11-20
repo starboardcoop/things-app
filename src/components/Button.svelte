@@ -2,7 +2,7 @@
     export let primary = false;
 </script>
 
-<button class:primary class="cursor-pointer bg-white font-bold px-4 py-2 rounded border-2 border-black solid transform hover:scale-105 duration-200">
+<button class:primary class="uppercase cursor-pointer bg-white font-bold px-4 py-2 rounded border-2 border-black solid transform hover:scale-105 duration-200">
     <slot />
 </button>
 
