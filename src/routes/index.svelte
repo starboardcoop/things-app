@@ -37,9 +37,9 @@
 />
 
 <Column>
-	<Title>pvd<span class="text-primary">:</span>things</Title>
-	<Spacer />
-	<Container>
+	<Container bg="red-200">
+		<Title>pvd<span class="text-primary">:</span>things</Title>
+		<Spacer />
 		<Heading center color="primary">Own Things Together!</Heading>
 		<Spacer />
 		<Text bold center>
@@ -50,7 +50,6 @@
 			access to loads of useful things without ever paying the full price.
 		</Text>
 	</Container>
-	<Spacer />
 	<Container bg="primary">
 		<Column>
 			<Row>
@@ -82,7 +81,6 @@
 			</Grid>
 		</Column>
 	</Container>
-	<Spacer />
 	<Container bg="indigo-400">
 		<Heading center>Ready to co-own Things?</Heading>
 		<Text center>
@@ -97,5 +95,4 @@
 				rel="nofollow">Join us!</a>
 		</Button>
 	</Container>
-	<Spacer />
 </Column>
