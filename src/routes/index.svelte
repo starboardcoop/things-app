@@ -37,7 +37,7 @@
 />
 
 <Column>
-	<Container bg="red-200">
+	<Container bg="bg">
 		<Title>pvd<span class="text-primary">:</span>things</Title>
 		<Spacer />
 		<Heading center color="primary">Own Things Together!</Heading>
