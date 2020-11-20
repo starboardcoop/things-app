@@ -39,19 +39,17 @@
 <Column>
 	<Title>pvd<span class="text-primary">:</span>things</Title>
 	<Spacer />
-	<section>
-		<Container>
-			<Heading center color="primary">Own Things Together!</Heading>
-			<Spacer />
-			<Text bold center>
-				For those things you only need once in a while, why not share them?
-			</Text>
-			<Text center>
-				As a member of the Providence Library of Things, you will have
-				access to loads of useful things without ever paying the full price.
-			</Text>
-		</Container>
-	</section>
+	<Container>
+		<Heading center color="primary">Own Things Together!</Heading>
+		<Spacer />
+		<Text bold center>
+			For those things you only need once in a while, why not share them?
+		</Text>
+		<Text center>
+			As a member of the Providence Library of Things, you will have
+			access to loads of useful things without ever paying the full price.
+		</Text>
+	</Container>
 	<Spacer />
 	<Container bg="primary">
 		<Column>
