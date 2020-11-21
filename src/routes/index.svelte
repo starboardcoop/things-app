@@ -43,10 +43,10 @@
 		<Spacer />
 		<Heading center color="primary">Own Things Together!</Heading>
 		<Spacer />
-		<Text bold center>
+		<Text light bold center>
 			For those things you only need once in a while, why not share them?
 		</Text>
-		<Text center>
+		<Text light center>
 			As a member of the Providence Library of Things, you will have
 			access to loads of useful things without ever paying the full price.
 		</Text>
