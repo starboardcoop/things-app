@@ -21,6 +21,10 @@ module.exports = {
       colors: {
         primary: "#fdd835",
         bg: "#282828"
+      },
+      height: {
+        "1/2-screen": "50vh",
+        "3/4-screen": "75vh"
       }
     }
   }
