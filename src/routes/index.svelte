@@ -56,7 +56,7 @@
 		<Column>
 			<Row>
 				<Heading bold>&gt;</Heading>
-				<Heading italic>
+				<Heading italic bold>
 					<Typewriter interval={50} loop>
 						<div>The best things in life are Things.</div>
 						<div>Audio Equipment</div>
@@ -68,7 +68,7 @@
 				</Heading>
 			</Row>
 			<Text dark>
-				Become a co-owning member and never pay to use a Thing.
+				Become a co-owning member and never pay to use Things like these:
 			</Text>
 			<Grid>
 				{#each things as thing}
