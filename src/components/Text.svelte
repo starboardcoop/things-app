@@ -22,9 +22,9 @@
         @apply text-center;
     }
 
-    div.italic {
+    /* div.italic {
         @apply italic;
-    }
+    } */
 
     div.bold {
         @apply font-bold;
