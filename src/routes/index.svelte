@@ -36,7 +36,7 @@
 	url="https://pvdthings.netlify.app" 
 />
 
-<Column>
+<Column spacing="0">
 	<Container bg="bg">
 		<Title>pvd<span class="text-primary">:</span>things</Title>
 		<Spacer />
