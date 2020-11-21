@@ -51,7 +51,7 @@
 			access to loads of useful things without ever paying the full price.
 		</Text>
 	</Section>
-	<Container bg="primary">
+	<Section bg="primary">
 		<Column>
 			<Row>
 				<Heading bold>&gt;</Heading>
@@ -81,7 +81,7 @@
 				{/each}
 			</Grid>
 		</Column>
-	</Container>
+	</Section>
 	<Container bg="indigo-400">
 		<Heading center>Ready to co-own Things?</Heading>
 		<Text center>

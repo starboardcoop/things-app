@@ -4,7 +4,7 @@
     export let bg = "transparent";
 </script>
 
-<section class={`bg-${bg} md:px-16 lg:px-32`}>
+<section class={`bg-${bg} md:px-1/4-screen`}>
     <Container>
         <slot />
     </Container>
