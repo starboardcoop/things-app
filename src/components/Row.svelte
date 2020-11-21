@@ -1,13 +1,18 @@
 <script>
     export let right = false;
+    export let center = false;
 </script>
 
-<div class:right class="flex flex-row space-x-4">
+<div class:right class:center class="flex flex-row space-x-4">
     <slot />
 </div>
 
 <style>
     div.right {
         @apply justify-end;
+    }
+
+    div.center {
+        @apply justify-center;
     }
 </style>

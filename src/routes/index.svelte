@@ -89,11 +89,13 @@
 			will soon.<br />Join our waiting list and help us start up!
 		</Text>
 		<Spacer />
-		<Button primary>
-			<a
-				href="https://docs.google.com/forms/d/e/1FAIpQLSdfEBlxZzN-MR7IoxKO4cxJ_-QqTMjlOQsssmYYdYfyjwH8NQ/viewform?usp=sf_link"
-				target="__blank"
-				rel="nofollow">Join us!</a>
-		</Button>
+		<Row center>
+			<Button primary>
+				<a
+					href="https://docs.google.com/forms/d/e/1FAIpQLSdfEBlxZzN-MR7IoxKO4cxJ_-QqTMjlOQsssmYYdYfyjwH8NQ/viewform?usp=sf_link"
+					target="__blank"
+					rel="nofollow">Join us!</a>
+			</Button>
+		</Row>
 	</Section>
 </Column>
