@@ -38,7 +38,7 @@
 />
 
 <Column spacing="0">
-	<Section bg="bg">
+	<Section bg="bg" big>
 		<Title>pvd<span class="text-primary">:</span>things</Title>
 		<Spacer />
 		<Heading center color="primary">Own Things Together!</Heading>
@@ -82,7 +82,7 @@
 			</Grid>
 		</Column>
 	</Section>
-	<Container bg="indigo-400">
+	<Section bg="indigo-400">
 		<Heading center>Ready to co-own Things?</Heading>
 		<Text center>
 			The Providence Library of Things hasn't launched just yet, but it
@@ -95,5 +95,5 @@
 				target="__blank"
 				rel="nofollow">Join us!</a>
 		</Button>
-	</Container>
+	</Section>
 </Column>
