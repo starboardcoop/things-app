@@ -22,10 +22,6 @@
         @apply text-center;
     }
 
-    /* div.italic {
-        @apply italic;
-    } */
-
     div.bold {
         @apply font-bold;
     }

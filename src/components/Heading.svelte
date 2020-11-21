@@ -25,10 +25,6 @@
         @apply font-bold;
     }
 
-    /* .italic {
-        @apply italic;
-    } */
-
     .center {
         @apply text-center;
     }

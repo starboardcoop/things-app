@@ -1,4 +1,4 @@
-<div class="bg-white rounded border-2 border-black solid transform hover:scale-105 duration-200">
+<div class="bg-white rounded border-2 border-black solid transform hover:scale-105 duration-200 overflow-hidden">
     <slot />
 </div>
 
