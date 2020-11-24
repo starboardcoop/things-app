@@ -24,6 +24,7 @@
 	import Button from "../components/Button.svelte";
 	import Spacer from "../components/Spacer.svelte";
 	import Row from "../components/Row.svelte";
+	import Spanner from "../components/Spanner.svelte"
 
 	export let things = [];
 </script>
@@ -42,15 +43,18 @@
 		<Title>pvd<span class="text-primary">:</span>things</Title>
 	</Section>
 	<Section bg="bg">
-		<Heading center color="primary">Own Things Together!</Heading>
-		<Spacer />
-		<Text light bold center>
-			For those things you only need once in a while, why not share them?
-		</Text>
-		<Text light center>
-			As a member of the Providence Library of Things, you will have
-			access to loads of useful things without ever paying the full price.
-		</Text>
+		<Spanner>
+			<Heading center color="primary">Own Things Together!</Heading>
+			<div>
+				<Text light bold center>
+					For those things you only need once in a while, why not share them?
+				</Text>
+				<Text light center>
+					As a member of the Providence Library of Things, you will have
+					access to loads of useful things without ever paying the full price.
+				</Text>
+			</div>
+		</Spanner>
 	</Section>
 	<Section bg="primary">
 		<Column>
