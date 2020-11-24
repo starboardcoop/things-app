@@ -3,7 +3,7 @@
     export let italic = false;
     export let bold = false;
     export let large = false;
-    export let dark = false;
+    export let light = false;
 </script>
 
 <div
@@ -11,8 +11,8 @@
     class:italic
     class:bold
     class:large 
-    class:dark 
-    class="text-md text-gray-300"
+    class:light 
+    class="text-md text-gray-800"
 >
     <slot />
 </div>
@@ -20,10 +20,6 @@
 <style>
     div.center {
         @apply text-center;
-    }
-
-    div.italic {
-        @apply italic;
     }
 
     div.bold {
@@ -34,7 +30,7 @@
         @apply text-2xl;
     }
 
-    div.dark {
-        @apply text-gray-800;
+    div.light {
+        @apply text-gray-200;
     }
 </style>

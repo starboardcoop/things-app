@@ -1,6 +1,8 @@
 <script context="module">
 	export async function preload() {
-	   	const res = await this.fetch(`https://starboardcoop-things-api.glitch.me/things`);
+		const res = await this.fetch(
+			`https://starboardcoop-things-api.glitch.me/things`
+		);
 		const data = await res.json();
 
 		return data;
@@ -8,12 +10,13 @@
 </script>
 
 <script>
-	import Typewriter from 'svelte-typewriter'
+	import Typewriter from "svelte-typewriter";
+	import Section from "../components/Section.svelte";
 	import Head from "../components/Head.svelte";
-	import Card from "../components/Card.svelte"
-	import Image from "../components/Image.svelte"
+	import Card from "../components/Card.svelte";
+	import Image from "../components/Image.svelte";
 	import Title from "../components/Title.svelte";
-	import Heading from "../components/Heading.svelte"
+	import Heading from "../components/Heading.svelte";
 	import Column from "../components/Column.svelte";
 	import Container from "../components/Container.svelte";
 	import Grid from "../components/Grid.svelte";
@@ -21,39 +24,43 @@
 	import Button from "../components/Button.svelte";
 	import Spacer from "../components/Spacer.svelte";
 	import Row from "../components/Row.svelte";
+	import Spanner from "../components/Spanner.svelte"
 
 	export let things = [];
-
 </script>
 
-<Head 
+<Head
 	title="Providence Library of Things"
 	description="A member-owned co-op for sharing those things you need once in a while."
 	keywords="things, tools, tool rentals, equipment, cooperative, Providence, Rhode Island"
 	image="https://pvdthings.netlify.app/pvd-pixels.jpg"
 	twitterHandle="@pvdthings"
-	url="https://pvdthings.netlify.app"
+	url="https://pvdthings.netlify.app" 
 />
 
-<Container>
-	<Column>
-		<Title>
-			pvd<span class="text-primary">:</span>things
-		</Title>
-		<Spacer/>
-		<Column>
+<Column spacing="0">
+	<Section bg="bg">
+		<Title>pvd<span class="text-primary">:</span>things</Title>
+	</Section>
+	<Section bg="bg">
+		<Spanner>
 			<Heading center color="primary">Own Things Together!</Heading>
-			<Spacer/>
-			<Text bold center>For those things you only need once in a while, why not share them?</Text>
-			<Text center>
-				As a member of the Providence Library of Things, you will have access to loads of useful things without ever paying the full price.
-			</Text>
-		</Column>
-		<Spacer/>
-		<Container bg="primary">
+			<div>
+				<Text light bold center>
+					For those things you only need once in a while, why not share them?
+				</Text>
+				<Text light center>
+					As a member of the Providence Library of Things, you will have
+					access to loads of useful things without ever paying the full price.
+				</Text>
+			</div>
+		</Spanner>
+	</Section>
+	<Section bg="primary">
+		<Column>
 			<Row>
-				<Heading>&gt;</Heading>
-				<Heading italic>
+				<Heading bold>&gt;</Heading>
+				<Heading italic bold>
 					<Typewriter interval={50} loop>
 						<div>The best things in life are Things.</div>
 						<div>Audio Equipment</div>
@@ -64,28 +71,36 @@
 					</Typewriter>
 				</Heading>
 			</Row>
-			<Text dark>Become a co-owning member and never pay to use a Thing.</Text>
-		</Container>
-		<Grid>
-			{#each things as thing}
-				<Card>
-					<Image src={thing.img} alt={thing.name}/>
-					<Container>
-						<Heading bold>{thing.name}</Heading>
-						<Text dark>{thing.description}</Text>
-					</Container>
-				</Card>
-			{/each}
-		</Grid>
-		<Spacer/>
-		<div class="text-center">
-			<Heading center color="primary">Ready to co-own Things?</Heading>
-			<Text center>The Providence Library of Things hasn't launched just yet, but it will soon.<br>Join our waiting list and help us start up!</Text>
-			<Spacer/>
+			<Text dark>
+				Become a co-owning member and never pay to use Things like these:
+			</Text>
+			<Grid>
+				{#each things as thing}
+					<Card>
+						<Image src={thing.img} alt={thing.name} />
+						<Container>
+							<Heading caps bold>{thing.name}</Heading>
+							<Text>{thing.category}</Text>
+						</Container>
+					</Card>
+				{/each}
+			</Grid>
+		</Column>
+	</Section>
+	<Section bg="indigo-400">
+		<Heading italic bold center>Ready to co-own Things?</Heading>
+		<Text center>
+			The Providence Library of Things hasn't launched just yet, but it
+			will soon. Join our waiting list and help us start up!
+		</Text>
+		<Spacer />
+		<Row center>
 			<Button primary>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSdfEBlxZzN-MR7IoxKO4cxJ_-QqTMjlOQsssmYYdYfyjwH8NQ/viewform?usp=sf_link" target="__blank" rel="nofollow">Join us!</a>
+				<a
+					href="https://docs.google.com/forms/d/e/1FAIpQLSdfEBlxZzN-MR7IoxKO4cxJ_-QqTMjlOQsssmYYdYfyjwH8NQ/viewform?usp=sf_link"
+					target="__blank"
+					rel="nofollow">Join us!</a>
 			</Button>
-		</div>
-		<Spacer/>
-	</Column>
-</Container>
+		</Row>
+	</Section>
+</Column>
