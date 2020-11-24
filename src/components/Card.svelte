@@ -8,7 +8,7 @@
         <slot />
     </div>
     <div class="fixed z-10 inset-0 p-8 h-screen w-screen bg-black bg-opacity-50 justify-center align-middle hidden" class:visible={showModal}>
-        <div class="bg-gray-400 p-16 rounded-lg md:max-w-md m-auto">
+        <div class="thicc overflow-hidden bg-gray-50 rounded border-2 border-black scale-105 md:max-w-md m-auto">
             <slot name="modal" />
         </div>
     </div>
@@ -20,10 +20,14 @@
     }
 
     .solid:hover {
-        box-shadow: 4px 4px 0 #000000;
+        @apply thicc;
     }
 
     div.visible {
         @apply flex;
+    }
+
+    div.thicc {
+        box-shadow: 4px 4px 0 #000000;
     }
 </style>

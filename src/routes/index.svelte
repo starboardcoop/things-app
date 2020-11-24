@@ -82,12 +82,16 @@
 							<Heading caps bold>{thing.name}</Heading>
 							<Text>{thing.category}</Text>
 						</Container>
-						<div class="flex flex-col space-y-5" slot="modal">
-							<Heading bold>pvd:thing</Heading>
-							<Heading dark bold>{thing.name}</Heading>
-							<Text dark>Available: {thing.available}</Text>
-							<Text dark>Retail price: {thing.price}</Text>
-							<Text dark small>{thing.category}</Text>
+						<div slot="modal">
+							<div class="bg-indigo-400 py-1 px-2">
+								<Heading bold>pvd:thing</Heading>
+							</div>
+							<div class="flex flex-col space-y-5 p-16">
+								<Heading dark bold>{thing.name}</Heading>
+								<Text dark>Available: {thing.available}</Text>
+								<Text dark>Retail price: {thing.price}</Text>
+								<Text dark small>{thing.category}</Text>
+							</div>
 						</div>
 					</Card>
 				{/each}
