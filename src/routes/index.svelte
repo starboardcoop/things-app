@@ -82,6 +82,13 @@
 							<Heading caps bold>{thing.name}</Heading>
 							<Text>{thing.category}</Text>
 						</Container>
+						<div class="flex flex-col space-y-5" slot="modal">
+							<Heading bold>pvd:thing</Heading>
+							<Heading dark bold>{thing.name}</Heading>
+							<Text dark>Available: {thing.available}</Text>
+							<Text dark>Retail price: {thing.price}</Text>
+							<Text dark small>{thing.category}</Text>
+						</div>
 					</Card>
 				{/each}
 			</Grid>
