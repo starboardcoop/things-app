@@ -5,9 +5,9 @@
 
 <Layout>
 	<slot></slot>
-	<footer class="bg-primary justify-center">
-		<Text dark center>
-			2020 <b>Providence Library of Things</b>
+	<footer class="bg-bg justify-center py-2">
+		<Text light center>
+			 A project by <a href="https://starboard.coop" target="_blank"><b>Starboard Co-op</b></a>
 		</Text>
 	</footer>
 </Layout>
@@ -18,10 +18,6 @@
 	@tailwind utilities;
 
 	:root {
-		font-family: 'Noto Serif', serif;
-	}
-	
-	h1, h2, h3, h4, h5, h6 {
 		font-family: 'Roboto Mono', monospace;
 	}
 </style>

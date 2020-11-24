@@ -1,11 +1,13 @@
 <script>
+    export let caps = false;
     export let bold = false;
     export let italic = false;
     export let center = false;
     export let color = "inherit";
 </script>
 
-<h2 
+<h2
+    class:caps
     class:bold
     class:italic
     class:center   
@@ -15,12 +17,12 @@
 </h2>
 
 <style>
-    .bold {
-        @apply font-bold;
+    .caps {
+        @apply uppercase;
     }
 
-    .italic {
-        @apply italic;
+    .bold {
+        @apply font-bold;
     }
 
     .center {
