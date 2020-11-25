@@ -30,7 +30,7 @@
 		<Spacer />
 		<Text light center>
 			A project by <a href="https://starboard.coop" target="_blank"><b>Starboard Co-op</b></a>
-	   </Text>
+		</Text>
 	</Footer>
 </Layout>
 
