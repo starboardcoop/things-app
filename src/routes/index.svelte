@@ -96,21 +96,23 @@
 		</Column>
 	</Section>
 	<Section bg="indigo-100">
-		<Heading italic bold center>How will the Library work?</Heading>
-		<Spanner>
-			<div>
-				<Subheading center>Join and reserve</Subheading>
-				<Text center>Become a dues-paying member and reserve a Thing from our app.</Text>
-			</div>
-			<div>
-				<Subheading center>Use and return</Subheading>
-				<Text center>Pick up the Thing you reserved and bring it back when you're done with it.</Text>
-			</div>
-			<div>
-				<Subheading center>Get involved!</Subheading>
-				<Text center>Elect the Board of Directors, participate in Library meetings, and vote on the Things we share.</Text>
-			</div>
-		</Spanner>
+		<Column>
+			<Heading italic bold center>How will the Library work?</Heading>
+			<Spanner>
+				<div>
+					<Subheading center>Join and reserve</Subheading>
+					<Text center>Become a dues-paying member and reserve a Thing from our app.</Text>
+				</div>
+				<div>
+					<Subheading center>Use and return</Subheading>
+					<Text center>Pick up the Thing you reserved and bring it back when you're done with it.</Text>
+				</div>
+				<div>
+					<Subheading center>Get involved!</Subheading>
+					<Text center>Elect the Board of Directors, participate in Library meetings, and vote on the Things we share.</Text>
+				</div>
+			</Spanner>
+		</Column>
 	</Section>
 	<Section bg="indigo-400">
 		<Heading italic bold center>Ready to co-own Things?</Heading>
