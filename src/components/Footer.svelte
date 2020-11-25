@@ -1,3 +1,3 @@
-<footer class="bg-bg justify-center py-2">
+<footer class="bg-bg py-10">
     <slot />
 </footer>
