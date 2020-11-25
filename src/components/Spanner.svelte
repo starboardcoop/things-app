@@ -1,3 +1,3 @@
-<div class="grid grid-cols-1 row-auto md:grid-cols-2">
+<div class="grid gap-4 grid-flow-row md:grid-flow-col">
     <slot />
 </div>
