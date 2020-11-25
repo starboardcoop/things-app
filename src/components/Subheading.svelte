@@ -2,7 +2,7 @@
     export let center = false;
 </script>
 
-<h3 class:center class="text-xl font-bold text-gray-500">
+<h3 class:center class="text-xl font-bold text-indigo-600">
     <slot />
 </h3>
 

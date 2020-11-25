@@ -95,20 +95,20 @@
 			</Grid>
 		</Column>
 	</Section>
-	<Section bg="indigo-50">
+	<Section bg="indigo-100">
 		<Heading italic bold center>How will the Library work?</Heading>
 		<Spanner columns="3">
 			<div>
-				<Subheading center>Become a member</Subheading>
-				<Text center>The Providence Library of Things will be a member-owned non-profit cooperative. Members pay a monthly dues to cover the cost of buying, fixing, and replacing Things.</Text>
+				<Subheading center>Join and reserve</Subheading>
+				<Text center>Become a dues-paying member and reserve a Thing from our app.</Text>
 			</div>
 			<div>
-				<Subheading center>Reserve and use Things</Subheading>
-				<Text center>Reserve Things from our web app, pick them up from the Library, and use them. Just give them back when you're done.</Text>
+				<Subheading center>Use and return</Subheading>
+				<Text center>Pick up the Thing you reserved and bring it back when you're done with it.</Text>
 			</div>
 			<div>
-				<Subheading center>Get involved</Subheading>
-				<Text center>Members of the Library will have meetings where they can vote on Things to add or sell.</Text>
+				<Subheading center>Get involved!</Subheading>
+				<Text center>Elect the Board of Directors, participate in Library meetings, and vote on the Things we share.</Text>
 			</div>
 		</Spanner>
 	</Section>
