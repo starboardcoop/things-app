@@ -17,6 +17,7 @@
 	import Image from "../components/Image.svelte";
 	import Title from "../components/Title.svelte";
 	import Heading from "../components/Heading.svelte";
+	import Subheading from "../components/Subheading.svelte";
 	import Column from "../components/Column.svelte";
 	import Container from "../components/Container.svelte";
 	import Grid from "../components/Grid.svelte";
@@ -72,7 +73,7 @@
 				</Heading>
 			</Row>
 			<Text dark>
-				Become a co-owning member and never pay to use Things like these:
+				Become a co-owning member and never pay rent to use Things like these:
 			</Text>
 			<Grid>
 				{#each things as thing}
@@ -93,6 +94,23 @@
 				{/each}
 			</Grid>
 		</Column>
+	</Section>
+	<Section bg="indigo-50">
+		<Heading italic bold center>How will the Library work?</Heading>
+		<Spanner columns="3">
+			<div>
+				<Subheading center>Become a member</Subheading>
+				<Text center>The Providence Library of Things will be a member-owned non-profit cooperative. Members pay a monthly dues to cover the cost of buying, fixing, and replacing Things.</Text>
+			</div>
+			<div>
+				<Subheading center>Reserve and use Things</Subheading>
+				<Text center>Reserve Things from our web app, pick them up from the Library, and use them. Just give them back when you're done.</Text>
+			</div>
+			<div>
+				<Subheading center>Get involved</Subheading>
+				<Text center>Members of the Library will have meetings where they can vote on Things to add or sell.</Text>
+			</div>
+		</Spanner>
 	</Section>
 	<Section bg="indigo-400">
 		<Heading italic bold center>Ready to co-own Things?</Heading>
