@@ -97,7 +97,7 @@
 	</Section>
 	<Section bg="indigo-100">
 		<Heading italic bold center>How will the Library work?</Heading>
-		<Spanner columns="3">
+		<Spanner>
 			<div>
 				<Subheading center>Join and reserve</Subheading>
 				<Text center>Become a dues-paying member and reserve a Thing from our app.</Text>
