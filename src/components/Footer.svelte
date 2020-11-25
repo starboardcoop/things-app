@@ -1,7 +1,7 @@
 <script>
 	import Text from "../components/Text.svelte";
 	import Row from "../components/Row.svelte";
-import Column from "./Column.svelte";
+    import Column from "./Column.svelte";
 </script>
 
 <footer class="bg-bg py-10">
