@@ -11,7 +11,7 @@
     class:bold
     class:italic
     class:center   
-    class={`text-lg md:text-xl text-${color}`}
+    class={`text-2xl md:text-3xl text-${color}`}
 >
     <slot />
 </h2>
