@@ -14,7 +14,7 @@
     class:bold
     class:large 
     class:light 
-    class="text-md text-gray-800"
+    class="text-lg text-gray-800"
 >
     <slot />
 </div>

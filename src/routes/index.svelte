@@ -80,11 +80,11 @@
 					<Card>
 						<Image src={thing.img} alt={thing.name} />
 						<Container>
-							<Heading caps bold>{thing.name}</Heading>
+							<Subheading caps bold>{thing.name}</Subheading>
 							<Text>{thing.category}</Text>
 						</Container>
 						<div class="flex flex-col space-y-5" slot="modal">
-							<Heading bold>pvd:thing</Heading>
+							<Subheading bold>pvd:thing</Subheading>
 							<Heading dark bold>{thing.name}</Heading>
 							<Text dark>Available: {thing.available}</Text>
 							<Text dark>Retail price: {thing.price}</Text>
@@ -100,15 +100,15 @@
 			<Heading italic bold center>How will the Library work?</Heading>
 			<Spanner>
 				<div>
-					<Subheading center>Join and reserve</Subheading>
+					<Subheading color="indigo-600" center>Join and reserve</Subheading>
 					<Text center>Become a dues-paying member and reserve a Thing from our app.</Text>
 				</div>
 				<div>
-					<Subheading center>Use and return</Subheading>
+					<Subheading color="indigo-600" center>Use and return</Subheading>
 					<Text center>Pick up the Thing you reserved and bring it back when you're done with it.</Text>
 				</div>
 				<div>
-					<Subheading center>Get involved!</Subheading>
+					<Subheading color="indigo-600" center>Get involved!</Subheading>
 					<Text center>Elect the Board of Directors, participate in Library meetings, and vote on the Things we share.</Text>
 				</div>
 			</Spanner>
