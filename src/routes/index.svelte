@@ -45,16 +45,16 @@
 	</Section>
 	<Section bg="bg">
 		<Spanner>
-			<Heading center color="primary">Own Things Together!</Heading>
-			<div>
-				<Text light bold center>
+			<Heading color="primary">Own Things<br /><span class="text-6xl">Together!</span></Heading>
+			<Column>
+				<Text light bold>
 					For those things you only need once in a while, why not share them?
 				</Text>
-				<Text light center>
-					As a member of the Providence Library of Things, you will have
+				<Text light>
+					As a member of the <span class="text-indigo-400">Providence Library of Things</span>, you will have
 					access to loads of useful things without ever paying the full price.
 				</Text>
-			</div>
+			</Column>
 		</Spanner>
 	</Section>
 	<Section bg="primary">
