@@ -26,6 +26,9 @@ module.exports = {
         "1/2-screen": "50vh",
         "3/4-screen": "75vh"
       },
+      width: {
+        "largest": "50rem"
+      },
       padding: {
         "1/4-screen": "25vw"
       }
