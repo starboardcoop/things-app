@@ -72,7 +72,7 @@
 					</Typewriter>
 				</Heading>
 			</Row>
-			<Text dark>
+			<Text>
 				Become a co-owning member and never pay rent to use Things like these:
 			</Text>
 			<Grid>
@@ -85,10 +85,10 @@
 						</Container>
 						<div class="flex flex-col space-y-5" slot="modal">
 							<Subheading bold>pvd:thing</Subheading>
-							<Heading dark bold>{thing.name}</Heading>
-							<Text dark>Available: {thing.available}</Text>
-							<Text dark>Retail price: {thing.price}</Text>
-							<Text dark small>{thing.category}</Text>
+							<Heading bold>{thing.name}</Heading>
+							<Text>Available: {thing.available}</Text>
+							<Text>Retail price: {thing.price}</Text>
+							<Text small>{thing.category}</Text>
 						</div>
 					</Card>
 				{/each}
