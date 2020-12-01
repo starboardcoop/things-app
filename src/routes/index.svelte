@@ -91,7 +91,7 @@
 								<Text>Coming Soon!</Text>
 							</span>
 							<span>
-								<Text small>Cost to buy:</Text>
+								<Text small>Typical out-of-pocket cost:</Text>
 								<Text>{thing.price}</Text>
 							</span>
 							<Text small>{thing.category}</Text>
