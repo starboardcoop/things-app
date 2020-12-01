@@ -73,7 +73,7 @@
 				</Heading>
 			</Row>
 			<Text>
-				Become a co-owning member and never pay rent to use Things like these:
+				Become a co-owning member and never pay rent to use Things like <span class="font-bold italic">these:</span>
 			</Text>
 			<Grid>
 				{#each things as thing}
@@ -84,10 +84,16 @@
 							<Text>{thing.category}</Text>
 						</Container>
 						<div class="flex flex-col space-y-5" slot="modal">
-							<Subheading bold>pvd:thing</Subheading>
+							<Subheading bold>pvd<span class="text-indigo-600">:</span>thing</Subheading>
 							<Heading bold>{thing.name}</Heading>
-							<Text>Available: {thing.available}</Text>
-							<Text>Retail price: {thing.price}</Text>
+							<span>
+								<Text small>Available:</Text>
+								<Text>Coming Soon!</Text>
+							</span>
+							<span>
+								<Text small>Cost to buy:</Text>
+								<Text>{thing.price}</Text>
+							</span>
 							<Text small>{thing.category}</Text>
 						</div>
 					</Card>
