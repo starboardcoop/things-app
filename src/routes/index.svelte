@@ -81,7 +81,7 @@
 						<Image src={thing.img} alt={thing.name} />
 						<Container>
 							<Subheading caps bold>{thing.name}</Subheading>
-							<Text>{thing.category}</Text>
+							<Text small>{thing.category}</Text>
 						</Container>
 						<div class="flex flex-col space-y-5" slot="modal">
 							<Subheading bold>pvd<span class="text-indigo-600">:</span>thing</Subheading>
