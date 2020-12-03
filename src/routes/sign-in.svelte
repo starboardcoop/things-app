@@ -1,7 +1,12 @@
 <script>
   let input;
-  function getInput() {
-    console.log(input.value)
+  async function getInput() {
+    const res = await fetch('https://starboardcoop-things-api.glitch.me/humans/sign-in', {
+      method: 'GET'
+    })
+
+    const json = await res.json()
+    console.log(JSON.stringify(json))
   }
 </script>
 
