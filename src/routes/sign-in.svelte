@@ -1,4 +1,7 @@
 <script>
+  import { stores } from "@sapper/app";
+  const { session } = stores();
+
   let input;
   async function getInput() {
     const res = await fetch('https://starboardcoop-things-api.glitch.me/humans/sign-in', {
@@ -6,7 +9,8 @@
     })
 
     const json = await res.json()
-    console.log(JSON.stringify(json))
+    session.set(json)
+    console.log($session)
   }
 </script>
 
