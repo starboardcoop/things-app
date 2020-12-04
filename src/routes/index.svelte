@@ -25,7 +25,7 @@
 	import Button from "../components/Button.svelte";
 	import Spacer from "../components/Spacer.svelte";
 	import Row from "../components/Row.svelte";
-	import Spanner from "../components/Spanner.svelte"
+	import Spanner from "../components/Spanner.svelte";
 
 	export let things = [];
 </script>
@@ -123,11 +123,21 @@
 			</Spanner>
 		</Column>
 	</Section>
+	<Section bg="indigo-300">
+		<Column spacing="16">
+			<Heading bold>But we need your help to make this happen.</Heading>
+			<Text large><a href="https://starboard.coop" class="font-bold">Starboard Co-op</a> is currently developing the <b>web app</b> to support the Library of Things.</Text>
+			<Text large>In the meantime, we need to form a <b>steering committee</b> of dedicated volunteers to get the Library off the ground.</Text>
+			<Text>The steering committee will be responsible for drafting the <b>bylaws</b>, securing a <b>physical location</b>, applying for <b>grant funding</b>, and <b>incorporating</b> the Library.</Text>
+			<Text>Though not everyone will be able to serve on the steering committee (usually 10 people maximum), everyone else who joins now will be encouraged to help in any way they can, such as donating Things to the Library or just getting the word out.</Text>
+			<Text large>Plus, everyone who signs up before our launch will be considered a <b>founding member</b> of Rhode Island's first cooperative Library of Things!</Text>
+		</Column>
+	</Section>
 	<Section bg="indigo-400">
 		<Heading italic bold center>Ready to co-own Things?</Heading>
 		<Text center>
-			The Providence Library of Things hasn't launched just yet, but it
-			will soon. Join our waiting list and help us start up!
+			The Providence Library of Things hasn't launched yet, but you
+			can help make it happen. Join our waiting list to help us start up!
 		</Text>
 		<Spacer />
 		<Row center>
