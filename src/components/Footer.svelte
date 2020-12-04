@@ -2,6 +2,7 @@
 	import Text from "../components/Text.svelte";
 	import Row from "../components/Row.svelte";
     import Column from "./Column.svelte";
+    import Link from "./Link.svelte";
 </script>
 
 <footer class="bg-bg py-10">
@@ -25,7 +26,7 @@
             </a>
         </Row>
         <Text light center>
-            A project by <a href="https://starboard.coop" target="_blank" class="hover:text-primary"><b>Starboard Co-op</b></a>
+            A project by <Link to="https://starboard.coop">Starboard Co-op</Link>
         </Text>
     </Column>
 </footer>
