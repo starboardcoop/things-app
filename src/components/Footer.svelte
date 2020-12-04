@@ -25,7 +25,7 @@
             </a>
         </Row>
         <Text light center>
-            A project by <a href="https://starboard.coop" target="_blank"><b>Starboard Co-op</b></a>
+            A project by <a href="https://starboard.coop" target="_blank" class="hover:text-primary"><b>Starboard Co-op</b></a>
         </Text>
     </Column>
 </footer>
