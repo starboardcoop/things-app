@@ -10,7 +10,7 @@
 
     localStorage.setItem('session', JSON.stringify({ name: data.name }));
 
-    goto('/hello');
+    goto('/home');
   }
 </script>
 
