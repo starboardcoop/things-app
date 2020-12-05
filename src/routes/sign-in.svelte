@@ -1,7 +1,6 @@
 <script>
-  import { goto, stores } from '@sapper/app';
-  
-  const { session } = stores();
+  import { goto } from '@sapper/app';
+
   let input;
 
   async function submit() {
@@ -9,7 +8,7 @@
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
 
-    $session.name = data.name;
+    localStorage.setItem('session', JSON.stringify({ name: data.name }));
 
     goto('/hello');
   }
