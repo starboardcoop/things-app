@@ -1,10 +1,14 @@
 <script>
+  import { goto } from '@sapper/app';
+  
   let input;
 
   async function getInput() {
     const result = await fetch('/auth');
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
+
+    goto('/hello');
   }
 </script>
 
