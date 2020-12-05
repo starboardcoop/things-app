@@ -1,9 +1,9 @@
 <script>
   import { goto } from '@sapper/app';
-  
+
   let input;
 
-  async function getInput() {
+  async function submit() {
     const result = await fetch('/auth');
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
@@ -32,7 +32,7 @@
         placeholder="(401) 555-5555"
         pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
         class="px-4 py-2 border-2 border-black solid rounded-md outline-none transform hover:scale-105 duration-200" />
-      <button on:click={getInput} class="bg-yellow-300 px-4 py-2 border-2 border-black solid rounded-md uppercase font-bold transform hover:scale-105 duration-200">Submit</button>
+      <button on:click={submit} class="bg-yellow-300 px-4 py-2 border-2 border-black solid rounded-md uppercase font-bold transform hover:scale-105 duration-200">Submit</button>
     </div>
   </div>
 </main>
