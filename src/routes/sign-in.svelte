@@ -1,16 +1,11 @@
 <script>
-  import { stores } from "@sapper/app";
-  const { session } = stores();
-
   let input;
-  async function getInput() {
-    const res = await fetch('https://starboardcoop-things-api.glitch.me/humans/sign-in', {
-      method: 'GET'
-    })
+  let name;
 
-    const json = await res.json()
-    session.set(json)
-    console.log($session)
+  async function getInput() {
+    const result = await fetch('/auth');
+    const data = await result.json();
+    name = data.name;
   }
 </script>
 
@@ -28,6 +23,9 @@
 <main class="bg-indigo-300 w-screen h-screen font-mono">
   <div class="w-full h-full flex flex-col justify-center items-center p-8">
     <div class="flex flex-row gap-4 flex-wrap">
+      {#if name != null}
+        <div>Hello, {name}!</div>
+      {/if}
       <input
         bind:this={input}
         type="tel"
