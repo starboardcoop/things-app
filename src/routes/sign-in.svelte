@@ -1,12 +1,15 @@
 <script>
-  import { goto } from '@sapper/app';
-
+  import { goto, stores } from '@sapper/app';
+  
+  const { session } = stores();
   let input;
 
   async function submit() {
     const result = await fetch('/auth');
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
+
+    $session.name = data.name;
 
     goto('/hello');
   }
