@@ -1,5 +1,6 @@
 <script>
   import { goto } from '@sapper/app';
+  import Session from '../session';
   import { AsYouType, parsePhoneNumberFromString } from 'libphonenumber-js'
 
   let invalid = false;
@@ -34,7 +35,7 @@
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
 
-    localStorage.setItem('session', JSON.stringify({ name: data.name }));
+    Session.update({ name: data.name });
 
     goto('/home');
   }

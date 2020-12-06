@@ -1,10 +1,11 @@
 <script>
     import { onMount } from "svelte";
+    import Session from "../session";
 
     let name;
 
     onMount(() => {
-        const session = JSON.parse(localStorage.getItem('session'));
+        const session = Session.json();
         console.log(session);
         name = session.name;
     });
