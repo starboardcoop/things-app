@@ -1,7 +1,12 @@
 <script>
   import { goto } from '@sapper/app';
+  import { AsYouType } from 'libphonenumber-js'
 
-  let phone = "";
+  let phoneText = "";
+
+  function formatPhoneText() {
+    phoneText = new AsYouType('US').input(phoneText);
+  }
 
   async function submit() {
     const result = await fetch('/auth', {
@@ -10,7 +15,7 @@
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ phone: phone })
+      body: JSON.stringify({ phone: phoneText })
     });
 
     const data = await result.json();
@@ -37,7 +42,8 @@
   <div class="w-full h-full flex flex-col justify-center items-center p-8">
     <div class="flex flex-row gap-4 flex-wrap">
       <input
-        bind:value={phone}
+        bind:value={phoneText}
+        on:change={formatPhoneText}
         type="tel"
         placeholder="(401) 555-5555"
         pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
