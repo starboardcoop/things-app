@@ -8,7 +8,7 @@ const dev = NODE_ENV === 'development';
 
 const app = express();
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(
 		compression({ threshold: 0 }),
