@@ -61,6 +61,7 @@
       <input
         bind:value={phoneText}
         on:change={formatPhoneText}
+        on:input={formatPhoneText}
         type="tel"
         placeholder="(401) 555-5555"
         pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
