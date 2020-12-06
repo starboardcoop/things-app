@@ -1,21 +1,34 @@
 <script>
   import { goto } from '@sapper/app';
-  import { AsYouType } from 'libphonenumber-js'
+  import { AsYouType, parsePhoneNumberFromString } from 'libphonenumber-js'
 
+  let invalid = false;
   let phoneText = "";
 
   function formatPhoneText() {
     phoneText = new AsYouType('US').input(phoneText);
+    invalid = false;
   }
 
   async function submit() {
+    const phone = parsePhoneNumberFromString(phoneText, 'US');
+
+    if (!phone.isValid())
+    {
+      invalid = true;
+      console.log('Invalid phone number.');
+      return;
+    }
+
+    invalid = false;
+
     const result = await fetch('/auth', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ phone: phoneText })
+      body: JSON.stringify({ phone: phone.nationalNumber })
     });
 
     const data = await result.json();
@@ -36,6 +49,10 @@
   .solid:hover {
     box-shadow: 4px 4px 0 #000000;
   }
+
+  .invalid {
+    @apply bg-red-200;
+  }
 </style>
 
 <main class="bg-indigo-300 w-screen h-screen font-mono">
@@ -47,6 +64,7 @@
         type="tel"
         placeholder="(401) 555-5555"
         pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
+        class:invalid
         class="px-4 py-2 border-2 border-black solid rounded-md outline-none transform hover:scale-105 duration-200" />
       <button on:click={submit} class="bg-yellow-300 px-4 py-2 border-2 border-black solid rounded-md uppercase font-bold transform hover:scale-105 duration-200">Submit</button>
     </div>
