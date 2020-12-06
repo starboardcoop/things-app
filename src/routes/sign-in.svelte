@@ -1,10 +1,18 @@
 <script>
   import { goto } from '@sapper/app';
 
-  let input;
+  let phone = "";
 
   async function submit() {
-    const result = await fetch('/auth');
+    const result = await fetch('/auth', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ phone: phone })
+    });
+
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
 
@@ -29,7 +37,7 @@
   <div class="w-full h-full flex flex-col justify-center items-center p-8">
     <div class="flex flex-row gap-4 flex-wrap">
       <input
-        bind:this={input}
+        bind:value={phone}
         type="tel"
         placeholder="(401) 555-5555"
         pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
