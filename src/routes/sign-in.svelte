@@ -23,7 +23,7 @@
 
     invalid = false;
 
-    const result = await fetch('/auth', {
+    const result = await fetch("/.netlify/functions/auth", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
