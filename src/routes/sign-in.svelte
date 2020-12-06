@@ -17,7 +17,7 @@
     {
       invalid = true;
       console.log('Invalid phone number.');
-      return;
+      return new Promise(() => {});
     }
 
     invalid = false;
