@@ -8,21 +8,30 @@
     const reset = () => invalid = false;
   
     async function submit() {
-      if (codeText.length != 5)
-      {
-        invalid = true;
-        console.log('Invalid code.');
-        return new Promise(() => {});
-      }
+        if (codeText.length != 5)
+        {
+            invalid = true;
+            console.log('Invalid code.');
+            return new Promise(() => {});
+        }
 
-      console.log(`Sending code: ${codeText}`);
-  
-      const session = Session.json();
-      session.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+        const result = await fetch("/.netlify/functions/auth-code", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({ phone: "(401) 555-5555", code: codeText })
+        });
 
-      Session.update(session);
-  
-      goto('/home');
+        const { token } = await result.json();
+    
+        const session = Session.json();
+        session.token = token;
+
+        Session.update(session);
+    
+        goto('/home');
     }
   </script>
   
