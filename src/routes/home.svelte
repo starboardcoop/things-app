@@ -13,6 +13,12 @@
         console.log(session);
         name = session.name;
     });
+
+    async function thingify() {
+        const result = await fetch(`/.netlify/functions/things`);
+        const data = await result.json();
+        console.log(data);
+    }
 </script>
 
 <main class="bg-indigo-300 w-screen h-screen font-mono">
@@ -22,7 +28,7 @@
     <div class="flex flex-row gap-3 overflow-scroll px-8 py-7">
         {#each cards as card}
         <Card>
-            <Container>{card}</Container>
+            <Container><a href="/home/#" on:click={thingify}>{card}</a></Container>
         </Card>
         {/each}
     </div>
