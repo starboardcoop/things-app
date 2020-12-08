@@ -11,4 +11,8 @@
     });
 </script>
 
-<h1>Sup {name}</h1>
+<main class="bg-indigo-300 w-screen h-screen font-mono">
+    <div class="w-full h-full flex flex-col justify-center items-center p-8">
+        <h1>Hi, {name}!</h1>
+    </div>
+</main>
