@@ -14,7 +14,7 @@
   async function submit() {
     const phone = parsePhoneNumberFromString(phoneText, 'US');
 
-    if (!phone.isValid())
+    if (phone == null || !phone.isValid())
     {
       invalid = true;
       console.log('Invalid phone number.');
@@ -23,7 +23,7 @@
 
     invalid = false;
 
-    const result = await fetch('/auth', {
+    const result = await fetch("/.netlify/functions/auth", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

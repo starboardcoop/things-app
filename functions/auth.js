@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 
-export async function post(req, res) {
-    console.log("Logging in...");
+export async function handler(event, context, callback) {
+    console.log("Signing in...");
 
-    const { phone } = req.body;
+    const { phone } = JSON.parse(event.body);
 
     const result = await fetch('https://starboardcoop-things-api.glitch.me/humans/auth', {
         method: "POST",
@@ -16,5 +16,8 @@ export async function post(req, res) {
 
     const { name } = await result.json();
 
-    res.end(JSON.stringify({ name: name }));
+    return {
+        statusCode: 200,
+        body: JSON.stringify({ name: name })
+    }
 }
