@@ -15,18 +15,18 @@
             return new Promise(() => {});
         }
 
+        const session = Session.json();
+
         const result = await fetch("/.netlify/functions/auth-code", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
-            body: JSON.stringify({ phone: "(401) 555-5555", code: codeText })
+            body: JSON.stringify({ phone: session.phone, code: codeText })
         });
 
         const { token } = await result.json();
-    
-        const session = Session.json();
         session.token = token;
 
         Session.update(session);

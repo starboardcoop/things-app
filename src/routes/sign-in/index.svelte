@@ -35,9 +35,9 @@
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
 
-    Session.update({ name: data.name });
+    Session.update({ name: data.name, phone: phone.nationalNumber });
 
-    goto('/sign-in/code');
+    goto("/sign-in/code");
   }
 </script>
 
