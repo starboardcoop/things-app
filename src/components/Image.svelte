@@ -4,4 +4,4 @@
     export let height = "40";
 </script>
 
-<img src={src} alt={alt} class="w-full h-{height} object-contain" />
+<img {src} {alt} class="w-full h-{height} object-contain" />

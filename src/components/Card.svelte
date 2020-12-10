@@ -1,9 +1,12 @@
 <script>
+    export let height = "auto";
+    export let width = "auto";
+
     let showModal = false;
     const toggleModal = () => showModal = !showModal;
 </script>
 
-<div on:click={toggleModal}>
+<div on:click={toggleModal} class={`h-${height} w-${width}`}>
     <div class="h-full bg-white rounded border-2 border-black solid transform hover:scale-105 duration-200 overflow-hidden">
         <slot />
     </div>
