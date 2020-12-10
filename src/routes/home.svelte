@@ -16,9 +16,19 @@
     async function thingify() {
         const result = await fetch(`/.netlify/functions/things`);
         data = await result.json();
-        data.things = data.things.shuffle();
+        data.things = shuffle(data.things);
         console.log(data);
         return data;
+    }
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * i)
+            const temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
+        }
+        return array;
     }
 </script>
 
