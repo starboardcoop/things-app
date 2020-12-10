@@ -30,26 +30,42 @@
 
 <main class="bg-indigo-300 w-screen h-screen font-mono">
     <div>
-        <div class="w-full flex flex-col justify-center items-center p-8 overflow-hidden">
-            <Heading bold>Hi, {name}!</Heading>
+        <div class="w-full flex flex-col justify-center items-center p-8 bg-indigo-500 relative">
+            <Heading color="white" bold>Hi, {name}!</Heading>
+            <input
+                placeholder="Search..."
+                class="px-4 py-2 border-2 border-black solid rounded-md outline-none transform hover:scale-105 duration-200 absolute -bottom-6" />
         </div>
-        {#await data}
-            loading...
-        {:then}
-            <div>
-                <Container>
-                    <Subheading>Recommended Things:</Subheading>
-                </Container>
-                <Scroller things={data.things} />
-            </div>
-            <div>
-                <Container>
-                    <Subheading>DIY Things:</Subheading>
-                </Container>
-                <Scroller things={diyThings} />
-            </div>
-        {:catch error}
-            whoops!: {error}
-        {/await}
+        <div class="mt-10">
+            {#await data}
+                loading...
+            {:then}
+                <div>
+                    <Container>
+                        <Subheading>Recommended Things:</Subheading>
+                    </Container>
+                    <Scroller things={data.things} />
+                </div>
+                <div>
+                    <Container>
+                        <Subheading>DIY Things:</Subheading>
+                    </Container>
+                    <Scroller things={diyThings} />
+                </div>
+            {:catch error}
+                whoops!: {error}
+            {/await}
+        </div>
     </div>
 </main>
+
+<style>
+    .solid {
+        box-shadow: 2px 2px 0 #000000;
+    }
+
+    .solid:focus,
+    .solid:hover {
+        box-shadow: 4px 4px 0 #000000;
+    }
+</style>
