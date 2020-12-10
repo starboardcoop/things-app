@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import shuffle from "../lib/shuffle";
     import Container from "../components/Container.svelte";
     import Session from "../session";
     import Scroller from "../components/Scroller.svelte";
@@ -17,18 +18,8 @@
         const result = await fetch(`/.netlify/functions/things`);
         data = await result.json();
         data.things = shuffle(data.things);
-        console.log(data);
-        return data;
-    }
 
-    function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * i)
-            const temp = array[i]
-            array[i] = array[j]
-            array[j] = temp
-        }
-        return array;
+        return data;
     }
 </script>
 
