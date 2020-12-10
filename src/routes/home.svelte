@@ -55,7 +55,7 @@
                                 <Text small>{thing.category}</Text>
                             </div>
                         </Card>
-                        <div class="pl-1 pt-2 w-24 bg-red-400">
+                        <div class="pl-1 pt-2 w-24">
                             <Text bold>{thing.name}</Text>
                             <Text small>{thing.category}</Text>
                         </div>
