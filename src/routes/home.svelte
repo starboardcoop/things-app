@@ -12,6 +12,9 @@
     let diyThings = [];
     let cleaningThings = [];
 
+    let searchResults = [];
+    let searchText = "";
+
     thingify();
 
     onMount(() => {
@@ -28,6 +31,18 @@
         diyThings = data.things.filter(thing => thing.category === 'DIY');
         cleaningThings = data.things.filter(thing => thing.category === 'Cleaning');
     }
+
+    function search() {
+        if (searchText.length === 0) {
+            searchResults = [];
+            return;
+        }
+
+        const filtered = data.things.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
+
+        if (filtered.length > 0)
+            searchResults = filtered;
+    }
 </script>
 
 <main class="bg-indigo-300 w-screen min-h-screen font-mono">
@@ -35,6 +50,8 @@
         <div class="w-full flex flex-col justify-center items-center p-8 bg-bg relative">
             <Heading color="white">Hi, {name}!</Heading>
             <input
+                bind:value={searchText}
+                on:input={search}
                 placeholder="Search..."
                 class="px-4 py-2 border-2 border-black solid rounded-md outline-none transform hover:scale-105 duration-200 absolute -bottom-6" />
         </div>
@@ -42,24 +59,33 @@
             {#await data}
                 loading...
             {:then}
-                <div>
-                    <Container>
-                        <Subheading>Recommended Things:</Subheading>
-                    </Container>
-                    <Scroller things={data.things} />
-                </div>
-                <div>
-                    <Container>
-                        <Subheading>DIY Things:</Subheading>
-                    </Container>
-                    <Scroller things={diyThings} />
-                </div>
-                <div>
-                    <Container>
-                        <Subheading>Cleaning Things:</Subheading>
-                    </Container>
-                    <Scroller things={cleaningThings} />
-                </div>
+                {#if searchResults.length === 0}
+                    <div>
+                        <Container>
+                            <Subheading>Recommended Things:</Subheading>
+                        </Container>
+                        <Scroller things={data.things} />
+                    </div>
+                    <div>
+                        <Container>
+                            <Subheading>DIY Things:</Subheading>
+                        </Container>
+                        <Scroller things={diyThings} />
+                    </div>
+                    <div>
+                        <Container>
+                            <Subheading>Cleaning Things:</Subheading>
+                        </Container>
+                        <Scroller things={cleaningThings} />
+                    </div>
+                {:else}
+                    <div>
+                        <Container>
+                            <Subheading>Things:</Subheading>
+                        </Container>
+                        <Scroller things={searchResults} />
+                    </div>
+                {/if}
             {:catch error}
                 whoops!: {error}
             {/await}
