@@ -10,6 +10,7 @@
     let name;
     let data = [];
     let diyThings = [];
+    let cleaningThings = [];
 
     thingify();
 
@@ -25,10 +26,11 @@
         data.things = shuffle(data.things);
 
         diyThings = data.things.filter(thing => thing.category === 'DIY');
+        cleaningThings = data.things.filter(thing => thing.category === 'Cleaning');
     }
 </script>
 
-<main class="bg-indigo-300 w-screen h-screen font-mono">
+<main class="bg-indigo-300 w-screen min-h-screen font-mono">
     <div>
         <div class="w-full flex flex-col justify-center items-center p-8 bg-bg relative">
             <Heading color="white">Hi, {name}!</Heading>
@@ -51,6 +53,12 @@
                         <Subheading>DIY Things:</Subheading>
                     </Container>
                     <Scroller things={diyThings} />
+                </div>
+                <div>
+                    <Container>
+                        <Subheading>Cleaning Things:</Subheading>
+                    </Container>
+                    <Scroller things={cleaningThings} />
                 </div>
             {:catch error}
                 whoops!: {error}
