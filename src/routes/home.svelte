@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import shuffle from "../lib/shuffle";
+    import Heading from "../components/Heading.svelte";
     import Container from "../components/Container.svelte";
     import Session from "../session";
     import Scroller from "../components/Scroller.svelte";
@@ -26,7 +27,7 @@
 <main class="bg-indigo-300 w-screen h-screen font-mono">
     <div>
         <div class="w-full flex flex-col justify-center items-center p-8 overflow-hidden">
-            <h1>Hi, {name}!</h1>
+            <Heading bold>Hi, {name}!</Heading>
         </div>
         <Container>
             <h2>Recommended Things:</h2>
