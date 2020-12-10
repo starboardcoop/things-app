@@ -31,7 +31,7 @@
 <main class="bg-indigo-300 w-screen h-screen font-mono">
     <div>
         <div class="w-full flex flex-col justify-center items-center p-8 bg-bg relative">
-            <Heading color="indigo-300">Hi, {name}!</Heading>
+            <Heading color="white">Hi, {name}!</Heading>
             <input
                 placeholder="Search..."
                 class="px-4 py-2 border-2 border-black solid rounded-md outline-none transform hover:scale-105 duration-200 absolute -bottom-6" />
