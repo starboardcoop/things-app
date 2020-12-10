@@ -33,7 +33,7 @@
         <Container>
             <h2>Recommended Things:</h2>
         </Container>
-        <div class="flex flex-row gap-3 overflow-scroll px-8 py-7">
+        <div class="flex flex-row gap-3 overflow-auto px-8 py-7">
             {#await data}
                 loading...
             {:then}
