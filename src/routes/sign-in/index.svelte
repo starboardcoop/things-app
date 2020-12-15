@@ -1,6 +1,6 @@
 <script>
   import { goto } from '@sapper/app';
-  import Session from '../session';
+  import Session from '../../session';
   import { AsYouType, parsePhoneNumberFromString } from 'libphonenumber-js'
 
   let invalid = false;
@@ -35,9 +35,9 @@
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
 
-    Session.update({ name: data.name });
+    Session.update({ name: data.name, phone: phone.nationalNumber });
 
-    goto('/home');
+    goto("/sign-in/code");
   }
 </script>
 
