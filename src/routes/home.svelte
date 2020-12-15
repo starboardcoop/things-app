@@ -53,7 +53,7 @@
                 bind:value={searchText}
                 on:input={search}
                 placeholder="Search..."
-                class="px-4 py-2 border-2 border-black solid rounded-md outline-none transform hover:scale-105 duration-200 absolute -bottom-6" />
+                class="px-4 py-2 brutal hovers outline-none absolute -bottom-6" />
         </div>
         <div class="mt-10">
             {#await data}
@@ -92,14 +92,3 @@
         </div>
     </div>
 </main>
-
-<style>
-    .solid {
-        box-shadow: 2px 2px 0 #000000;
-    }
-
-    .solid:focus,
-    .solid:hover {
-        box-shadow: 4px 4px 0 #000000;
-    }
-</style>
