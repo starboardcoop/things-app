@@ -9,8 +9,6 @@
 
     let name;
     let data = [];
-    let diyThings = [];
-    let cleaningThings = [];
     let categories = [];
 
     let searchResults = [];
@@ -29,8 +27,6 @@
         data = await result.json();
         data.things = shuffle(data.things);
 
-        diyThings = data.things.filter(thing => thing.category === 'DIY');
-        cleaningThings = data.things.filter(thing => thing.category === 'Cleaning');
         categories = data.categories;
         console.log(categories);
     }
