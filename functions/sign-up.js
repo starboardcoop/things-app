@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 export async function handler(event, context, callback) {
     console.log("Signing tf up...");
 
@@ -5,16 +7,16 @@ export async function handler(event, context, callback) {
 
     console.log(`${phone}, ${name}`);
 
-    // const result = await fetch('https://starboardcoop-things-api.glitch.me/humans/auth/code', {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //         Accept: "application/json",
-    //     },
-    //     body: JSON.stringify({ phone, code })
-    // });
+    const result = await fetch('https://starboardcoop-things-api.glitch.me/humans/auth/enroll', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: JSON.stringify({ phone, name })
+    });
 
-    const member = { phone: phone, name: name };
+    const { member } = await result.json();
 
     console.log(member);
 
