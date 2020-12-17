@@ -8,9 +8,8 @@
     import Scroller from "../components/Scroller.svelte";
 
     let name;
-    let data = [];
-    let diyThings = [];
-    let cleaningThings = [];
+    let data = {};
+    let categories = [];
 
     let searchResults = [];
     let searchText = "";
@@ -28,8 +27,12 @@
         data = await result.json();
         data.things = shuffle(data.things);
 
-        diyThings = data.things.filter(thing => thing.category === 'DIY');
-        cleaningThings = data.things.filter(thing => thing.category === 'Cleaning');
+        categories = data.categories;
+        console.log(categories);
+    }
+
+    function filterThings(category) {
+        return data.things.filter(thing => thing.category === category);
     }
 
     function search() {
@@ -66,18 +69,14 @@
                         </Container>
                         <Scroller things={data.things} />
                     </div>
+                    {#each categories as category}
                     <div>
                         <Container>
-                            <Subheading>DIY Things:</Subheading>
+                            <Subheading>{category}:</Subheading>
                         </Container>
-                        <Scroller things={diyThings} />
+                        <Scroller things={filterThings(category)} />
                     </div>
-                    <div>
-                        <Container>
-                            <Subheading>Cleaning Things:</Subheading>
-                        </Container>
-                        <Scroller things={cleaningThings} />
-                    </div>
+                    {/each}
                 {:else}
                     <div>
                         <Container>
