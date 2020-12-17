@@ -14,10 +14,10 @@ export async function handler(event, context, callback) {
         body: JSON.stringify({ phone })
     });
 
-    const { name } = await result.json();
+    const response = await result.json();
 
     return {
         statusCode: 200,
-        body: JSON.stringify({ name: name })
+        body: JSON.stringify(response)
     }
 }
