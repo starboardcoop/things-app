@@ -8,7 +8,7 @@
     import Scroller from "../components/Scroller.svelte";
 
     let name;
-    let data = [];
+    let data = {};
     let categories = [];
 
     let searchResults = [];
