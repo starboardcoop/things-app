@@ -26,12 +26,16 @@
             body: JSON.stringify({ phone: session.phone, code: codeText })
         });
 
-        const { token } = await result.json();
+        const { member, token } = await result.json();
+        session.member = member;
         session.token = token;
 
         Session.update(session);
     
-        goto('/home');
+        if (member)
+          goto('/home');
+        else
+          goto('/sign-up');
     }
   </script>
   

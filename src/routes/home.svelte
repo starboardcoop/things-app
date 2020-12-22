@@ -19,7 +19,7 @@
     onMount(() => {
         const session = Session.json();
         console.log(session);
-        name = session.name;
+        name = session.member.name;
     });
 
     async function thingify() {
