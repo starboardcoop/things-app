@@ -28,7 +28,7 @@
 
         const { member, token, error } = await result.json();
         if (error) {
-          console.log(error);
+          invalid = true;
           errorMessage = error;
           return new Promise(() => {});
         }
@@ -78,4 +78,3 @@
       </div>
     </div>
   </main>
-  
