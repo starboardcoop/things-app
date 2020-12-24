@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
 export async function handler(event, context, callback) {
-    console.log("Signing tf up...");
+    console.log("Signing up...");
 
     const { phone, name } = JSON.parse(event.body);
 

@@ -22,8 +22,16 @@ export async function handler(event, context, callback) {
 
     const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
+    if (code != "12345")
+    {
+        return {
+            statusCode: 401,
+            body: JSON.stringify({error: `Your access code is invalid.`})
+        }
+    }
+     
     return {
         statusCode: 200,
         body: JSON.stringify({ member: member, token: token })
     }
-}
+} 
