@@ -1,80 +1,79 @@
 <script>
-    import { goto } from '@sapper/app';
-    import Session from '../../session';
-  
-    let invalid = false;
-    let codeText = "";
-    let errorMessage;
+  import { goto } from '@sapper/app';
+import Error from '../../components/Error.svelte';
+  import Session from '../../session';
 
-    const reset = () => invalid = false;
-  
-    async function submit() {
-        if (codeText.length != 5) {
-            invalid = true;
-            console.log('Invalid code.');
-            return new Promise(() => {});
-        }
+  let invalid = false;
+  let codeText = "";
+  let errorMessage;
 
-        const session = Session.json();
+  const reset = () => invalid = false;
 
-        const result = await fetch("/.netlify/functions/auth-code", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-            body: JSON.stringify({ phone: session.phone, code: codeText })
-        });
-
-        const { member, token, error } = await result.json();
-        if (error) {
+  async function submit() {
+      if (codeText.length != 5) {
           invalid = true;
-          errorMessage = error;
+          console.log('Invalid code.');
           return new Promise(() => {});
-        }
+      }
 
-        session.member = member;
-        session.token = token;
+      const session = Session.json();
 
-        Session.update(session);
-    
-        if (member)
-          goto('/home');
-        else
-          goto('/sign-up');
-    }
-  </script>
+      const result = await fetch("/.netlify/functions/auth-code", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+          },
+          body: JSON.stringify({ phone: session.phone, code: codeText })
+      });
+
+      const { member, token, error } = await result.json();
+      if (error) {
+        invalid = true;
+        errorMessage = error;
+        return new Promise(() => {});
+      }
+
+      session.member = member;
+      session.token = token;
+
+      Session.update(session);
   
-  <style>
-    .solid {
-      box-shadow: 2px 2px 0 #000000;
-    }
-  
-    .solid:focus,
-    .solid:hover {
-      box-shadow: 4px 4px 0 #000000;
-    }
-  
-    .invalid {
-      @apply bg-red-200;
-    }
-  </style>
-  
-  {#if errorMessage}
-    <div class="fixed top-4 left-4 right-4 bg-gray-800 py-2 px-4 text-white rounded-md">{errorMessage}</div>
-  {/if}
-  <main class="bg-indigo-300 w-screen h-screen font-mono">
-    <div class="w-full h-full flex flex-col justify-center items-center p-8">
-      <div class="flex flex-row gap-4 flex-wrap">
-        <input
-          bind:value={codeText}
-          on:change={reset}
-          type="password"
-          placeholder="00000"
-          pattern="[0-9]{5}"
-          class:invalid
-          class="px-4 py-2 border-2 border-black solid rounded-md outline-none transform hover:scale-105 duration-200" />
-        <button on:click={submit} class="bg-yellow-300 px-4 py-2 border-2 border-black solid rounded-md uppercase font-bold transform hover:scale-105 duration-200">Sign in</button>
-      </div>
+      if (member)
+        goto('/home');
+      else
+        goto('/sign-up');
+  }
+</script>
+
+<style>
+  .solid {
+    box-shadow: 2px 2px 0 #000000;
+  }
+
+  .solid:focus,
+  .solid:hover {
+    box-shadow: 4px 4px 0 #000000;
+  }
+
+  .invalid {
+    @apply bg-red-200;
+  }
+</style>
+
+<Error {errorMessage} visible={errorMessage}/>
+<main class="bg-indigo-300 w-screen h-screen font-mono">
+  <div class="w-full h-full flex flex-col justify-center items-center p-8">
+    <div class="flex flex-row gap-4 flex-wrap">
+      <input
+        bind:value={codeText}
+        on:change={reset}
+        type="password"
+        placeholder="00000"
+        pattern="[0-9]{5}"
+        class:invalid
+        class="px-4 py-2 border-2 border-black solid rounded-md outline-none transform hover:scale-105 duration-200" />
+      <button on:click={submit} class="bg-yellow-300 px-4 py-2 border-2 border-black solid rounded-md uppercase font-bold transform hover:scale-105 duration-200">Sign in</button>
     </div>
-  </main>
+  </div>
+</main>
