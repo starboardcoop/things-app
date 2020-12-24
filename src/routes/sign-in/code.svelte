@@ -60,11 +60,11 @@
     }
   </style>
   
+  {#if errorMessage}
+    <div class="fixed top-4 left-4 right-4 bg-gray-800 py-2 px-4 text-white rounded-md">{errorMessage}</div>
+  {/if}
   <main class="bg-indigo-300 w-screen h-screen font-mono">
     <div class="w-full h-full flex flex-col justify-center items-center p-8">
-      {#if errorMessage}
-        <div>{errorMessage}</div>
-      {/if}
       <div class="flex flex-row gap-4 flex-wrap">
         <input
           bind:value={codeText}

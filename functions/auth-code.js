@@ -1,5 +1,4 @@
 import fetch from "node-fetch";
-import { element_is } from "svelte/internal";
 
 export async function handler(event, context, callback) {
     console.log("Authenticating code...");
