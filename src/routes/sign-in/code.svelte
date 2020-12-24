@@ -1,6 +1,6 @@
 <script>
   import { goto } from '@sapper/app';
-import Error from '../../components/Error.svelte';
+  import Error from '../../components/Error.svelte';
   import Session from '../../session';
 
   let invalid = false;
@@ -12,7 +12,7 @@ import Error from '../../components/Error.svelte';
   async function submit() {
       if (codeText.length != 5) {
           invalid = true;
-          console.log('Invalid code.');
+          errorMessage = "Invalid code.";
           return new Promise(() => {});
       }
 
