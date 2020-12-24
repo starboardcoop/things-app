@@ -4,12 +4,12 @@
   
     let invalid = false;
     let codeText = "";
+    let errorMessage;
 
     const reset = () => invalid = false;
   
     async function submit() {
-        if (codeText.length != 5)
-        {
+        if (codeText.length != 5) {
             invalid = true;
             console.log('Invalid code.');
             return new Promise(() => {});
@@ -26,7 +26,13 @@
             body: JSON.stringify({ phone: session.phone, code: codeText })
         });
 
-        const { member, token } = await result.json();
+        const { member, token, error } = await result.json();
+        if (error) {
+          console.log(error);
+          errorMessage = error;
+          return new Promise(() => {});
+        }
+
         session.member = member;
         session.token = token;
 
@@ -56,6 +62,9 @@
   
   <main class="bg-indigo-300 w-screen h-screen font-mono">
     <div class="w-full h-full flex flex-col justify-center items-center p-8">
+      {#if errorMessage}
+        <div>{errorMessage}</div>
+      {/if}
       <div class="flex flex-row gap-4 flex-wrap">
         <input
           bind:value={codeText}
