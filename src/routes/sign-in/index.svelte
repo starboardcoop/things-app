@@ -7,7 +7,8 @@
   let phoneText = "";
 
   function formatPhoneText() {
-    phoneText = new AsYouType('US').input(phoneText);
+    if (phoneText.length > 6)
+      phoneText = new AsYouType('US').input(phoneText);
     invalid = false;
   }
 
