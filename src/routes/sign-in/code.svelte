@@ -10,7 +10,7 @@
   const reset = () => invalid = false;
 
   async function submit() {
-      if (codeText.length != 5) {
+      if (codeText.length != 6) {
           invalid = true;
           errorMessage = "Invalid code.";
           return new Promise(() => {});

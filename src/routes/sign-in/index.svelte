@@ -30,13 +30,13 @@
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ phone: phone.nationalNumber })
+      body: JSON.stringify({ phone: phone.number })
     });
 
     const data = await result.json();
     console.log(`Hi, ${data.name}!`);
 
-    Session.update({ name: data.name, phone: phone.nationalNumber });
+    Session.update({ name: data.name, phone: phone.number });
 
     goto("/sign-in/code");
   }

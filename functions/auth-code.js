@@ -16,22 +16,22 @@ export async function handler(event, context, callback) {
         body: JSON.stringify({ phone, code })
     });
 
-    const { member } = await result.json();
+    const { member, status } = await result.json();
 
     console.log(member);
 
     const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
-    if (code != "12345")
+    if (status != 200)
     {
         return {
-            statusCode: 401,
+            statusCode: status,
             body: JSON.stringify({error: `Your access code is invalid.`})
         }
     }
      
     return {
-        statusCode: 200,
+        statusCode: status,
         body: JSON.stringify({ member: member, token: token })
     }
 } 
