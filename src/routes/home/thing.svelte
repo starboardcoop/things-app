@@ -18,11 +18,14 @@
 
 <main class="bg-indigo-300 w-screen min-h-screen font-mono">
     <div>
-        <div class="w-full flex flex-col justify-center items-center p-8 bg-bg relative">
-            <Heading color="white">{thing.name}</Heading>
+        <div class="w-full flex flex-col justify-center items-center p-8 bg-bg relative text-white">
+            <Heading>pvd<span class="text-primary">:</span>thing</Heading>
         </div>
         <div class="flex flex-col space-y-5 mt-10 p-8">
-            <Image src={thing.img} alt={thing.name} />
+            <Subheading>{thing.name}</Subheading>
+            <div class="brutal overflow-hidden bg-white">
+                <Image src={thing.img} alt={thing.name} />
+            </div>
             <span>
                 <Text small>Available:</Text>
                 <Text>Coming Soon!</Text>
