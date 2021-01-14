@@ -150,5 +150,11 @@
 					rel="nofollow">Join us!</a>
 			</Button>
 		</Row>
+		<Spacer />
+		<Row center>
+			<Button small>
+				<a href="https://discord.gg/DbYtbFYkJD" target="_blank" rel="nofollow">Join us on Discord</a>
+			</Button>
+		</Row>
 	</Section>
 </Column>
