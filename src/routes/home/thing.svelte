@@ -1,9 +1,12 @@
 <script>
     import { onMount } from "svelte";
+    import { goto } from '@sapper/app';
+
     import Heading from "../../components/Heading.svelte";
     import Image from "../../components/Image.svelte";
     import Subheading from "../../components/Subheading.svelte";
     import Text from "../../components/Text.svelte";
+    import Card from "../../components/Card.svelte";
 
     let thing = {}
 
@@ -22,10 +25,14 @@
             <Heading>pvd<span class="text-primary">:</span>thing</Heading>
         </div>
         <div class="flex flex-col space-y-5 mt-10 p-8">
-            <Subheading>{thing.name}</Subheading>
-            <div class="brutal overflow-hidden bg-white">
-                <Image src={thing.img} alt={thing.name} />
+            <div on:click={ () => goto('/home') }>back</div>
+            <div>
+                <Subheading>{thing.name}</Subheading>
+                <Text small>{thing.category}</Text>
             </div>
+            <Card>
+                <Image src={thing.img} alt={thing.name} />
+            </Card>
             <span>
                 <Text small>Available:</Text>
                 <Text>Coming Soon!</Text>
@@ -34,7 +41,6 @@
                 <Text small>Typical out-of-pocket cost:</Text>
                 <Text>{thing.price}</Text>
             </span>
-            <Text small>{thing.category}</Text>
         </div>
     </div>
 </main>
