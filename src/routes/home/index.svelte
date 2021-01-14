@@ -25,6 +25,7 @@
     async function thingify() {
         const result = await fetch(`/.netlify/functions/things`);
         data = await result.json();
+        sessionStorage.setItem("data", JSON.stringify(data))
         data.things = shuffle(data.things);
 
         categories = data.categories;

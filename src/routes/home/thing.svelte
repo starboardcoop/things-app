@@ -1,9 +1,18 @@
 <script>
+    import { onMount } from "svelte";
     import Heading from "../../components/Heading.svelte";
     import Subheading from "../../components/Subheading.svelte";
     import Text from "../../components/Text.svelte";
 
     let thing = {}
+
+    onMount(() => {
+        const data = JSON.parse(sessionStorage.getItem("data"));
+        const urlParams = new URLSearchParams(window.location.search);
+        const thingId = urlParams.get('id');
+
+        thing = data.things.find(t => t.id === thingId)
+    })
 </script>
 
 <div class="flex flex-col space-y-5">
