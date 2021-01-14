@@ -1,11 +1,11 @@
 <script>
     import { onMount } from "svelte";
-    import shuffle from "../lib/shuffle";
-    import Heading from "../components/Heading.svelte";
-    import Subheading from "../components/Subheading.svelte";
-    import Container from "../components/Container.svelte";
-    import Session from "../session";
-    import Scroller from "../components/Scroller.svelte";
+    import shuffle from "../../lib/shuffle";
+    import Heading from "../../components/Heading.svelte";
+    import Subheading from "../../components/Subheading.svelte";
+    import Container from "../../components/Container.svelte";
+    import Session from "../../session";
+    import Scroller from "../../components/Scroller.svelte";
 
     let name;
     let data = {};
