@@ -14,12 +14,11 @@
     let searchResults = [];
     let searchText = "";
 
-    thingify();
-
     onMount(() => {
         const session = Session.json();
         console.log(session);
         name = session.member.name;
+        thingify();
     });
 
     async function thingify() {
