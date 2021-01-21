@@ -43,7 +43,7 @@
 <Column spacing="0">
 	<Section bg="bg">
 		<Title>pvd<span class="text-primary">:</span>things</Title>
-		<a href="/sign-in" hidden>Sign in</a>
+		<a href="/routes" hidden>Routes</a>
 	</Section>
 	<Section bg="bg">
 		<Spanner>
