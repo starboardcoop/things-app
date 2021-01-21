@@ -8,6 +8,8 @@
     import Text from "../../components/Text.svelte";
     import Column from "../../components/Column.svelte";
     import Section from "../../components/Section.svelte";
+    import Button from "../../components/Button.svelte";
+    import Row from "../../components/Row.svelte";
 
     let thing = {}
 
@@ -25,8 +27,10 @@
 </div>
 <Column spacing="0">
     <Section>
+        <Row>
+            <Button on:click={ () => goto('/home') }>back</Button>
+        </Row>
         <div class="flex flex-col space-y-5 mt-10 p-8">
-            <div on:click={ () => goto('/home') }>back</div>
             <div>
                 <Subheading>{thing.name}</Subheading>
                 <Text small>{thing.category}</Text>

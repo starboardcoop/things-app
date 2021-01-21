@@ -3,7 +3,7 @@
     export let small = false;
 </script>
 
-<button class:primary class:small class="uppercase cursor-pointer bg-indigo-100 font-bold px-4 py-2 brutal hovers">
+<button on:click class:primary class:small class="uppercase cursor-pointer bg-indigo-100 font-bold px-4 py-2 brutal hovers">
     <slot />
 </button>
 
