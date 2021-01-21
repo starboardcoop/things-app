@@ -33,27 +33,35 @@
         <Row>
             <Button on:click={ () => goto('/home') }>back</Button>
         </Row>
-        <Spacer />
         <Column>
-            <Grid>
-                <Card hovers={false}>
-                    <Image src={thing.img} alt={thing.name} />
-                </Card>
-                <div>
+            <div class="mt-10">
+                <Grid>
+                    <Card hovers={false}>
+                        <Image src={thing.img} alt={thing.name} height="60"/>
+                    </Card>
                     <div>
-                        <Subheading>{thing.name}</Subheading>
-                        <Text small>{thing.category}</Text>
+                        <div>
+                            <Subheading>{thing.name}</Subheading>
+                            <Text small>{thing.category}</Text>
+                        </div>
+                        <Spacer />
+                        <span>
+                            <Text small>Available:</Text>
+                            <Text>Coming Soon!</Text>
+                        </span>
+                        <Spacer />
+                        <span>
+                            <Text small>Typical out-of-pocket cost:</Text>
+                            <Text>{thing.price}</Text>
+                        </span>
                     </div>
-                    <span>
-                        <Text small>Available:</Text>
-                        <Text>Coming Soon!</Text>
-                    </span>
-                    <span>
-                        <Text small>Typical out-of-pocket cost:</Text>
-                        <Text>{thing.price}</Text>
-                    </span>
-                </div>
-            </Grid>
+                </Grid>
+            </div>
+            <Spacer />
+            <Text small>Description:</Text>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+            <Spacer />
+            <Text small>Always practice safety while using all Things!</Text>
         </Column>
     </Section>
 </Column>
