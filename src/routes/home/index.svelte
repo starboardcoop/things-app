@@ -6,6 +6,7 @@
     import Container from "../../components/Container.svelte";
     import Session from "../../session";
     import Scroller from "../../components/Scroller.svelte";
+    import Section from "../../components/Section.svelte";
 
     let name;
     let data = {};
@@ -57,35 +58,37 @@
             placeholder="Search..."
             class="px-4 py-2 brutal hovers outline-none absolute -bottom-6" />
     </div>
-    <div class="mt-10">
-        {#await data}
-            loading...
-        {:then}
-            {#if searchResults.length === 0}
-                <div>
-                    <Container>
-                        <Subheading>Recommended Things:</Subheading>
-                    </Container>
-                    <Scroller things={data.things} />
-                </div>
-                {#each categories as category}
-                <div>
-                    <Container>
-                        <Subheading>{category}:</Subheading>
-                    </Container>
-                    <Scroller things={filterThings(category)} />
-                </div>
-                {/each}
-            {:else}
-                <div>
-                    <Container>
-                        <Subheading>Things:</Subheading>
-                    </Container>
-                    <Scroller things={searchResults} />
-                </div>
-            {/if}
-        {:catch error}
-            whoops!: {error}
-        {/await}
-    </div>
+    <Section>
+        <div class="mt-10">
+            {#await data}
+                loading...
+            {:then}
+                {#if searchResults.length === 0}
+                    <div>
+                        <Container>
+                            <Subheading>Recommended Things:</Subheading>
+                        </Container>
+                        <Scroller things={data.things} />
+                    </div>
+                    {#each categories as category}
+                    <div>
+                        <Container>
+                            <Subheading>{category}:</Subheading>
+                        </Container>
+                        <Scroller things={filterThings(category)} />
+                    </div>
+                    {/each}
+                {:else}
+                    <div>
+                        <Container>
+                            <Subheading>Things:</Subheading>
+                        </Container>
+                        <Scroller things={searchResults} />
+                    </div>
+                {/if}
+            {:catch error}
+                whoops!: {error}
+            {/await}
+        </div>
+    </Section>
 </div>
