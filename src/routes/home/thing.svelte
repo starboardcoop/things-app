@@ -10,6 +10,9 @@
     import Section from "../../components/Section.svelte";
     import Button from "../../components/Button.svelte";
     import Row from "../../components/Row.svelte";
+    import Spacer from "../../components/Spacer.svelte";
+    import Grid from "../../components/Grid.svelte";
+    import Card from "../../components/Card.svelte";
 
     let thing = {}
 
@@ -30,20 +33,27 @@
         <Row>
             <Button on:click={ () => goto('/home') }>back</Button>
         </Row>
-        <div class="flex flex-col space-y-5 mt-10 p-8">
-            <div>
-                <Subheading>{thing.name}</Subheading>
-                <Text small>{thing.category}</Text>
-            </div>
-            <Image src={thing.img} alt={thing.name} />
-            <span>
-                <Text small>Available:</Text>
-                <Text>Coming Soon!</Text>
-            </span>
-            <span>
-                <Text small>Typical out-of-pocket cost:</Text>
-                <Text>{thing.price}</Text>
-            </span>
-        </div>
+        <Spacer />
+        <Column>
+            <Grid>
+                <Card hovers={false}>
+                    <Image src={thing.img} alt={thing.name} />
+                </Card>
+                <div>
+                    <div>
+                        <Subheading>{thing.name}</Subheading>
+                        <Text small>{thing.category}</Text>
+                    </div>
+                    <span>
+                        <Text small>Available:</Text>
+                        <Text>Coming Soon!</Text>
+                    </span>
+                    <span>
+                        <Text small>Typical out-of-pocket cost:</Text>
+                        <Text>{thing.price}</Text>
+                    </span>
+                </div>
+            </Grid>
+        </Column>
     </Section>
 </Column>
