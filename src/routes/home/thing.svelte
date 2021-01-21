@@ -38,6 +38,7 @@
                 <Grid>
                     <Card hovers={false}>
                         <Image src={thing.img} alt={thing.name} height="60"/>
+                        <p slot="modal">👀</p>
                     </Card>
                     <div>
                         <div>
