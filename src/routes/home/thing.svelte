@@ -55,6 +55,8 @@
                             <Text small>Typical out-of-pocket cost:</Text>
                             <Text>{thing.price}</Text>
                         </span>
+                        <Spacer />
+                        <Button primary>Get it!</Button>
                     </div>
                 </Grid>
             </div>
