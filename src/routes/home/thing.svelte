@@ -13,7 +13,6 @@
     import Spacer from "../../components/Spacer.svelte";
     import Grid from "../../components/Grid.svelte";
     import Card from "../../components/Card.svelte";
-import Spanner from "../../components/Spanner.svelte";
 
     let thing = {}
     let showModal = false;
@@ -74,7 +73,7 @@ import Spanner from "../../components/Spanner.svelte";
                                     bind:value={pickUp}
                                     type="text"
                                     placeholder="01/01/2021"
-                                    class="px-4 py-2 brutal hovers outline-none" />
+                                    class="px-4 py-2 brutal hovers outline-none w-full" />
                                 </div>
                                 <Spacer />
                                 <div>
@@ -85,7 +84,7 @@ import Spanner from "../../components/Spanner.svelte";
                                     bind:value={dropOff}
                                     type="text"
                                     placeholder="01/01/2021"
-                                    class="px-4 py-2 brutal hovers outline-none" />
+                                    class="px-4 py-2 brutal hovers outline-none w-full" />
                                 </div>
                                 <Spacer />
                                 <Row spread>
