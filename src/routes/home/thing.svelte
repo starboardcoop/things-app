@@ -87,6 +87,11 @@ import Spanner from "../../components/Spanner.svelte";
                                     placeholder="01/01/2021"
                                     class="px-4 py-2 brutal hovers outline-none" />
                                 </div>
+                                <Spacer />
+                                <Row spread>
+                                    <Button cancel on:click={toggleModal}>Cancel</Button>
+                                    <Button primary>Reserve</Button>
+                                </Row>
                             </div>
                         </div>
                     </div>
