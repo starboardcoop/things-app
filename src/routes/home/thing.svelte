@@ -13,10 +13,13 @@
     import Spacer from "../../components/Spacer.svelte";
     import Grid from "../../components/Grid.svelte";
     import Card from "../../components/Card.svelte";
+import Spanner from "../../components/Spanner.svelte";
 
     let thing = {}
     let showModal = false;
     const toggleModal = () => showModal = !showModal;
+    let pickUp = "";
+    let dropOff = "";
 
     onMount(() => {
         const data = JSON.parse(sessionStorage.getItem("data"));
@@ -61,6 +64,29 @@
                         <Button on:click={toggleModal} primary>Get it!</Button>
                         <div class="fixed z-10 inset-0 p-8 h-screen w-screen bg-black bg-opacity-50 justify-center align-middle hidden" class:visible={showModal}>
                             <div class="bg-gray-300 p-16 rounded md:max-w-md m-auto border-2 border-black thicc">
+                                <Subheading center>Get your {thing.name}!</Subheading>
+                                <Spacer />
+                                <div>
+                                    <div class="p-2">
+                                        <Text small bold>Pick Up</Text>
+                                    </div>
+                                    <input
+                                    bind:value={pickUp}
+                                    type="text"
+                                    placeholder="01/01/2021"
+                                    class="px-4 py-2 brutal hovers outline-none" />
+                                </div>
+                                <Spacer />
+                                <div>
+                                    <div class="p-2">
+                                        <Text small bold>Drop Off</Text>
+                                    </div>
+                                    <input
+                                    bind:value={dropOff}
+                                    type="text"
+                                    placeholder="01/01/2021"
+                                    class="px-4 py-2 brutal hovers outline-none" />
+                                </div>
                             </div>
                         </div>
                     </div>
