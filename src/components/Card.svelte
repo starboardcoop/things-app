@@ -1,13 +1,14 @@
 <script>
     export let height = "auto";
     export let width = "auto";
+    export let hovers = true;
 
     let showModal = false;
     const toggleModal = () => showModal = !showModal;
 </script>
 
 <div on:click={toggleModal} class={`h-${height} w-${width}`}>
-    <div class="h-full bg-white brutal hovers overflow-hidden">
+    <div class:hovers class="h-full bg-white brutal overflow-hidden">
         <slot />
     </div>
     <div class="fixed z-10 inset-0 p-8 h-screen w-screen bg-black bg-opacity-50 justify-center align-middle hidden" class:visible={showModal}>
