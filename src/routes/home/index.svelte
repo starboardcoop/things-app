@@ -58,7 +58,7 @@
             placeholder="Search..."
             class="px-4 py-2 brutal hovers outline-none absolute -bottom-6" />
     </div>
-    <Section>
+    <div>
         <div class="mt-10">
             {#await data}
                 loading...
@@ -90,5 +90,5 @@
                 whoops!: {error}
             {/await}
         </div>
-    </Section>
+    </div>
 </div>
