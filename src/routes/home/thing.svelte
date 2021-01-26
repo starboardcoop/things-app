@@ -15,6 +15,8 @@
     import Card from "../../components/Card.svelte";
 
     let thing = {}
+    let showModal = false;
+    const toggleModal = () => showModal = !showModal;
 
     onMount(() => {
         const data = JSON.parse(sessionStorage.getItem("data"));
@@ -56,7 +58,11 @@
                             <Text>{thing.price}</Text>
                         </span>
                         <Spacer />
-                        <Button primary>Get it!</Button>
+                        <Button on:click={toggleModal} primary>Get it!</Button>
+                        <div class="fixed z-10 inset-0 p-8 h-screen w-screen bg-black bg-opacity-50 justify-center align-middle hidden" class:visible={showModal}>
+                            <div class="bg-gray-300 p-16 rounded md:max-w-md m-auto border-2 border-black thicc">
+                            </div>
+                        </div>
                     </div>
                 </Grid>
             </div>
@@ -68,3 +74,9 @@
         </Column>
     </Section>
 </Column>
+
+<style>
+    div.visible {
+        @apply flex;
+    }
+</style>
