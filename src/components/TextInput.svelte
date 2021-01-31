@@ -1,5 +1,6 @@
 <script>
     export let value = "";
+    export let customClass = "";
     export let invalid = false;
 </script>
 
@@ -9,7 +10,8 @@
     on:input
     on:change
     class:invalid
-    class="px-4 py-2 brutal hovers outline-none" />
+    class="px-4 py-2 brutal hovers outline-none {customClass}"
+/>
 
 <style>
     .invalid {
