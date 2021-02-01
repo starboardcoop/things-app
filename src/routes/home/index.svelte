@@ -6,7 +6,7 @@
     import Container from "../../components/Container.svelte";
     import Session from "../../session";
     import Scroller from "../../components/Scroller.svelte";
-    import Section from "../../components/Section.svelte";
+    import TextInput from "../../components/TextInput.svelte";
 
     let name;
     let data = {};
@@ -52,11 +52,13 @@
 <div>
     <div class="w-full flex flex-col justify-center items-center p-8 bg-bg relative">
         <Heading color="white">Hi, {name}!</Heading>
-        <input
-            bind:value={searchText}
-            on:input={search}
-            placeholder="Search..."
-            class="px-4 py-2 brutal hovers outline-none absolute -bottom-6" />
+        <div class="absolute -bottom-6">
+            <TextInput
+                bind:value={searchText}
+                on:input={search}
+                placeholder="Search..."
+            />
+        </div>
     </div>
     <div>
         <div class="mt-10">

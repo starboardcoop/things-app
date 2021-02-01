@@ -1,10 +1,11 @@
 <script>
   import { goto } from '@sapper/app';
   import Session from '../../session';
-  import { AsYouType, parsePhoneNumberFromString } from 'libphonenumber-js'
+  import { AsYouType, parsePhoneNumberFromString } from 'libphonenumber-js';
+  import TextInput from '../../components/TextInput.svelte';
 
-  let invalid = false;
   let phoneText = "";
+  let invalid = false;
 
   function formatPhoneText() {
     if (phoneText.length > 6)
@@ -44,21 +45,15 @@
 
 <div class="w-full h-full flex flex-col justify-center items-center p-8">
   <div class="flex flex-row gap-4 flex-wrap">
-    <input
+    <TextInput
       bind:value={phoneText}
+      bind:invalid={invalid}
       on:change={formatPhoneText}
       on:input={formatPhoneText}
       type="tel"
       placeholder="(401) 555-5555"
       pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
-      class:invalid
-      class="px-4 py-2 brutal hovers outline-none" />
+    />
     <button on:click={submit} class="bg-yellow-300 px-4 py-2 brutal hovers uppercase font-bold">Submit</button>
   </div>
 </div>
-
-<style>
-  .invalid {
-    @apply bg-red-200;
-  }
-</style>

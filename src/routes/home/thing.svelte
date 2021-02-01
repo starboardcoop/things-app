@@ -13,6 +13,7 @@
     import Spacer from "../../components/Spacer.svelte";
     import Grid from "../../components/Grid.svelte";
     import Card from "../../components/Card.svelte";
+    import TextInput from "../../components/TextInput.svelte";
 
     let thing = {}
     let showModal = false;
@@ -69,22 +70,24 @@
                                     <div class="p-2">
                                         <Text small bold>Pick Up</Text>
                                     </div>
-                                    <input
-                                    bind:value={pickUp}
-                                    type="text"
-                                    placeholder="01/01/2021"
-                                    class="px-4 py-2 brutal hovers outline-none w-full" />
+                                    <TextInput
+                                        bind:value={pickUp}
+                                        type="text"
+                                        placeholder="01/01/2021"
+                                        customClass="w-full" 
+                                    />
                                 </div>
                                 <Spacer />
                                 <div>
                                     <div class="p-2">
                                         <Text small bold>Drop Off</Text>
                                     </div>
-                                    <input
-                                    bind:value={dropOff}
-                                    type="text"
-                                    placeholder="01/01/2021"
-                                    class="px-4 py-2 brutal hovers outline-none w-full" />
+                                    <TextInput
+                                        bind:value={dropOff}
+                                        type="text"
+                                        placeholder="01/01/2021"
+                                        customClass="w-full" 
+                                    />
                                 </div>
                                 <Spacer />
                                 <Row spread>
