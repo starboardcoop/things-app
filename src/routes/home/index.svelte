@@ -12,14 +12,22 @@
     let data = {};
     let categories = [];
 
+    let reservations = [];
+
     let searchResults = [];
     let searchText = "";
 
-    onMount(() => {
+    onMount(async () => {
         const session = Session.json();
         console.log(session);
         name = session.member.name;
-        thingify();
+        await thingify();
+        reservations.push({
+            thing: data.things[0],
+            startDate: "2/1/2020",
+            endDate: "2/12/2020"
+        });
+        console.log(reservations);
     });
 
     async function thingify() {
