@@ -125,7 +125,7 @@
 			</Spanner>
 		</Column>
 	</Section>
-	<Section bg="indigo-300">
+	<Section>
 		<Column spacing="16">
 			<Heading bold>But we need your help to make this happen.</Heading>
 			<Text large><Link to="https://starboard.coop">Starboard Co-op</Link> is currently developing the <b>web app</b> to support the Library of Things.</Text>
