@@ -33,11 +33,11 @@
 
 <Head
 	title="Providence Library of Things"
-	description="A member-owned co-op for sharing those things you need once in a while."
+	description="A non-profit co-op for sharing those things you need once in a while."
 	keywords="things, tools, tool rentals, equipment, cooperative, Providence, Rhode Island"
 	image="https://pvdthings.netlify.app/pvd-pixels.jpg"
 	twitterHandle="@pvdthings"
-	url="https://pvdthings.netlify.app" 
+	url="https://pvdthings.netlify.app"
 />
 
 <Column spacing="0">
@@ -75,7 +75,7 @@
 				</Heading>
 			</Row>
 			<Text>
-				Become a co-owning member and never pay rent to use Things like <span class="font-bold italic">these:</span>
+				Become a co-op member and never pay rent to use Things like <span class="font-bold italic">these:</span>
 			</Text>
 			<Grid>
 				{#each things as thing}
