@@ -129,9 +129,8 @@
 		<Column spacing="16">
 			<Heading bold>But we need your help to make this happen.</Heading>
 			<Text large><Link to="https://starboard.coop">Starboard Co-op</Link> is currently developing the <b>web app</b> to support the Library of Things.</Text>
-			<Text large>Meanwhile, we're assembling a <b>steering committee</b> of dedicated volunteers to get the Library off the ground.</Text>
-			<Text>The steering committee will be responsible for drafting the <b>bylaws</b>, securing a <b>physical location</b>, applying for <b>grant funding</b>, and <b>incorporating</b> the Library.</Text>
-			<Text>Though not everyone will be able to serve on the steering committee, everyone else who joins now will be encouraged to help in any way they can, such as donating Things to the Library or just getting the word out.</Text>
+			<Text large>Meanwhile, a <b>steering committee</b> of volunteers is working diligently to get the Library off the ground.</Text>
+			<Text>Though not everyone can serve on the steering committee, everyone else who joins now will be encouraged to help in any way they can, such as donating Things to the Library or just getting the word out.</Text>
 			<Text large>Plus, everyone who signs up before our launch will be a <b>founding member</b> of Rhode Island's first cooperative Library of Things!</Text>
 		</Column>
 	</Section>
