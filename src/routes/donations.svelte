@@ -8,6 +8,7 @@
     import Button from "../components/Button.svelte";
 
     const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfpUUKhhCr32Z_fE8ogvmDv4bD0icWrgTt7QOZVfaNVZemOcg/viewform?usp=sf_link";
+    const gofundmeURL = "https://www.gofundme.com/f/cooperative-library-of-things-in-providence";
 </script>
 
 <Head
@@ -32,6 +33,19 @@
             <div>
                 <Button primary>
                     <a href={formURL} target="_blank" rel="nofollow">Donate</a>
+                </Button>
+            </div>
+        </Column>
+    </Section>
+    <Section>
+        <Column>
+            <div>
+                <Heading>Have money to donate?</Heading>
+                <Text>We would eventually like to be 100% member-funded. But as we're starting up, we need community support. If you can afford to make a donation, it would be very much appreciated.</Text>
+            </div>
+            <div>
+                <Button primary>
+                    <a href={gofundmeURL} target="_blank">Donate</a>
                 </Button>
             </div>
         </Column>
