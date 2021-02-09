@@ -9,7 +9,7 @@
     import TextInput from "../../components/TextInput.svelte";
 
     let name;
-    let data = {};
+    let data;
     let categories = [];
 
     let searchResults = [];
@@ -19,7 +19,20 @@
         const session = Session.json();
         console.log(session);
         name = session.member.name;
-        thingify();
+
+        let now = new Date();
+
+        let previousRefresh = new Date(sessionStorage.getItem("previousRefresh"));
+        if (Math.abs(now - previousRefresh) > 120000) {
+            thingify();
+            sessionStorage.setItem("previousRefresh", now.toUTCString());
+        } else {
+            data = JSON.parse(sessionStorage.getItem("data"));
+            data.things = shuffle(data.things);
+
+            categories = data.categories;
+            console.log('Previous data refreshed.');
+        }
     });
 
     async function thingify() {
@@ -62,9 +75,9 @@
     </div>
     <div>
         <div class="mt-10">
-            {#await data}
+            {#if !data}
                 loading...
-            {:then}
+            {:else}
                 {#if searchResults.length === 0}
                     <div>
                         <Container>
@@ -88,9 +101,7 @@
                         <Scroller things={searchResults} />
                     </div>
                 {/if}
-            {:catch error}
-                whoops!: {error}
-            {/await}
+            {/if}
         </div>
     </div>
 </div>
