@@ -50,6 +50,7 @@
       bind:invalid={invalid}
       on:change={formatPhoneText}
       on:input={formatPhoneText}
+      on:enter={submit}
       type="tel"
       placeholder="(401) 555-5555"
       pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
