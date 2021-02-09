@@ -65,6 +65,7 @@
       bind:value={codeText}
       bind:invalid={invalid}
       on:change={reset}
+      on:enter={submit}
       type="password"
       placeholder="00000"
       pattern="[0-9]{5}"
