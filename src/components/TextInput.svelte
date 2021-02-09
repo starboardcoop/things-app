@@ -9,6 +9,7 @@
     bind:value
     on:input
     on:change
+    on:keyup
     class:invalid
     class="px-4 py-2 brutal hovers outline-none {customClass}"
 />
