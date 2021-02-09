@@ -27,12 +27,12 @@
     <Section>
         <Column>
             <div>
-                <Heading>Have a Thing to donate?</Heading>
+                <Heading>Have a <span class="font-bold">Thing</span> to donate?</Heading>
                 <Text>As a nonprofit organization in the early startup phase, Thing donations are very much appreciated. Click the button below to fill out our donation form.</Text>
             </div>
             <div>
                 <Button primary>
-                    <a href={formURL} target="_blank" rel="nofollow">Donate</a>
+                    <a href={formURL} target="_blank" rel="nofollow">Donate Thing</a>
                 </Button>
             </div>
         </Column>
@@ -40,12 +40,12 @@
     <Section>
         <Column>
             <div>
-                <Heading>Have money to donate?</Heading>
+                <Heading>Have <span class="font-bold">money</span> to donate?</Heading>
                 <Text>We would eventually like to be 100% member-funded. But as we're starting up, we need community support. If you can afford to make a donation, it would be very much appreciated.</Text>
             </div>
             <div>
                 <Button primary>
-                    <a href={gofundmeURL} target="_blank">Donate</a>
+                    <a href={gofundmeURL} target="_blank">Donate Money</a>
                 </Button>
             </div>
         </Column>
