@@ -1,7 +1,8 @@
 <script>
   import { goto } from '@sapper/app';
   import Session from '../../session';
-  import { AsYouType, parsePhoneNumberFromString } from 'libphonenumber-js';
+  import Phone from '../../lib/phone';
+  import { AsYouType } from 'libphonenumber-js';
   import TextInput from '../../components/TextInput.svelte';
 
   let phoneText = "";
@@ -14,32 +15,31 @@
   }
 
   async function submit() {
-    const phone = parsePhoneNumberFromString(phoneText, 'US');
+    const phone = new Phone(phoneText);
 
-    if (phone == null || !phone.isValid())
-    {
+    if (!phone.isValid()) {
       invalid = true;
       console.log('Invalid phone number.');
       return new Promise(() => {});
+    } else {
+      invalid = false;
+
+      const result = await fetch("/.netlify/functions/auth", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ phone: phone.asNumber() })
+      });
+
+      const data = await result.json();
+      console.log(`Hi, ${data.name}!`);
+
+      Session.update({ name: data.name, phone: phone.asNumber() });
+
+      goto("/sign-in/code");
     }
-
-    invalid = false;
-
-    const result = await fetch("/.netlify/functions/auth", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({ phone: phone.number })
-    });
-
-    const data = await result.json();
-    console.log(`Hi, ${data.name}!`);
-
-    Session.update({ name: data.name, phone: phone.number });
-
-    goto("/sign-in/code");
   }
 </script>
 
