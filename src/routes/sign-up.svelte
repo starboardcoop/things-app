@@ -42,6 +42,7 @@
             bind:value={nameText}
             bind:invalid
             on:change={() => invalid = false}
+            on:enter={submit}
             type="text"
             placeholder="Name"
         />
