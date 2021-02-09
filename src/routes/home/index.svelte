@@ -10,7 +10,6 @@
 
     let name;
     let data;
-    let categories = [];
 
     let searchResults = [];
     let searchText = "";
@@ -30,7 +29,6 @@
             data = JSON.parse(sessionStorage.getItem("data"));
             data.things = shuffle(data.things);
 
-            categories = data.categories;
             console.log('Previous data refreshed.');
         }
     });
@@ -41,8 +39,7 @@
         sessionStorage.setItem("data", JSON.stringify(data))
         data.things = shuffle(data.things);
 
-        categories = data.categories;
-        console.log(categories);
+        console.log('Refreshed data from API.');
     }
 
     function filterThings(category) {
@@ -85,7 +82,7 @@
                         </Container>
                         <Scroller things={data.things} />
                     </div>
-                    {#each categories as category}
+                    {#each data.categories as category}
                     <div>
                         <Container>
                             <Subheading>{category}:</Subheading>
