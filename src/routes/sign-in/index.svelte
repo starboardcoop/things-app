@@ -41,11 +41,6 @@
 
     goto("/sign-in/code");
   }
-
-  function triggerSubmit(event) {
-    if (event.key === 'Enter')
-      submit();
-  }
 </script>
 
 <div class="w-full h-full flex flex-col justify-center items-center p-8">
@@ -55,7 +50,7 @@
       bind:invalid={invalid}
       on:change={formatPhoneText}
       on:input={formatPhoneText}
-      on:keyup={triggerSubmit}
+      on:enter={submit}
       type="tel"
       placeholder="(401) 555-5555"
       pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"

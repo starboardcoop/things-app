@@ -1,7 +1,16 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+
     export let value = "";
     export let customClass = "";
     export let invalid = false;
+
+    const dispatch = createEventDispatcher();
+
+    function keyReleased(event) {
+        if (event.key === 'Enter')
+            dispatch('enter');
+    }
 </script>
 
 <input
@@ -9,7 +18,7 @@
     bind:value
     on:input
     on:change
-    on:keyup
+    on:keyup={keyReleased}
     class:invalid
     class="px-4 py-2 brutal hovers outline-none {customClass}"
 />
