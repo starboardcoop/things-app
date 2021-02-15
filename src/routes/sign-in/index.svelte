@@ -2,15 +2,13 @@
   import { goto } from '@sapper/app';
   import Session from '../../session';
   import Phone from '../../lib/phone';
-  import { AsYouType } from 'libphonenumber-js';
   import TextInput from '../../components/TextInput.svelte';
 
   let phoneText = "";
   let invalid = false;
 
   function formatPhoneText() {
-    if (phoneText.length > 6)
-      phoneText = new AsYouType('US').input(phoneText);
+    phoneText = Phone.formatted(phoneText);
     invalid = false;
   }
 
