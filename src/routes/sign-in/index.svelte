@@ -1,7 +1,7 @@
 <script>
   import { goto } from '@sapper/app';
-  import Session from '../../session';
   import Phone from '../../lib/phone';
+  import { trySubmit } from './_helpers/submit-phone';
   import TextInput from '../../components/TextInput.svelte';
 
   let phoneText = "";
@@ -13,29 +13,11 @@
   }
 
   async function submit() {
-    const phone = new Phone(phoneText);
-    invalid = !phone.isValid();
-
-    if (invalid) {
-      console.log('Invalid phone number.');
-      return new Promise(() => {});
-    } else {
-      const result = await fetch("/.netlify/functions/auth", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ phone: phone.asNumber() })
-      });
-
-      const data = await result.json();
-      console.log(`Hi, ${data.name}!`);
-
-      Session.update({ name: data.name, phone: phone.asNumber() });
-
+    const success = await trySubmit(phoneText);
+    if (success)
       goto("/sign-in/code");
-    }
+    else
+      invalid = true;
   }
 </script>
 
