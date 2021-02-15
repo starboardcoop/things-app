@@ -16,14 +16,12 @@
 
   async function submit() {
     const phone = new Phone(phoneText);
+    invalid = !phone.isValid();
 
-    if (!phone.isValid()) {
-      invalid = true;
+    if (invalid) {
       console.log('Invalid phone number.');
       return new Promise(() => {});
     } else {
-      invalid = false;
-
       const result = await fetch("/.netlify/functions/auth", {
         method: "POST",
         headers: {
