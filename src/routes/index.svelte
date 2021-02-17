@@ -32,12 +32,12 @@
 </script>
 
 <Head
-	title="Providence Library of Things"
+	title="PVD Things"
 	description="A non-profit co-op for sharing those things you need once in a while."
 	keywords="things, tools, tool rentals, equipment, cooperative, Providence, Rhode Island"
-	image="https://pvdthings.netlify.app/pvd-pixels.jpg"
+	image="https://pvdthings.coop/pvd-pixels.jpg"
 	twitterHandle="@pvdthings"
-	url="https://pvdthings.netlify.app"
+	url="https://pvdthings.coop"
 />
 
 <Column spacing="0">
