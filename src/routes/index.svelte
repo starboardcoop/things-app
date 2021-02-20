@@ -42,7 +42,9 @@
 
 <Column spacing="0">
 	<Section bg="bg">
-		<Title>pvd<span class="text-primary">:</span>things</Title>
+		<Row center>
+			<img src="/PVD_Things_Logo_White.png" alt="PVD Things logo" class="h-36 lg:h-64"/>
+		</Row>
 		<a href="/routes" hidden>Routes</a>
 	</Section>
 	<Section bg="bg">
