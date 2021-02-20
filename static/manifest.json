@@ -1,20 +1,30 @@
 {
     "name": "Providence Library of Things",
-    "short_name": "pvd:things",
+    "short_name": "PVD Things",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/icon-256x256.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "theme_color": "#fdd835",
-    "background_color": "#282828",
+    "background_color": "#A5B4FC",
     "display": "minimal-ui",
     "start_url": "/"
 }
