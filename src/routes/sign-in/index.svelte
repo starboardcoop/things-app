@@ -1,45 +1,23 @@
 <script>
   import { goto } from '@sapper/app';
-  import Session from '../../session';
-  import { AsYouType, parsePhoneNumberFromString } from 'libphonenumber-js';
+  import Phone from '../../lib/phone';
+  import { trySubmit } from './_helpers/submit-phone';
   import TextInput from '../../components/TextInput.svelte';
 
   let phoneText = "";
   let invalid = false;
 
   function formatPhoneText() {
-    if (phoneText.length > 6)
-      phoneText = new AsYouType('US').input(phoneText);
+    phoneText = Phone.formatted(phoneText);
     invalid = false;
   }
 
   async function submit() {
-    const phone = parsePhoneNumberFromString(phoneText, 'US');
-
-    if (phone == null || !phone.isValid())
-    {
+    const success = await trySubmit(phoneText);
+    if (success)
+      goto("/sign-in/code");
+    else
       invalid = true;
-      console.log('Invalid phone number.');
-      return new Promise(() => {});
-    }
-
-    invalid = false;
-
-    const result = await fetch("/.netlify/functions/auth", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({ phone: phone.number })
-    });
-
-    const data = await result.json();
-    console.log(`Hi, ${data.name}!`);
-
-    Session.update({ name: data.name, phone: phone.number });
-
-    goto("/sign-in/code");
   }
 </script>
 

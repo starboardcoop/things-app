@@ -32,17 +32,20 @@
 </script>
 
 <Head
-	title="Providence Library of Things"
+	title="PVD Things"
 	description="A non-profit co-op for sharing those things you need once in a while."
 	keywords="things, tools, tool rentals, equipment, cooperative, Providence, Rhode Island"
-	image="https://pvdthings.netlify.app/pvd-pixels.jpg"
+	image="https://pvdthings.coop/PVD_Things_Twitter_Header.png"
 	twitterHandle="@pvdthings"
-	url="https://pvdthings.netlify.app"
+	url="https://pvdthings.coop"
 />
 
 <Column spacing="0">
-	<Section bg="bg">
-		<Title>pvd<span class="text-primary">:</span>things</Title>
+	<Section bg="purple-city">
+		<Row center>
+			<img src="/PVD_Things_Logo_White.png" alt="PVD Things logo" class="h-36 lg:h-64"/>
+			<h1 hidden>PVD Things</h1>
+		</Row>
 		<a href="/routes" hidden>Routes</a>
 	</Section>
 	<Section bg="bg">
@@ -130,7 +133,14 @@
 			<Heading bold>But we need your help to make this happen.</Heading>
 			<Text large><Link to="https://starboard.coop">Starboard Co-op</Link> is currently developing the <b>web app</b> to support the Library of Things.</Text>
 			<Text large>Meanwhile, a <b>steering committee</b> of volunteers is working diligently to get the Library off the ground.</Text>
-			<Text>Though not everyone can serve on the steering committee, everyone else who joins now will be encouraged to help in any way they can, such as <Link to="/donations">donating</Link> to the Library or just getting the word out. We're also still looking for a physical space for the library. If you know of any low-rent opportunities, please contact us at <span class="font-bold">hello@starboard.coop</span>.</Text>
+			<Text>
+				Though not everyone can serve on the steering committee, everyone else who joins now will be encouraged to help in any way they can, such as 
+				<span class="text-xl underline">
+					<Link to="/donations">donating</Link>
+				</span> 
+				to the Library or just getting the word out. We're also still looking for a physical space for the library. If you know of any low-rent opportunities, please contact us at 
+				<span class="font-bold">hello@starboard.coop</span>.
+			</Text>
 			<Text large>Plus, everyone who signs up before our launch will be a <b>founding member</b> of Rhode Island's first cooperative Library of Things!</Text>
 		</Column>
 	</Section>
