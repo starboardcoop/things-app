@@ -1,9 +1,11 @@
 <script>
 	import Layout from "../components/Layout.svelte";
 	import Footer from "../components/Footer.svelte";
+	import Menu from "../components/Menu.svelte";
 </script>
 
 <Layout>
+	<Menu />
 	<slot />
 	<Footer />
 </Layout>
