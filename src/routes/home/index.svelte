@@ -9,8 +9,7 @@
     import TextInput from "../../components/TextInput.svelte";
 
     let name;
-    let data = {};
-    let categories = [];
+    let data;
 
     let searchResults = [];
     let searchText = "";
@@ -19,7 +18,19 @@
         const session = Session.json();
         console.log(session);
         name = session.member.name;
-        thingify();
+
+        let now = new Date();
+
+        let previousRefresh = new Date(sessionStorage.getItem("previousRefresh"));
+        if (Math.abs(now - previousRefresh) > 120000) {
+            thingify();
+            sessionStorage.setItem("previousRefresh", now.toUTCString());
+        } else {
+            data = JSON.parse(sessionStorage.getItem("data"));
+            data.things = shuffle(data.things);
+
+            console.log('Previous data refreshed.');
+        }
     });
 
     async function thingify() {
@@ -28,8 +39,7 @@
         sessionStorage.setItem("data", JSON.stringify(data))
         data.things = shuffle(data.things);
 
-        categories = data.categories;
-        console.log(categories);
+        console.log('Refreshed data from API.');
     }
 
     function filterThings(category) {
@@ -62,9 +72,9 @@
     </div>
     <div>
         <div class="mt-10">
-            {#await data}
+            {#if !data}
                 loading...
-            {:then}
+            {:else}
                 {#if searchResults.length === 0}
                     <div>
                         <Container>
@@ -72,7 +82,7 @@
                         </Container>
                         <Scroller things={data.things} />
                     </div>
-                    {#each categories as category}
+                    {#each data.categories as category}
                     <div>
                         <Container>
                             <Subheading>{category}:</Subheading>
@@ -88,9 +98,7 @@
                         <Scroller things={searchResults} />
                     </div>
                 {/if}
-            {:catch error}
-                whoops!: {error}
-            {/await}
+            {/if}
         </div>
     </div>
 </div>
