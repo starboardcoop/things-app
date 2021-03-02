@@ -1,6 +1,4 @@
 <script>
-import Text from "./Text.svelte";
-
     export let pages = [
         {
             label: "home",
@@ -11,10 +9,12 @@ import Text from "./Text.svelte";
             url: "/donations"
         }
     ];
+
+    let visible = false;
 </script>
 
 <div class="flex flex-col space-y-4 fixed bottom-4 md:top-4 right-4 items-end">
-    <div class="h-16 w-16 rounded-full cursor-pointer bg-indigo-300 shadow-lg hover:shadow text-center p-4">
+    <div on:click={() => visible = !visible} class="h-16 w-16 rounded-full cursor-pointer bg-indigo-300 shadow-lg hover:shadow text-center p-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="1.7" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <line x1="4" y1="6" x2="20" y2="6" />
@@ -22,9 +22,15 @@ import Text from "./Text.svelte";
             <line x1="4" y1="18" x2="20" y2="18" />
         </svg>
     </div>
-    <nav class="bg-white shadow w-max overflow-hidden p-4 rounded-lg flex flex-col space-y-2">
+    <nav class:visible class="bg-white shadow w-max overflow-hidden p-4 rounded-lg hidden flex-col space-y-2">
         {#each pages as page}
             <a href={page.url} class="hover:underline">{page.label}</a>
         {/each}
     </nav>
 </div>
+
+<style>
+    .visible {
+        @apply flex;
+    }
+</style>
