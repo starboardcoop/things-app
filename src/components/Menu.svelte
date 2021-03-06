@@ -2,7 +2,7 @@
     export let pages = [
         {
             label: "home",
-            url: "/home"
+            url: "/"
         }, 
         {
             label: "donations",
