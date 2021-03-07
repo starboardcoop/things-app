@@ -45,7 +45,6 @@
 			<img src="/PVD_Things_Logo_White.png" alt="PVD Things logo" class="h-36 lg:h-64"/>
 			<h1 hidden>PVD Things</h1>
 		</Row>
-		<a href="/routes" hidden>Routes</a>
 	</Section>
 	<Section bg="bg">
 		<Spanner>
