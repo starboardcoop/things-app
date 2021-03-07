@@ -1,10 +1,7 @@
 <script context="module">
 	export async function preload() {
-		const res = await this.fetch(
-			`https://starboardcoop-things-api.glitch.me/things`
-		);
+		const res = await this.fetch('/.netlify/functions/things');
 		const data = await res.json();
-
 		return data;
 	}
 </script>
