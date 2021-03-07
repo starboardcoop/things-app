@@ -15,7 +15,6 @@
 	import Head from "../components/Head.svelte";
 	import Card from "../components/Card.svelte";
 	import Image from "../components/Image.svelte";
-	import Title from "../components/Title.svelte";
 	import Heading from "../components/Heading.svelte";
 	import Subheading from "../components/Subheading.svelte";
 	import Column from "../components/Column.svelte";
