@@ -1,21 +1,9 @@
-<script context="module">
-	export async function preload() {
-		const res = await this.fetch(
-			`https://starboardcoop-things-api.glitch.me/things`
-		);
-		const data = await res.json();
-
-		return data;
-	}
-</script>
-
 <script>
 	import Typewriter from "svelte-typewriter";
 	import Section from "../components/Section.svelte";
 	import Head from "../components/Head.svelte";
 	import Card from "../components/Card.svelte";
 	import Image from "../components/Image.svelte";
-	import Title from "../components/Title.svelte";
 	import Heading from "../components/Heading.svelte";
 	import Subheading from "../components/Subheading.svelte";
 	import Column from "../components/Column.svelte";
@@ -27,8 +15,15 @@
 	import Row from "../components/Row.svelte";
 	import Spanner from "../components/Spanner.svelte";
 	import Link from "../components/Link.svelte";
+	import { onMount } from "svelte";
 
-	export let things = [];
+	export let things;
+
+	onMount(async () => {
+		const res = await fetch('/.netlify/functions/things');
+		const data = await res.json();
+		things = data.things;
+	});
 </script>
 
 <Head
@@ -46,7 +41,6 @@
 			<img src="/PVD_Things_Logo_White.png" alt="PVD Things logo" class="h-36 lg:h-64"/>
 			<h1 hidden>PVD Things</h1>
 		</Row>
-		<a href="/routes" hidden>Routes</a>
 	</Section>
 	<Section bg="bg">
 		<Spanner>
@@ -81,28 +75,30 @@
 				Become a co-op member and never pay rent to use Things like <span class="font-bold italic">these:</span>
 			</Text>
 			<Grid>
-				{#each things as thing}
-					<Card>
-						<Image src={thing.img} alt={thing.name} />
-						<Container>
-							<Subheading caps bold>{thing.name}</Subheading>
-							<Text small>{thing.category}</Text>
-						</Container>
-						<div class="flex flex-col space-y-5" slot="modal">
-							<Subheading bold>pvd<span class="text-indigo-600">:</span>thing</Subheading>
-							<Heading bold>{thing.name}</Heading>
-							<span>
-								<Text small>Available:</Text>
-								<Text>Coming Soon!</Text>
-							</span>
-							<span>
-								<Text small>Typical out-of-pocket cost:</Text>
-								<Text>{thing.price}</Text>
-							</span>
-							<Text small>{thing.category}</Text>
-						</div>
-					</Card>
-				{/each}
+				{#if things}
+					{#each things as thing}
+						<Card>
+							<Image src={thing.img} alt={thing.name} />
+							<Container>
+								<Subheading caps bold>{thing.name}</Subheading>
+								<Text small>{thing.category}</Text>
+							</Container>
+							<div class="flex flex-col space-y-5" slot="modal">
+								<Subheading bold>pvd<span class="text-indigo-600">:</span>thing</Subheading>
+								<Heading bold>{thing.name}</Heading>
+								<span>
+									<Text small>Available:</Text>
+									<Text>Coming Soon!</Text>
+								</span>
+								<span>
+									<Text small>Typical out-of-pocket cost:</Text>
+									<Text>{thing.price}</Text>
+								</span>
+								<Text small>{thing.category}</Text>
+							</div>
+						</Card>
+					{/each}
+				{/if}
 			</Grid>
 		</Column>
 	</Section>
