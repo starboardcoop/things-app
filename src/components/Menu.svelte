@@ -25,7 +25,7 @@
     <nav class:visible class="bg-white shadow w-max text-lg overflow-hidden p-4 rounded-lg hidden flex-col space-y-2 mb-4">
         <a href="/routes" hidden>routes</a>
         {#each pages as page}
-            <a href={page.url} class="hover:underline">{page.label}</a>
+            <a href={page.url} class="hover:underline capitalize">{page.label}</a>
         {/each}
     </nav>
 </div>
