@@ -6,7 +6,9 @@
 
 <Layout>
 	<Menu />
-	<slot />
+	<div class="flex-grow">
+		<slot />
+	</div>
 	<Footer />
 </Layout>
 

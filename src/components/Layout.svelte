@@ -1,3 +1,3 @@
-<main class="bg-indigo-300 min-h-screen w-screen">
+<main class="bg-indigo-300 flex flex-col min-h-screen w-screen">
     <slot />
 </main>
