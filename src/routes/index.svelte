@@ -46,7 +46,7 @@
 			<Heading color="primary">Own Things<br /><span class="text-6xl">Together!</span></Heading>
 			<Column>
 				<Text light bold>
-					For those things you only need once in a while, why not share them?
+					For those things you only sometimes need, why not share them?
 				</Text>
 				<Text light>
 					As a member of the <span class="text-indigo-400">Providence Library of Things</span>, you will have
