@@ -1,10 +1,13 @@
 <script>
     export let caps = false;
     export let center = false;
+    export let large = false;
     export let color = "inherit";
+
+    let size = large ? "text-3xl" : "text-xl";
 </script>
 
-<h3 class:caps class:center class={`text-xl font-bold text-${color}`}>
+<h3 class:caps class:center class="{size} font-bold text-{color}">
     <slot />
 </h3>
 

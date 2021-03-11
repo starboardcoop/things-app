@@ -128,7 +128,7 @@
 			<Heading bold>But we need your help.</Heading>
 			<div>
 				<Subheading>Location.</Subheading>
-				<Text>Location for tool libraries is always the biggest hurdle. Rent, especially in and around a city, is -- let's face it -- absurd. If you know of any low-cost opportunities, please don't hesitate to <a href="mailto: hello@starboard.coop" class="underline font-bold">let us know.</a> We're open to storefront space, a warehouse, or even an open field.</Text>
+				<Text>Location for tool libraries is always the biggest hurdle. Rent, especially in and around a city, is -- let's face it -- absurd. If you know of any low-cost opportunities in PVD, please don't hesitate to <a href="mailto: hello@starboard.coop" class="underline font-bold">let us know.</a> We're open to storefront space, a warehouse, or even an open field.</Text>
 			</div>
 			<div>
 				<Subheading>Things.</Subheading>
@@ -143,11 +143,11 @@
 	<Section bg="bg">
 		<Spanner>
 			<Column spacing="2">
-				<Subheading color="indigo-300">140+</Subheading>
-				<Text light small>potential members</Text>
+				<Subheading large color="indigo-300">140+</Subheading>
+				<Text light small>prospective members</Text>
 			</Column>
 			<Column spacing="2">
-				<Subheading color="indigo-300">5+</Subheading>
+				<Subheading large color="indigo-300">5+</Subheading>
 				<Text light small>things donated</Text>
 			</Column>
 		</Spanner>
