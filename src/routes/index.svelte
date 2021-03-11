@@ -143,11 +143,11 @@
 	<Section bg="bg">
 		<Spanner>
 			<Column spacing="2">
-				<Subheading large color="indigo-300">140+</Subheading>
+				<Subheading oversized color="indigo-300">140+</Subheading>
 				<Text light small>prospective members</Text>
 			</Column>
 			<Column spacing="2">
-				<Subheading large color="indigo-300">5+</Subheading>
+				<Subheading oversized color="indigo-300">5+</Subheading>
 				<Text light small>things donated</Text>
 			</Column>
 		</Spanner>

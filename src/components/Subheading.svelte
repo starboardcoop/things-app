@@ -1,10 +1,10 @@
 <script>
     export let caps = false;
     export let center = false;
-    export let large = false;
+    export let oversized = false;
     export let color = "inherit";
 
-    let size = large ? "text-3xl" : "text-xl";
+    let size = oversized ? "text-4xl lg:text-5xl" : "text-xl";
 </script>
 
 <h3 class:caps class:center class="{size} font-bold text-{color}">
