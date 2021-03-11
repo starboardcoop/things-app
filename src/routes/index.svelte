@@ -14,7 +14,6 @@
 	import Spacer from "../components/Spacer.svelte";
 	import Row from "../components/Row.svelte";
 	import Spanner from "../components/Spanner.svelte";
-	import Link from "../components/Link.svelte";
 	import { onMount } from "svelte";
 
 	export let things;
