@@ -140,6 +140,18 @@
 			</div>
 		</Column>
 	</Section>
+	<Section bg="bg">
+		<Spanner>
+			<Column spacing="2">
+				<Subheading color="indigo-300">140+</Subheading>
+				<Text light small>potential members</Text>
+			</Column>
+			<Column spacing="2">
+				<Subheading color="indigo-300">5+</Subheading>
+				<Text light small>things donated</Text>
+			</Column>
+		</Spanner>
+	</Section>
 	<Section bg="indigo-400">
 		<Heading italic bold center>Ready to co-own Things?</Heading>
 		<Text center>
