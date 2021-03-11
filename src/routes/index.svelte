@@ -126,18 +126,19 @@
 	</Section>
 	<Section>
 		<Column spacing="16">
-			<Heading bold>But we need your help to make this happen.</Heading>
-			<Text large><Link to="https://starboard.coop">Starboard Co-op</Link> is currently developing the <b>web app</b> to support the Library of Things.</Text>
-			<Text large>Meanwhile, a <b>steering committee</b> of volunteers is working diligently to get the Library off the ground.</Text>
-			<Text>
-				Though not everyone can serve on the steering committee, everyone else who joins now will be encouraged to help in any way they can, such as 
-				<span class="text-xl underline">
-					<Link to="/donations">donating</Link>
-				</span> 
-				to the Library or just getting the word out. We're also still looking for a physical space for the library. If you know of any low-rent opportunities, please contact us at 
-				<span class="font-bold">hello@starboard.coop</span>.
-			</Text>
-			<Text large>Plus, everyone who signs up before our launch will be a <b>founding member</b> of Rhode Island's first cooperative Library of Things!</Text>
+			<Heading bold>But we need your help.</Heading>
+			<div>
+				<Subheading>Location.</Subheading>
+				<Text>Location for tool libraries is always the biggest hurdle. Rent, especially in and around a city, is -- let's face it -- absurd. If you know of any low-cost opportunities, please don't hesitate to <a href="mailto: hello@starboard.coop" class="underline font-bold">let us know.</a> We're open to storefront space, a warehouse, or even an open field.</Text>
+			</div>
+			<div>
+				<Subheading>Things.</Subheading>
+				<Text>Though we will be purchasing new Things for the library, <a href="/donations" class="underline font-bold">donations</a> will go a long way toward getting us to financial sustainability while offering every Thing the co-op members may need.</Text>
+			</div>
+			<div>
+				<Subheading>Spreading the word.</Subheading>
+				<Text>More members means a stronger cooperative! The more who join, the faster we'll have financial sustainability and lots of Things to use.</Text>
+			</div>
 		</Column>
 	</Section>
 	<Section bg="indigo-400">
