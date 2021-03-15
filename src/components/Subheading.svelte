@@ -1,21 +1,19 @@
 <script>
     export let caps = false;
-    export let bold = false;
     export let center = false;
+    export let oversized = false;
     export let color = "inherit";
+
+    let size = oversized ? "text-6xl" : "text-xl";
 </script>
 
-<h3 class:caps class:bold class:center class={`text-xl font-bold text-${color}`}>
+<h3 class:caps class:center class="{size} font-bold text-{color}">
     <slot />
 </h3>
 
 <style>
     .caps {
         @apply uppercase;
-    }
-
-    .bold {
-        @apply font-bold;
     }
 
     h3.center {
