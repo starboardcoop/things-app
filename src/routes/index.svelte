@@ -1,5 +1,4 @@
 <script>
-	import Typewriter from "svelte-typewriter";
 	import Section from "../components/Section.svelte";
 	import Head from "../components/Head.svelte";
 	import Card from "../components/Card.svelte";
@@ -15,6 +14,7 @@
 	import Row from "../components/Row.svelte";
 	import Spanner from "../components/Spanner.svelte";
 	import Link from "../components/Link.svelte";
+	import Terminal from "../components/Terminal.svelte";
 	import { onMount } from "svelte";
 
 	export let things;
@@ -57,23 +57,15 @@
 		</Spanner>
 	</Section>
 	<Section bg="primary">
-		<Column>
-			<Row>
-				<Heading bold>&gt;</Heading>
-				<Heading italic bold>
-					<Typewriter interval={50} loop>
-						<div>The best things in life are Things.</div>
-						<div>Audio Equipment</div>
-						<div>Cleaning Tools</div>
-						<div>Musical Instruments</div>
-						<div>Cooking Supplies</div>
-						<div>Any Thing.</div>
-					</Typewriter>
-				</Heading>
-			</Row>
-			<Text>
-				Become a co-op member and never pay rent to use Things like <span class="font-bold italic">these:</span>
-			</Text>
+		<Column spacing="10">
+			<Terminal>
+				<span>Audio Equipment</span>
+				<span>Cleaning Tools</span>
+				<span>Musical Instruments</span>
+				<span>Cooking Supplies</span>
+				<span>Any Thing.</span>
+			</Terminal>
+			<Text><span class="font-bold">The best things in life are Things.</span> Become a co-op member and never pay rent to use Things like <span class="font-bold italic">these:</span></Text>
 			<Grid>
 				{#if things}
 					{#each things as thing}
