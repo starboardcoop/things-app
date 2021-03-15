@@ -136,7 +136,7 @@
 			</div>
 			<div>
 				<Subheading>Spreading the word.</Subheading>
-				<Text>More members means a stronger cooperative! The more who join, the faster we'll have financial sustainability and lots of Things to use.</Text>
+				<Text>More members means a stronger cooperative! The more who join, the faster we'll have a thriving community and lots of Things to use.</Text>
 			</div>
 		</Column>
 	</Section>
@@ -147,7 +147,7 @@
 				<Text light small>prospective members</Text>
 			</Column>
 			<Column spacing="2">
-				<Subheading oversized color="indigo-300">5+</Subheading>
+				<Subheading oversized color="indigo-300">15+</Subheading>
 				<Text light small>things donated</Text>
 			</Column>
 		</Spanner>
