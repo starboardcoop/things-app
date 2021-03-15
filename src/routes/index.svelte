@@ -57,18 +57,15 @@
 		</Spanner>
 	</Section>
 	<Section bg="primary">
-		<Column>
+		<Column spacing="10">
 			<Terminal>
-				<div>The best things in life are Things.</div>
-				<div>Audio Equipment</div>
-				<div>Cleaning Tools</div>
-				<div>Musical Instruments</div>
-				<div>Cooking Supplies</div>
-				<div>Any Thing.</div>
+				<span>Audio Equipment</span>
+				<span>Cleaning Tools</span>
+				<span>Musical Instruments</span>
+				<span>Cooking Supplies</span>
+				<span>Any Thing.</span>
 			</Terminal>
-			<Text>
-				Become a co-op member and never pay rent to use Things like <span class="font-bold italic">these:</span>
-			</Text>
+			<Text><span class="font-bold">The best things in life are Things.</span> Become a co-op member and never pay rent to use Things like <span class="font-bold italic">these:</span></Text>
 			<Grid>
 				{#if things}
 					{#each things as thing}
