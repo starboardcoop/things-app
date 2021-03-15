@@ -141,7 +141,7 @@
 		</Column>
 	</Section>
 	<Section bg="bg">
-		<Spanner>
+		<Spanner center gap="12">
 			<Column spacing="2">
 				<Subheading oversized color="indigo-300">140+</Subheading>
 				<Text light small>prospective members</Text>
