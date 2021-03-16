@@ -5,7 +5,7 @@
     export let backdrop = false;
 </script>
 
-<h1 class:bold class:caps class:backdrop class="text-3xl md:text-4xl text-{color} text-center max-w-max px-2">
+<h1 class:bold class:caps class:backdrop class="text-3xl md:text-4xl text-{color} text-center max-w-max px-2 py-1">
     <slot />
 </h1>
 
