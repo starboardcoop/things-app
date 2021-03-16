@@ -6,6 +6,7 @@
     import Heading from "../components/Heading.svelte";
     import Text from "../components/Text.svelte";
     import Button from "../components/Button.svelte";
+import Header from "../components/Header.svelte";
 
     const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfpUUKhhCr32Z_fE8ogvmDv4bD0icWrgTt7QOZVfaNVZemOcg/viewform?usp=sf_link";
     const gofundmeURL = "https://www.gofundme.com/f/cooperative-library-of-things-in-providence";
@@ -21,9 +22,7 @@
 />
 
 <Column spacing="0">
-    <Section bg="bg">
-        <Title>Donating Things</Title>
-    </Section>
+    <Header title="Donating Things" />
     <Section>
         <Column>
             <div>
