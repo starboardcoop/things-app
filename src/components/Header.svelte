@@ -14,6 +14,6 @@
 </header>
 {#if title}
     <Section bg="bg">
-        <Title>{title}</Title>
+        <Title color="primary">{title}</Title>
     </Section>
 {/if}
