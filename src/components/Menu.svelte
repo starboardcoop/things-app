@@ -15,13 +15,13 @@
 
     let visible = false;
 
-    let toggle = (event) => {
-        console.log(event)
-        console.log('toggle called!')
+    let toggle = () => {
         visible = !visible
     }
+    // Close the menu on any click event,
+    // unless the user clicks the menu button or menu itself
     let closeIfOpen = (event) => {
-        if([menuButton, menu].includes(event.target)) return
+        if ([menuButton, menu].includes(event.target)) return
         visible = false
     }
     let closeOnEsc = (event) => {
