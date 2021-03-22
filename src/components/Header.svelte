@@ -10,9 +10,10 @@
         <a href="/">
             <img src="/PVD_Things_Logo_White.png" alt="PVD Things" class="h-14 md:h-20 lg:h-24"/>
         </a>
-        <h1 hidden>PVD Things</h1>
     </Row>
     {#if title}
         <Row center><Title bold caps backdrop>{title}</Title></Row>
+    {:else}
+        <h1 hidden>PVD Things</h1>
     {/if}
 </header>
