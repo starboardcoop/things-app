@@ -11,6 +11,6 @@
         <h1 hidden>PVD Things</h1>
     </Row>
     {#if title}
-        <Row center><Title bold caps backdrop size="3">{title}</Title></Row>
+        <Row center><Title bold caps backdrop>{title}</Title></Row>
     {/if}
 </header>
