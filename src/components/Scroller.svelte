@@ -1,5 +1,4 @@
 <script>
-    import { goto } from '@sapper/app';
     import Card from "./Card.svelte";
     import Image from "./Image.svelte";
     import Text from "./Text.svelte";
