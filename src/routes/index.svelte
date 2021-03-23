@@ -71,7 +71,7 @@
 						<Card>
 							<Image src={thing.img} alt={thing.name} />
 							<Container>
-								<Subheading caps bold>{thing.name}</Subheading>
+								<Subheading caps>{thing.name}</Subheading>
 								<Text small>{thing.category}</Text>
 							</Container>
 						</Card>

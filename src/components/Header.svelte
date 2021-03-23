@@ -2,7 +2,7 @@
     import Row from "./Row.svelte";
     import Title from "./Title.svelte";
     
-    export let title;
+    export let title = null;
 </script>
 
 <header class="w-full p-4 flex flex-col space-y-8 justify-center bg-long-city bg-cover border-b-2 border-gray-200">
