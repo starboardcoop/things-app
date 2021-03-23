@@ -11,6 +11,7 @@
             <img src="/PVD_Things_Logo_White.png" alt="PVD Things" class="h-14 md:h-20 lg:h-24"/>
         </a>
     </Row>
+    <Row center><slot /></Row>
     {#if title}
         <Row center><Title bold caps backdrop>{title}</Title></Row>
     {:else}

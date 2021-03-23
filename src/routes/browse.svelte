@@ -1,24 +1,17 @@
 <script>
     import { onMount } from "svelte";
     import shuffle from "../lib/shuffle";
-    import Heading from "../components/Heading.svelte";
+    import Header from "../components/Header.svelte";
     import Subheading from "../components/Subheading.svelte";
     import Container from "../components/Container.svelte";
-    import Session from "../session";
     import Scroller from "../components/Scroller.svelte";
     import TextInput from "../components/TextInput.svelte";
 
-    let name;
     let data;
-
     let searchResults = [];
     let searchText = "";
 
     onMount(() => {
-        const session = Session.json();
-        console.log(session);
-        name = session.member.name;
-
         let now = new Date();
 
         let previousRefresh = new Date(sessionStorage.getItem("previousRefresh"));
@@ -59,40 +52,35 @@
     }
 </script>
 
+<Header> 
+    <TextInput
+        bind:value={searchText}
+        on:input={search}
+        placeholder="Search..."
+    />
+</Header>
 <div>
-    <div class="w-full flex flex-col justify-center items-center p-8 bg-bg relative">
-        <Heading color="white">Hi, {name}!</Heading>
-        <div class="absolute -bottom-6">
-            <TextInput
-                bind:value={searchText}
-                on:input={search}
-                placeholder="Search..."
-            />
-        </div>
-    </div>
-    <div>
-        <div class="mt-10">
-            {#if !data}
-                loading...
+    <div class="mt-10">
+        {#if !data}
+            loading...
+        {:else}
+            {#if searchResults.length === 0}
+                {#each data.categories as category}
+                <div>
+                    <Container>
+                        <Subheading>{category}:</Subheading>
+                    </Container>
+                    <Scroller things={filterThings(category)} />
+                </div>
+                {/each}
             {:else}
-                {#if searchResults.length === 0}
-                    {#each data.categories as category}
-                    <div>
-                        <Container>
-                            <Subheading>{category}:</Subheading>
-                        </Container>
-                        <Scroller things={filterThings(category)} />
-                    </div>
-                    {/each}
-                {:else}
-                    <div>
-                        <Container>
-                            <Subheading>Things:</Subheading>
-                        </Container>
-                        <Scroller things={searchResults} />
-                    </div>
-                {/if}
+                <div>
+                    <Container>
+                        <Subheading>Things:</Subheading>
+                    </Container>
+                    <Scroller things={searchResults} />
+                </div>
             {/if}
-        </div>
+        {/if}
     </div>
 </div>
