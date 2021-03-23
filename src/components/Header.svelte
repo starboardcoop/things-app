@@ -13,7 +13,7 @@
     </Row>
     <Row center><slot /></Row>
     {#if title}
-        <Row center><Title bold caps backdrop>{title}</Title></Row>
+        <Row center><Title bold caps>{title}</Title></Row>
     {:else}
         <h1 hidden>PVD Things</h1>
     {/if}
