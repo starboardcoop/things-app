@@ -71,22 +71,9 @@
 						<Card>
 							<Image src={thing.img} alt={thing.name} />
 							<Container>
-								<Subheading caps bold>{thing.name}</Subheading>
+								<Subheading caps>{thing.name}</Subheading>
 								<Text small>{thing.category}</Text>
 							</Container>
-							<div class="flex flex-col space-y-5" slot="modal">
-								<Subheading bold>pvd<span class="text-indigo-600">:</span>thing</Subheading>
-								<Heading bold>{thing.name}</Heading>
-								<span>
-									<Text small>Available:</Text>
-									<Text>Coming Soon!</Text>
-								</span>
-								<span>
-									<Text small>Typical out-of-pocket cost:</Text>
-									<Text>{thing.price}</Text>
-								</span>
-								<Text small>{thing.category}</Text>
-							</div>
 						</Card>
 					{/each}
 				{/if}

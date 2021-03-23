@@ -7,6 +7,10 @@
         {
             label: "donations",
             url: "/donations"
+        }, 
+        {
+            label: "browse",
+            url: "/browse"
         }
     ];
 
@@ -41,8 +45,7 @@
             <line x1="4" y1="18" x2="20" y2="18" />
         </svg>
     </button>
-    <nav class:visible class="bg-white shadow w-max text-lg overflow-hidden p-4 rounded-lg hidden flex-col space-y-2 mb-4" bind:this={menu} id="main-menu" aria-labelledby="menubutton" role="menu" tabindex="-1">
-        <a href="/routes" hidden>routes</a>
+    <nav class:visible class="bg-white shadow w-max text-lg overflow-hidden p-4 rounded-lg hidden flex-col space-y-2 mb-4">
         {#each pages as page}
             <a href={page.url} class="hover:underline focus:underline capitalize" role="menuitem">{page.label}</a>
         {/each}
