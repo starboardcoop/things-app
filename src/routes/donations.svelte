@@ -2,11 +2,10 @@
     import Head from "../components/Head.svelte";
     import Column from "../components/Column.svelte";
     import Section from "../components/Section.svelte";
-    import Title from "../components/Title.svelte";
     import Heading from "../components/Heading.svelte";
     import Text from "../components/Text.svelte";
     import Button from "../components/Button.svelte";
-import Header from "../components/Header.svelte";
+    import Header from "../components/Header.svelte";
 
     const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfpUUKhhCr32Z_fE8ogvmDv4bD0icWrgTt7QOZVfaNVZemOcg/viewform?usp=sf_link";
     const gofundmeURL = "https://www.gofundme.com/f/cooperative-library-of-things-in-providence";
