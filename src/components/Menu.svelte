@@ -7,6 +7,10 @@
         {
             label: "donations",
             url: "/donations"
+        }, 
+        {
+            label: "browse",
+            url: "/browse"
         }
     ];
 
