@@ -59,28 +59,26 @@
         placeholder="Search..."
     />
 </Header>
-<div>
-    <div class="mt-10">
-        {#if !data}
-            loading...
-        {:else}
-            {#if searchResults.length === 0}
-                {#each data.categories as category}
+<div class="mt-10">
+    {#if !data}
+        loading...
+    {:else}
+        {#if searchResults.length === 0}
+            {#each data.categories as category}
                 <div>
                     <Container>
                         <Subheading>{category}:</Subheading>
                     </Container>
                     <Scroller things={filterThings(category)} />
                 </div>
-                {/each}
-            {:else}
-                <div>
-                    <Container>
-                        <Subheading>Things:</Subheading>
-                    </Container>
-                    <Scroller things={searchResults} />
-                </div>
-            {/if}
+            {/each}
+        {:else}
+            <div>
+                <Container>
+                    <Subheading>Things:</Subheading>
+                </Container>
+                <Scroller things={searchResults} />
+            </div>
         {/if}
-    </div>
+    {/if}
 </div>
