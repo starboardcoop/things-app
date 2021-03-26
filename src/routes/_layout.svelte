@@ -24,12 +24,14 @@
 
 		.hovers {
 			box-shadow: 2px 2px 0 #000000;
+			-webkit-box-shadow: 2px 2px 0px 0px #000000;
 			@apply transform duration-200;
 		}
 
 		.hovers:focus,
 		.hovers:hover {
 			box-shadow: 4px 4px 0 #000000;
+			-webkit-box-shadow: 4px 4px 0px 0px #000000;
 			@apply scale-105;
 		}
 	}
