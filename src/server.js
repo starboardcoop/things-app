@@ -7,20 +7,13 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
-const devProxy = {
-	'/.netlify': {
-		target: 'http://localhost:9000',
-		pathRewrite: { '^/.netlify/functions': '' }
-	}
-};
-
 const app = express();
 
-if (dev && devProxy)
-{
-	Object.keys(devProxy).forEach((context) => {
-		app.use(createProxyMiddleware(context, devProxy[context]));
-	});
+if (dev) {
+	app.use(createProxyMiddleware('/.netlify', {
+		target: 'http://localhost:9000',
+		pathRewrite: { '^/.netlify/functions': '' }
+	}));
 }
 
 app.use(express.urlencoded({ extended: true }));

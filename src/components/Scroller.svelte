@@ -1,19 +1,14 @@
 <script>
-    import { goto } from '@sapper/app';
     import Card from "./Card.svelte";
     import Image from "./Image.svelte";
     import Text from "./Text.svelte";
 
     export let things = [];
-
-    function showDetails(thingId) {
-        goto(`/home/thing?id=${thingId}`);
-    }
 </script>
 
-<div class="flex flex-row gap-3 overflow-auto px-8 py-7">
+<div class="flex flex-row space-x-3 overflow-auto px-8 py-7">
     {#each things as thing}
-        <div on:click={showDetails(thing.id)}>
+        <div>
             <Card height="24" width="24">
                 <Image height="full" src={thing.img} alt={thing.name} />
             </Card>

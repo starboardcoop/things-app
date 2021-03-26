@@ -1,21 +1,8 @@
-<script context="module">
-	export async function preload() {
-		const res = await this.fetch(
-			`https://starboardcoop-things-api.glitch.me/things`
-		);
-		const data = await res.json();
-
-		return data;
-	}
-</script>
-
 <script>
-	import Typewriter from "svelte-typewriter";
 	import Section from "../components/Section.svelte";
 	import Head from "../components/Head.svelte";
 	import Card from "../components/Card.svelte";
 	import Image from "../components/Image.svelte";
-	import Title from "../components/Title.svelte";
 	import Heading from "../components/Heading.svelte";
 	import Subheading from "../components/Subheading.svelte";
 	import Column from "../components/Column.svelte";
@@ -26,9 +13,16 @@
 	import Spacer from "../components/Spacer.svelte";
 	import Row from "../components/Row.svelte";
 	import Spanner from "../components/Spanner.svelte";
-	import Link from "../components/Link.svelte";
+	import Terminal from "../components/Terminal.svelte";
+	import { onMount } from "svelte";
 
-	export let things = [];
+	export let things;
+
+	onMount(async () => {
+		const res = await fetch('/.netlify/functions/things');
+		const data = await res.json();
+		things = data.things;
+	});
 </script>
 
 <Head
@@ -46,14 +40,13 @@
 			<img src="/PVD_Things_Logo_White.png" alt="PVD Things logo" class="h-36 lg:h-64"/>
 			<h1 hidden>PVD Things</h1>
 		</Row>
-		<a href="/routes" hidden>Routes</a>
 	</Section>
 	<Section bg="bg">
 		<Spanner>
 			<Heading color="primary">Own Things<br /><span class="text-6xl">Together!</span></Heading>
 			<Column>
 				<Text light bold>
-					For those things you only need once in a while, why not share them?
+					For those things you only sometimes need, why not share them?
 				</Text>
 				<Text light>
 					As a member of the <span class="text-indigo-400">Providence Library of Things</span>, you will have
@@ -63,46 +56,27 @@
 		</Spanner>
 	</Section>
 	<Section bg="primary">
-		<Column>
-			<Row>
-				<Heading bold>&gt;</Heading>
-				<Heading italic bold>
-					<Typewriter interval={50} loop>
-						<div>The best things in life are Things.</div>
-						<div>Audio Equipment</div>
-						<div>Cleaning Tools</div>
-						<div>Musical Instruments</div>
-						<div>Cooking Supplies</div>
-						<div>Any Thing.</div>
-					</Typewriter>
-				</Heading>
-			</Row>
-			<Text>
-				Become a co-op member and never pay rent to use Things like <span class="font-bold italic">these:</span>
-			</Text>
+		<Column spacing="10">
+			<Terminal>
+				<span>Audio Equipment</span>
+				<span>Cleaning Tools</span>
+				<span>Musical Instruments</span>
+				<span>Cooking Supplies</span>
+				<span>Any Thing.</span>
+			</Terminal>
+			<Text><span class="font-bold">The best things in life are Things.</span> Become a co-op member and never pay rent to use Things like <span class="font-bold italic">these:</span></Text>
 			<Grid>
-				{#each things as thing}
-					<Card>
-						<Image src={thing.img} alt={thing.name} />
-						<Container>
-							<Subheading caps bold>{thing.name}</Subheading>
-							<Text small>{thing.category}</Text>
-						</Container>
-						<div class="flex flex-col space-y-5" slot="modal">
-							<Subheading bold>pvd<span class="text-indigo-600">:</span>thing</Subheading>
-							<Heading bold>{thing.name}</Heading>
-							<span>
-								<Text small>Available:</Text>
-								<Text>Coming Soon!</Text>
-							</span>
-							<span>
-								<Text small>Typical out-of-pocket cost:</Text>
-								<Text>{thing.price}</Text>
-							</span>
-							<Text small>{thing.category}</Text>
-						</div>
-					</Card>
-				{/each}
+				{#if things}
+					{#each things as thing}
+						<Card>
+							<Image src={thing.img} alt={thing.name} />
+							<Container>
+								<Subheading caps>{thing.name}</Subheading>
+								<Text small>{thing.category}</Text>
+							</Container>
+						</Card>
+					{/each}
+				{/if}
 			</Grid>
 		</Column>
 	</Section>
@@ -130,19 +104,32 @@
 	</Section>
 	<Section>
 		<Column spacing="16">
-			<Heading bold>But we need your help to make this happen.</Heading>
-			<Text large><Link to="https://starboard.coop">Starboard Co-op</Link> is currently developing the <b>web app</b> to support the Library of Things.</Text>
-			<Text large>Meanwhile, a <b>steering committee</b> of volunteers is working diligently to get the Library off the ground.</Text>
-			<Text>
-				Though not everyone can serve on the steering committee, everyone else who joins now will be encouraged to help in any way they can, such as 
-				<span class="text-xl underline">
-					<Link to="/donations">donating</Link>
-				</span> 
-				to the Library or just getting the word out. We're also still looking for a physical space for the library. If you know of any low-rent opportunities, please contact us at 
-				<span class="font-bold">hello@starboard.coop</span>.
-			</Text>
-			<Text large>Plus, everyone who signs up before our launch will be a <b>founding member</b> of Rhode Island's first cooperative Library of Things!</Text>
+			<Heading bold>But we need your help.</Heading>
+			<div>
+				<Subheading>Location.</Subheading>
+				<Text>Location for tool libraries is always the biggest hurdle. Rent, especially in and around a city, is -- let's face it -- absurd. If you know of any low-cost opportunities in PVD, please don't hesitate to <a href="mailto: hello@starboard.coop" class="underline font-bold">let us know.</a> We're open to storefront space, a warehouse, or even an open field.</Text>
+			</div>
+			<div>
+				<Subheading>Things.</Subheading>
+				<Text>Though we will be purchasing new Things for the library, <a href="/donations" class="underline font-bold">donations</a> will go a long way toward getting us to financial sustainability while offering every Thing the co-op members may need.</Text>
+			</div>
+			<div>
+				<Subheading>Spreading the word.</Subheading>
+				<Text>More members means a stronger cooperative! The more who join, the faster we'll have a thriving community and lots of Things to use.</Text>
+			</div>
 		</Column>
+	</Section>
+	<Section bg="bg">
+		<Spanner center gap="12">
+			<Column spacing="2">
+				<Subheading oversized color="indigo-300">140+</Subheading>
+				<Text light small>prospective members</Text>
+			</Column>
+			<Column spacing="2">
+				<Subheading oversized color="indigo-300">15+</Subheading>
+				<Text light small>things donated</Text>
+			</Column>
+		</Spanner>
 	</Section>
 	<Section bg="indigo-400">
 		<Heading italic bold center>Ready to co-own Things?</Heading>
