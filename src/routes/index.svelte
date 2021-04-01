@@ -21,7 +21,7 @@
 	onMount(async () => {
 		const res = await fetch('/.netlify/functions/things');
 		const data = await res.json();
-		things = data.things;
+		things = data.things.slice(0, 6);
 	});
 </script>
 
