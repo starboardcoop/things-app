@@ -7,15 +7,15 @@
     import Button from "../components/Button.svelte";
     import Header from "../components/Header.svelte";
 
-    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfpUUKhhCr32Z_fE8ogvmDv4bD0icWrgTt7QOZVfaNVZemOcg/viewform?usp=sf_link";
+    const formURL = "https://airtable.com/shr2qWhgJ3cFEjjhw";
     const gofundmeURL = "https://www.gofundme.com/f/cooperative-library-of-things-in-providence";
 </script>
 
 <Head
 	title="Donations | PVD Things"
-	description="A non-profit co-op for sharing those things you need once in a while."
+	description="A non-profit co-op for sharing those things you sometimes need."
 	keywords="donations, nonprofit, things, tools, tool rentals, equipment, cooperative, Providence, Rhode Island"
-	image="https://pvdthings.coop/pvd-pixels.jpg"
+	image="https://pvdthings.coop/PVD_Things_Twitter_Header.png"
 	twitterHandle="@pvdthings"
 	url="https://pvdthings.coop/donations"
 />
