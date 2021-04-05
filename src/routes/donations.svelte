@@ -7,7 +7,7 @@
     import Button from "../components/Button.svelte";
     import Header from "../components/Header.svelte";
 
-    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfpUUKhhCr32Z_fE8ogvmDv4bD0icWrgTt7QOZVfaNVZemOcg/viewform?usp=sf_link";
+    const formURL = "https://airtable.com/shr2qWhgJ3cFEjjhw";
     const gofundmeURL = "https://www.gofundme.com/f/cooperative-library-of-things-in-providence";
 </script>
 
