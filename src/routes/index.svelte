@@ -27,7 +27,7 @@
 
 <Head
 	title="PVD Things"
-	description="A non-profit co-op for sharing those things you need once in a while."
+	description="A non-profit co-op for sharing those things you sometimes need."
 	keywords="things, tools, tool rentals, equipment, cooperative, Providence, Rhode Island"
 	image="https://pvdthings.coop/PVD_Things_Twitter_Header.png"
 	twitterHandle="@pvdthings"
