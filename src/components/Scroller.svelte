@@ -10,11 +10,10 @@
     {#each things as thing}
         <div>
             <Card height="24" width="24">
-                <Image height="full" src={thing.img} alt={thing.name} />
+                <Image height="full" src={thing.image} alt={thing.name} />
             </Card>
             <div class="pl-1 pt-2 w-24">
-                <Text bold>{thing.name}</Text>
-                <Text small>{thing.category}</Text>
+                <Text bold small>{thing.name}</Text>
             </div>
         </div>
     {/each}

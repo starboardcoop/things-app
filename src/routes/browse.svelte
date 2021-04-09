@@ -1,6 +1,5 @@
 <script>
     import { onMount } from "svelte";
-    import shuffle from "../lib/shuffle";
     import Header from "../components/Header.svelte";
     import Subheading from "../components/Subheading.svelte";
     import Container from "../components/Container.svelte";
@@ -20,7 +19,6 @@
             sessionStorage.setItem("previousRefresh", now.toUTCString());
         } else {
             data = JSON.parse(sessionStorage.getItem("data"));
-            data.things = shuffle(data.things);
 
             console.log('Previous data refreshed.');
         }
@@ -29,14 +27,13 @@
     async function thingify() {
         const result = await fetch(`/.netlify/functions/things`);
         data = await result.json();
-        sessionStorage.setItem("data", JSON.stringify(data))
-        data.things = shuffle(data.things);
+        sessionStorage.setItem("data", JSON.stringify(data));
 
         console.log('Refreshed data from API.');
     }
 
     function filterThings(category) {
-        return data.things.filter(thing => thing.category === category);
+        return data.things.filter(thing => thing.categories.includes(category));
     }
 
     function search() {
