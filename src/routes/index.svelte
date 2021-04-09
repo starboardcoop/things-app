@@ -69,10 +69,10 @@
 				{#if things}
 					{#each things as thing}
 						<Card>
-							<Image src={thing.img} alt={thing.name} />
+							<Image src={thing.image} alt={thing.name} />
 							<Container>
 								<Subheading caps>{thing.name}</Subheading>
-								<Text small>{thing.category}</Text>
+								<Text small>{thing.categories[0]}</Text>
 							</Container>
 						</Card>
 					{/each}
