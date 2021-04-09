@@ -14,6 +14,9 @@
             </Card>
             <div class="pl-1 pt-2 w-24">
                 <Text bold small>{thing.name}</Text>
+                {#if thing.stock > 0}
+                    <Text small>{thing.stock} in stock</Text>
+                {/if}
             </div>
         </div>
     {/each}
