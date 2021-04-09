@@ -4,6 +4,7 @@
     import Subheading from "../components/Subheading.svelte";
     import Container from "../components/Container.svelte";
     import Scroller from "../components/Scroller.svelte";
+    import Text from "../components/Text.svelte";
     import TextInput from "../components/TextInput.svelte";
 
     let data;
@@ -60,6 +61,11 @@
     {#if !data}
         loading...
     {:else}
+        <div>
+            <Container>
+                <Text>Pictured are all the Things we have or plan on having in the PVD Things collection. <br><a href="/donate" class="underline font-bold">Click here</a> to donate!</Text>
+            </Container>
+        </div>
         {#if searchResults.length === 0}
             {#each data.categories as category}
                 <div>
