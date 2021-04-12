@@ -1,10 +1,10 @@
 <script>
     import { onMount } from "svelte";
-    import shuffle from "../lib/shuffle";
     import Header from "../components/Header.svelte";
     import Subheading from "../components/Subheading.svelte";
     import Container from "../components/Container.svelte";
     import Scroller from "../components/Scroller.svelte";
+    import Text from "../components/Text.svelte";
     import TextInput from "../components/TextInput.svelte";
 
     let data;
@@ -14,13 +14,12 @@
     onMount(() => {
         let now = new Date();
 
-        let previousRefresh = new Date(sessionStorage.getItem("previousRefresh"));
+        let previousRefresh = new Date(localStorage.getItem("previousRefresh"));
         if (Math.abs(now - previousRefresh) > 120000) {
             thingify();
-            sessionStorage.setItem("previousRefresh", now.toUTCString());
+            localStorage.setItem("previousRefresh", now.toUTCString());
         } else {
-            data = JSON.parse(sessionStorage.getItem("data"));
-            data.things = shuffle(data.things);
+            data = JSON.parse(localStorage.getItem("data"));
 
             console.log('Previous data refreshed.');
         }
@@ -29,14 +28,13 @@
     async function thingify() {
         const result = await fetch(`/.netlify/functions/things`);
         data = await result.json();
-        sessionStorage.setItem("data", JSON.stringify(data))
-        data.things = shuffle(data.things);
+        localStorage.setItem("data", JSON.stringify(data));
 
         console.log('Refreshed data from API.');
     }
 
     function filterThings(category) {
-        return data.things.filter(thing => thing.category === category);
+        return data.things.filter(thing => thing.categories.includes(category));
     }
 
     function search() {
@@ -59,10 +57,15 @@
         placeholder="Search..."
     />
 </Header>
-<div class="mt-10">
+<div>
     {#if !data}
         loading...
     {:else}
+        <div>
+            <Container bg="indigo-600">
+                <Text light>Pictured are all the Things we have or plan on having in the PVD Things collection. <br><a href="/donate" class="underline font-bold">Click here</a> to donate!</Text>
+            </Container>
+        </div>
         {#if searchResults.length === 0}
             {#each data.categories as category}
                 <div>
