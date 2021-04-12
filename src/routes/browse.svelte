@@ -14,12 +14,12 @@
     onMount(() => {
         let now = new Date();
 
-        let previousRefresh = new Date(sessionStorage.getItem("previousRefresh"));
+        let previousRefresh = new Date(localStorage.getItem("previousRefresh"));
         if (Math.abs(now - previousRefresh) > 120000) {
             thingify();
-            sessionStorage.setItem("previousRefresh", now.toUTCString());
+            localStorage.setItem("previousRefresh", now.toUTCString());
         } else {
-            data = JSON.parse(sessionStorage.getItem("data"));
+            data = JSON.parse(localStorage.getItem("data"));
 
             console.log('Previous data refreshed.');
         }
@@ -28,7 +28,7 @@
     async function thingify() {
         const result = await fetch(`/.netlify/functions/things`);
         data = await result.json();
-        sessionStorage.setItem("data", JSON.stringify(data));
+        localStorage.setItem("data", JSON.stringify(data));
 
         console.log('Refreshed data from API.');
     }
@@ -57,13 +57,13 @@
         placeholder="Search..."
     />
 </Header>
-<div class="mt-10">
+<div>
     {#if !data}
         loading...
     {:else}
         <div>
-            <Container>
-                <Text>Pictured are all the Things we have or plan on having in the PVD Things collection. <br><a href="/donate" class="underline font-bold">Click here</a> to donate!</Text>
+            <Container bg="indigo-600">
+                <Text light>Pictured are all the Things we have or plan on having in the PVD Things collection. <br><a href="/donate" class="underline font-bold">Click here</a> to donate!</Text>
             </Container>
         </div>
         {#if searchResults.length === 0}
