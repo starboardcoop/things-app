@@ -6,9 +6,9 @@
     export let things = [];
 </script>
 
-<div class="flex flex-row space-x-3 overflow-auto px-8 py-7">
+<div class="flex flex-row overflow-auto pl-8 py-7">
     {#each things as thing}
-        <div>
+        <div class="pr-3">
             <Card height="24" width="24">
                 <Image height="full" src={thing.image} alt={thing.name} />
             </Card>

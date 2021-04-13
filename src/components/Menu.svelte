@@ -35,7 +35,7 @@
 </script>
 
 <svelte:window on:click={closeIfOpen} on:keydown={closeOnEsc} />
-<div class="z-40 flex flex-col-reverse md:flex-col md:space-y-4 fixed bottom-4 md:top-4 right-4 items-end">
+<div class="z-40 flex flex-col-reverse pointer-events-none md:flex-col md:space-y-4 fixed bottom-4 md:top-4 right-4 items-end">
     <button on:click={toggle} class:selected={visible} class="h-16 w-16 rounded-full cursor-pointer appearance-none focus:outline-none focus:ring focus:ring-white focus:bg-indigo-100 box-border border-2 border-indigo-200 bg-indigo-200 shadow-lg hover:shadow text-center p-4" bind:this={menuButton} id="menubutton" aria-haspopup="true" aria-controls="main-menu">
         <span class="sr-only">Menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 pointer-events-none" viewBox="0 0 24 24" stroke-width="1.7" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
