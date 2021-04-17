@@ -122,7 +122,7 @@
 	<Section bg="bg">
 		<Spanner center gap="12">
 			<Column spacing="2">
-				<Subheading oversized color="indigo-300">140+</Subheading>
+				<Subheading oversized color="indigo-300">150+</Subheading>
 				<Text light small>prospective members</Text>
 			</Column>
 			<Column spacing="2">
