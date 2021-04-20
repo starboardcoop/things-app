@@ -8,8 +8,8 @@
 
 <div class="flex flex-row overflow-auto pl-8 py-7 lg:flex-wrap">
     {#each things as thing}
-        <div class="pr-3">
-            <Card height="24" width="24">
+        <div class="pr-3 lg:pr-6 lg:pb-6">
+            <Card style="h-24 w-24 lg:h-48 lg:w-48">
                 <Image height="full" src={thing.image} alt={thing.name} />
             </Card>
             <div class="pl-1 pt-2 w-24">
