@@ -6,7 +6,7 @@
     export let things = [];
 </script>
 
-<div class="flex flex-row overflow-auto pl-8 py-7">
+<div class="flex flex-row overflow-auto pl-8 py-7 lg:flex-wrap">
     {#each things as thing}
         <div class="pr-3">
             <Card height="24" width="24">
