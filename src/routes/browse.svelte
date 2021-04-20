@@ -6,7 +6,8 @@
     import Scroller from "../components/Scroller.svelte";
     import Text from "../components/Text.svelte";
     import TextInput from "../components/TextInput.svelte";
-
+    import Row from "../components/Row.svelte";
+    
     let data;
     let searchResults = [];
     let searchText = "";
@@ -66,22 +67,33 @@
                 <Text light>Pictured are all the Things we have or plan on having in the PVD Things collection. <br><a href="/donate" class="underline font-bold">Click here</a> to donate!</Text>
             </Container>
         </div>
-        {#if searchResults.length === 0}
-            {#each data.categories as category}
-                <div>
-                    <Container>
-                        <Subheading>{category}:</Subheading>
-                    </Container>
-                    <Scroller things={filterThings(category)} />
-                </div>
-            {/each}
-        {:else}
-            <div>
-                <Container>
-                    <Subheading>Things:</Subheading>
+        <Row>
+            <div class="w-1/4">
+                <Container bg="indigo-200">
+                    {#each data.categories as category}
+                        <div class="my-2"><a href="/browse#{category}">{category}</a></div>
+                    {/each}
                 </Container>
-                <Scroller things={searchResults} />
             </div>
-        {/if}
+            <div>
+                {#if searchResults.length === 0}
+                    {#each data.categories as category}
+                        <div id={category}>
+                            <Container>
+                                <Subheading>{category}:</Subheading>
+                            </Container>
+                            <Scroller things={filterThings(category)} />
+                        </div>
+                    {/each}
+                {:else}
+                    <div>
+                        <Container>
+                            <Subheading>Things:</Subheading>
+                        </Container>
+                        <Scroller things={searchResults} />
+                    </div>
+                {/if}
+            </div>
+        </Row>
     {/if}
 </div>
