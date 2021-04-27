@@ -4,7 +4,7 @@
     export let oversized = false;
     export let color = "inherit";
 
-    let size = oversized ? "text-6xl" : "text-xl";
+    let size = oversized ? "text-6xl" : "text-xl md:text-2xl lg:text-3xl";
 </script>
 
 <h3 class:caps class:center class="{size} font-bold text-{color}">

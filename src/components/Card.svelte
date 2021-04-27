@@ -1,10 +1,9 @@
 <script>
-    export let height = "auto";
-    export let width = "auto";
-    export let hovers = true;
+    export let hovers = true
+    export let style = "h-auto w-auto"
 </script>
 
-<div class={`h-${height} w-${width}`}>
+<div class={style}>
     <div class:hovers class="h-full bg-white brutal overflow-hidden">
         <slot />
     </div>
