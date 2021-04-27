@@ -58,27 +58,25 @@
     />
 </Header>
 <div>
+    <Container bg="indigo-600">
+        <Text light>Pictured are all the Things we have or plan on having in the PVD Things collection. <br><a href="/donate" class="underline font-bold">Click here</a> to donate!</Text>
+    </Container>
+</div>
+<div class="pt-4">
     {#if !data}
         loading...
     {:else}
-        <div>
-            <Container bg="indigo-600">
-                <Text light>Pictured are all the Things we have or plan on having in the PVD Things collection. <br><a href="/donate" class="underline font-bold">Click here</a> to donate!</Text>
-            </Container>
-        </div>
         {#if searchResults.length === 0}
             {#each data.categories as category}
                 <div>
-                    <Container>
-                        <Subheading>{category}</Subheading>
-                    </Container>
+                    <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
                     <Scroller things={filterThings(category)} />
                 </div>
             {/each}
         {:else}
             <div>
                 <Container>
-                    <Subheading>Things:</Subheading>
+                    <Subheading>Things</Subheading>
                 </Container>
                 <Scroller things={searchResults} />
             </div>
