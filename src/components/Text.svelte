@@ -1,16 +1,18 @@
 <script>
-    export let center = false;
-    export let italic = false;
-    export let bold = false;
-    export let small = false;
-    export let large = false;
-    export let light = false;
+    export let center = false
+    export let italic = false
+    export let bold = false
+    export let small = false
+    export let smallauto = false
+    export let large = false
+    export let light = false
 </script>
 
 <div
     class:center 
     class:italic
     class:small
+    class:smallauto
     class:bold
     class:large 
     class:light 
@@ -30,6 +32,11 @@
 
     div.small {
         @apply text-xs;
+    }
+    
+    div.smallauto {
+        @apply text-xs;
+        @apply lg:text-lg;
     }
 
     div.large {

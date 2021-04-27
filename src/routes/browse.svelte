@@ -70,7 +70,7 @@
             {#each data.categories as category}
                 <div>
                     <Container>
-                        <Subheading>{category}:</Subheading>
+                        <Subheading>{category}</Subheading>
                     </Container>
                     <Scroller things={filterThings(category)} />
                 </div>
