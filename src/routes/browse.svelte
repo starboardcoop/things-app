@@ -75,9 +75,6 @@
             {/each}
         {:else}
             <div>
-                <Container>
-                    <Subheading>Things</Subheading>
-                </Container>
                 <Scroller things={searchResults} />
             </div>
         {/if}
