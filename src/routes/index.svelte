@@ -78,6 +78,9 @@
 					{/each}
 				{/if}
 			</Grid>
+			<Row center>
+				<Button><a href="/browse">Browse the Collection</a></Button>
+			</Row>
 		</Column>
 	</Section>
 	<Section bg="indigo-100">
