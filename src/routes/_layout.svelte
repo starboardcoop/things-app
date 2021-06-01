@@ -1,11 +1,9 @@
 <script>
 	import Layout from "../components/Layout.svelte";
 	import Footer from "../components/Footer.svelte";
-	import Menu from "../components/Menu.svelte";
 </script>
 
 <Layout>
-	<Menu />
 	<div class="flex-grow">
 		<slot />
 	</div>
