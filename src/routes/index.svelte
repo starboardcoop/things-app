@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import things from "./_api/things.js"
     import Header from "../components/Header.svelte";
     import Scroller from "../components/Scroller.svelte";
     import TextInput from "../components/TextInput.svelte";
@@ -8,27 +9,9 @@
     let searchResults = [];
     let searchText = "";
 
-    onMount(() => {
-        let now = new Date();
-
-        let previousRefresh = new Date(localStorage.getItem("previousRefresh"));
-        if (Math.abs(now - previousRefresh) > 120000) {
-            thingify();
-            localStorage.setItem("previousRefresh", now.toUTCString());
-        } else {
-            data = JSON.parse(localStorage.getItem("data"));
-
-            console.log('Previous data refreshed.');
-        }
+    onMount(async () => {
+        data = await things.getAll();
     });
-
-    async function thingify() {
-        const result = await fetch(`/.netlify/functions/things`);
-        data = await result.json();
-        localStorage.setItem("data", JSON.stringify(data));
-
-        console.log('Refreshed data from API.');
-    }
 
     function filterThings(category) {
         return data.things.filter(thing => thing.categories.includes(category));
