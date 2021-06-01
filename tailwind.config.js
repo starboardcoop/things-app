@@ -18,8 +18,11 @@ module.exports = {
   },
   theme: {
     extend: {
+      fontFamily: {
+        display: ['bpimperial']
+      },
       colors: {
-        primary: "#fdd835",
+        primary: "#ffde59",
         bg: "#282828"
       },
       height: {
