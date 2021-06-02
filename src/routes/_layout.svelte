@@ -35,6 +35,6 @@
 	}
 
 	:root {
-		font-family: 'Roboto Mono', monospace;
+		font-family: 'Courier Prime', 'Courier', monospace;
 	}
 </style>

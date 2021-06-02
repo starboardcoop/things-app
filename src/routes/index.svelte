@@ -44,7 +44,7 @@
         {#if searchResults.length === 0}
             {#each data.categories as category}
                 <div>
-                    <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
+                    <div class="pl-4 text-4xl lg:text-5xl font-display font-bold text-black">{category}.</div>
                     <Scroller things={filterThings(category)} />
                 </div>
             {/each}

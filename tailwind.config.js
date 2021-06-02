@@ -19,7 +19,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['bpimperial']
+        display: ['IBM Plex Sans']
       },
       colors: {
         primary: "#ffde59",
