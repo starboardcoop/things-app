@@ -6,7 +6,7 @@
     export let things = [];
 </script>
 
-<div class="flex flex-row gap-3 lg:gap-6 overflow-auto pl-4 my-7 lg:flex-wrap">
+<div class="flex flex-row gap-3 lg:gap-6 overflow-x-scroll p-4 my-6 lg:flex-wrap">
     {#each things as thing}
         <div>
             <Card style="h-24 w-24 lg:h-48 lg:w-48">
