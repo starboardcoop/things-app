@@ -5,7 +5,7 @@
     import Link from "./Link.svelte";
 </script>
 
-<footer class="bg-bg py-10 relative z-50">
+<footer class="bg-bg py-10 relative z-40">
     <Column>
         <Row center>
             <a href="https://www.instagram.com/pvdthings" target="_blank">
