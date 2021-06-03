@@ -4,6 +4,7 @@
     import Header from "../components/Header.svelte";
     import Scroller from "../components/Scroller.svelte";
     import TextInput from "../components/TextInput.svelte";
+    import LoadingIndicator from "../components/LoadingIndicator.svelte";
 
     let data;
     let searchResults = [];
@@ -39,7 +40,7 @@
 </Header>
 <div class="pt-4">
     {#if !data}
-        loading...
+        <LoadingIndicator />
     {:else}
         {#if searchResults.length === 0}
             {#each data.categories as category}
