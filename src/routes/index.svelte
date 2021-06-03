@@ -38,7 +38,7 @@
         placeholder="Search..."
     />
 </Header>
-<div class="pt-4">
+<div class="pt-4 lg:w-3/4 mx-auto">
     {#if !data}
         <LoadingIndicator />
     {:else}
