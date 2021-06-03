@@ -1,8 +1,17 @@
 <script>
 	import Layout from "../components/Layout.svelte";
 	import Footer from "../components/Footer.svelte";
+	import Head from "../components/Head.svelte";
 </script>
 
+<Head 
+	title="PVD Things" 
+	description="The app for Providence Library of Things."
+	keywords="Providence, Library, Things, PVD, Tools, Rentals, Sharing"
+	image="/PVD_Things_Twitter_Header.png"
+	url="https://app.pvdthings.coop"
+	twitterHandle="@pvdthings"
+/>
 <Layout>
 	<div class="flex-grow">
 		<slot />
