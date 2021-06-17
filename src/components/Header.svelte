@@ -5,7 +5,7 @@
     export let title = null;
 </script>
 
-<header class="w-full p-4 flex flex-col space-y-8 justify-center bg-long-city bg-cover border-b-2 border-bg">
+<header class="w-full p-4 flex flex-col space-y-8 justify-center bg-long-city bg-center bg-cover border-b-2 border-bg">
     <div class="grid grid-cols-3">
         <div class="flex flex-row justify-start">
             <div>
@@ -20,7 +20,7 @@
         </div>
         <div class="flex flex-row justify-center">
             <a href="https://pvdthings.coop">
-                <img src="/PVD_Things_Logo_White.png" alt="PVD Things" class="h-14 md:h-20 lg:h-24"/>
+                <img src="/PVD_Things_Logo_White.png" alt="PVD Things" class="mt-2 h-14 md:h-20 lg:h-24"/>
             </a>
         </div>
         <div class="flex flex-row justify-end"></div>
