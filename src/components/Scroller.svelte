@@ -13,7 +13,7 @@
             <Card style="h-24 w-24 lg:h-48 lg:w-48">
                 <Image height="full" src={thing.image} alt={thing.name} />
             </Card>
-            <div class="pl-1 pt-2 w-24 flex flex-col gap-2 space-between">
+            <div class="pl-1 pt-2 w-24 lg:w-48 flex flex-col gap-2 space-between">
                 <Text bold smallauto>{thing.name}</Text>
                 {#if thing.stock > 0}
                     <div class="px-2 py-1 rounded bg-yellow-300"><Text small>{thing.stock} in stock</Text></div>
