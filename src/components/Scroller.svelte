@@ -4,6 +4,7 @@
     import Text from "./Text.svelte";
 
     export let things = [];
+    things = things.sort((a, b) => b.stock - a.stock);
 </script>
 
 <div class="flex flex-row overflow-auto pl-4 py-7 lg:flex-wrap">
