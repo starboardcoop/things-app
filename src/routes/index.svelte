@@ -7,11 +7,14 @@
     import LoadingIndicator from "../components/LoadingIndicator.svelte";
 
     let data;
+    let pplData;
     let searchResults = [];
     let searchText = "";
 
     onMount(async () => {
         data = await things.getAll();
+        pplData = await things.getPPL();
+        console.log(pplData)
     });
 
     function filterThings(category) {

@@ -26,6 +26,16 @@ async function _getAll() {
     return data;
 }
 
+async function getPPL() {
+    const result = await fetch(`/.netlify/functions/things-ppl`);
+    let data = await result.json();
+    localStorage.setItem("pplData", JSON.stringify(data));
+
+    console.log('Refreshed data from API.');
+    return data;
+}
+
 export default {
-    getAll
+    getAll,
+    getPPL
 }
