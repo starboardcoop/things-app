@@ -20,6 +20,8 @@ async function _getAll() {
     let data = await result.json();
     localStorage.setItem("data", JSON.stringify(data));
 
+    data.things = data.things.filter(thing => thing.categories);
+
     console.log('Refreshed data from API.');
     return data;
 }
