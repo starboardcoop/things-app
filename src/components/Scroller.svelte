@@ -15,9 +15,16 @@
             </Card>
             <div class="pl-1 pt-2 w-24 lg:w-48 flex flex-col gap-2 space-between">
                 <Text bold smallauto>{thing.name}</Text>
-                {#if thing.stock > 0}
-                    <div class="px-2 py-1 rounded bg-yellow-300"><Text small>{thing.stock} in stock</Text></div>
-                {/if}
+                <div class="flex flex-col lg:flex-row gap-2">
+                    {#if thing.location}
+                        <div class="px-2 py-1 rounded bg-yellow-300">
+                            <Text small bold>{thing.location}</Text>
+                        </div>
+                    {/if}
+                    {#if thing.stock > 0}
+                        <div class="px-2 py-1 rounded bg-black"><Text small light>{thing.stock} in stock</Text></div>
+                    {/if}
+                </div>
             </div>
         </div>
     {/each}

@@ -7,52 +7,73 @@
     import LoadingIndicator from "../components/LoadingIndicator.svelte";
 
     let data;
-    let searchResults = [];
+    let shownThings;
+    let shownLocation;
     let searchText = "";
 
     onMount(async () => {
         data = await things.getAll();
+        shownThings = data.things;
     });
 
-    function filterThings(category) {
-        return data.things.filter(thing => thing.categories.includes(category));
+    function showAll() {
+        shownLocation = null;
+        shownThings = filtered();
     }
 
-    function search() {
-        if (searchText.length === 0) {
-            searchResults = [];
-            return;
-        }
+    function filterThings(category) {
+        return shownThings.filter(thing => thing.categories.includes(category));
+    }
 
-        const filtered = data.things.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
+    function filtered() {
+        let filtered = data.things;
+        if (shownLocation)
+            filtered = filtered.filter(thing => thing.location === shownLocation);
+        if (searchText.length > 0)
+            filtered = filtered.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
+        
+        return filtered;
+    }
 
-        if (filtered.length > 0)
-            searchResults = filtered;
+    function filterByLocation(location) {
+        shownLocation = location;
+        shownThings = filtered();
     }
 </script>
 
-<Header> 
-    <TextInput
-        bind:value={searchText}
-        on:input={search}
-        placeholder="Search..."
-    />
-</Header>
+<Header />
 <div class="pt-4 lg:w-3/4 mx-auto">
     {#if !data}
         <LoadingIndicator />
     {:else}
-        {#if searchResults.length === 0}
-            {#each data.categories as category}
-                <div>
-                    <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
-                    <Scroller things={filterThings(category)} />
-                </div>
-            {/each}
-        {:else}
-            <div>
-                <Scroller things={searchResults} />
+        <div class="flex flex-col md:flex-row flex-wrap px-4 mb-8 gap-4">
+            <TextInput
+                bind:value={searchText}
+                on:input={() => shownThings = filtered()}
+                placeholder="Search..."
+            />
+            <div class="flex flex-row flex-wrap gap-4">
+                <button on:click={showAll} class:selected={shownLocation == null} class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold outline-none">All</button>
+                {#each data.locations as location}
+                    <button on:click={() => filterByLocation(location)} class:selected={shownLocation === location} class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold outline-none">{location}</button>
+                {/each}
             </div>
-        {/if}
+        </div>
+        {#key shownThings}
+            {#each data.categories as category}
+                {#if filterThings(category).length > 0}
+                    <div>
+                        <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
+                        <Scroller things={filterThings(category)} />
+                    </div>
+                {/if}
+            {/each}
+        {/key}
     {/if}
 </div>
+
+<style>
+    button.selected {
+        @apply bg-green-200;
+    }
+</style>
