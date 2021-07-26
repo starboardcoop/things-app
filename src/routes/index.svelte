@@ -32,16 +32,23 @@
 </script>
 
 <Header> 
-    <TextInput
-        bind:value={searchText}
-        on:input={search}
-        placeholder="Search..."
-    />
 </Header>
 <div class="pt-4 lg:w-3/4 mx-auto">
     {#if !data}
         <LoadingIndicator />
     {:else}
+        <div class="flex flex-col md:flex-row flex-wrap px-4 mb-8 gap-4">
+            <TextInput
+                bind:value={searchText}
+                on:input={search}
+                placeholder="Search..."
+            />
+            <div class="flex flex-row flex-wrap gap-4">
+                {#each data.locations as location}
+                    <button class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold">{location}</button>
+                {/each}
+            </div>
+        </div>
         {#if searchResults.length === 0}
             {#each data.categories as category}
                 <div>
