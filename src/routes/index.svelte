@@ -9,7 +9,6 @@
     let data;
     let shownThings;
     let shownLocation;
-    let searchResults = [];
     let searchText = "";
 
     onMount(async () => {
@@ -18,29 +17,27 @@
     });
 
     function showAll() {
-        shownThings = data.things;
         shownLocation = null;
+        shownThings = filtered();
     }
 
     function filterThings(category) {
         return shownThings.filter(thing => thing.categories.includes(category));
     }
 
-    function filterByLocation(location) {
-        shownLocation = location;
-        shownThings = data.things.filter(thing => thing.location === location);
+    function filtered() {
+        let filtered = data.things;
+        if (shownLocation)
+            filtered = filtered.filter(thing => thing.location === shownLocation);
+        if (searchText.length > 0)
+            filtered = filtered.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
+        
+        return filtered;
     }
 
-    function search() {
-        if (searchText.length === 0) {
-            searchResults = [];
-            return;
-        }
-
-        const filtered = shownThings.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
-
-        if (filtered.length > 0)
-            searchResults = filtered;
+    function filterByLocation(location) {
+        shownLocation = location;
+        shownThings = filtered();
     }
 </script>
 
@@ -52,7 +49,7 @@
         <div class="flex flex-col md:flex-row flex-wrap px-4 mb-8 gap-4">
             <TextInput
                 bind:value={searchText}
-                on:input={search}
+                on:input={() => shownThings = filtered()}
                 placeholder="Search..."
             />
             <div class="flex flex-row flex-wrap gap-4">
@@ -62,22 +59,16 @@
                 {/each}
             </div>
         </div>
-        {#if searchResults.length === 0}
-            {#key shownThings}
-                {#each data.categories as category}
-                    {#if filterThings(category).length > 0}
-                        <div>
-                            <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
-                            <Scroller things={filterThings(category)} />
-                        </div>
-                    {/if}
-                {/each}
-            {/key}
-        {:else}
-            <div>
-                <Scroller things={searchResults} />
-            </div>
-        {/if}
+        {#key shownThings}
+            {#each data.categories as category}
+                {#if filterThings(category).length > 0}
+                    <div>
+                        <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
+                        <Scroller things={filterThings(category)} />
+                    </div>
+                {/if}
+            {/each}
+        {/key}
     {/if}
 </div>
 
