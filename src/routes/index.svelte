@@ -7,15 +7,28 @@
     import LoadingIndicator from "../components/LoadingIndicator.svelte";
 
     let data;
+    let shownThings;
+    let shownLocation;
     let searchResults = [];
     let searchText = "";
 
     onMount(async () => {
         data = await things.getAll();
+        shownThings = data.things;
     });
 
+    function showAll() {
+        shownThings = data.things;
+        shownLocation = null;
+    }
+
     function filterThings(category) {
-        return data.things.filter(thing => thing.categories.includes(category));
+        return shownThings.filter(thing => thing.categories.includes(category));
+    }
+
+    function filterByLocation(location) {
+        shownLocation = location;
+        shownThings = data.things.filter(thing => thing.location === location);
     }
 
     function search() {
@@ -24,15 +37,14 @@
             return;
         }
 
-        const filtered = data.things.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
+        const filtered = shownThings.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
 
         if (filtered.length > 0)
             searchResults = filtered;
     }
 </script>
 
-<Header> 
-</Header>
+<Header />
 <div class="pt-4 lg:w-3/4 mx-auto">
     {#if !data}
         <LoadingIndicator />
@@ -44,18 +56,21 @@
                 placeholder="Search..."
             />
             <div class="flex flex-row flex-wrap gap-4">
+                <button on:click={showAll} class:selected={shownLocation == null} class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold outline-none">All</button>
                 {#each data.locations as location}
-                    <button class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold">{location}</button>
+                    <button on:click={() => filterByLocation(location)} class:selected={shownLocation === location} class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold outline-none">{location}</button>
                 {/each}
             </div>
         </div>
         {#if searchResults.length === 0}
-            {#each data.categories as category}
-                <div>
-                    <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
-                    <Scroller things={filterThings(category)} />
-                </div>
-            {/each}
+            {#key shownThings}
+                {#each data.categories as category}
+                    <div>
+                        <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
+                        <Scroller things={filterThings(category)} />
+                    </div>
+                {/each}
+            {/key}
         {:else}
             <div>
                 <Scroller things={searchResults} />
@@ -63,3 +78,9 @@
         {/if}
     {/if}
 </div>
+
+<style>
+    button.selected {
+        @apply bg-green-200;
+    }
+</style>
