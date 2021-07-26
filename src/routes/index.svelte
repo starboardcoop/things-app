@@ -65,10 +65,12 @@
         {#if searchResults.length === 0}
             {#key shownThings}
                 {#each data.categories as category}
-                    <div>
-                        <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
-                        <Scroller things={filterThings(category)} />
-                    </div>
+                    {#if filterThings(category).length > 0}
+                        <div>
+                            <div class="pl-4 text-4xl lg:text-5xl font-display text-primary" style="text-shadow:2px 2px #000000">{category}</div>
+                            <Scroller things={filterThings(category)} />
+                        </div>
+                    {/if}
                 {/each}
             {/key}
         {:else}
