@@ -23,6 +23,8 @@
                     {/if}
                     {#if thing.stock > 0}
                         <div class="px-2 py-1 rounded bg-black"><Text small light>{thing.stock} in stock</Text></div>
+                    {:else}
+                        <div class="px-2 py-1 rounded bg-white"><Text small>Wanted</Text></div>
                     {/if}
                 </div>
             </div>
