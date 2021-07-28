@@ -10,6 +10,7 @@
     let shownThings;
     let shownLocation;
     let searchText = "";
+    let showWantedItems = false;
 
     onMount(async () => {
         data = await things.getAll();
@@ -17,6 +18,7 @@
     });
 
     function showAll() {
+        showWantedItems = false;
         shownLocation = null;
         shownThings = filtered();
     }
@@ -31,12 +33,21 @@
             filtered = filtered.filter(thing => thing.location === shownLocation);
         if (searchText.length > 0)
             filtered = filtered.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
-        
+        if (showWantedItems)
+            filtered = filtered.filter(thing => thing.stock < 1);
+
         return filtered;
     }
 
     function filterByLocation(location) {
+        showWantedItems = false;
         shownLocation = location;
+        shownThings = filtered();
+    }
+
+    function filterByWanted() {
+        showWantedItems = true;
+        shownLocation = null;
         shownThings = filtered();
     }
 </script>
@@ -53,10 +64,11 @@
                 placeholder="Search..."
             />
             <div class="flex flex-row flex-wrap gap-4">
-                <button on:click={showAll} class:selected={shownLocation == null} class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold outline-none">All</button>
+                <button on:click={showAll} class:selected={shownLocation == null && !showWantedItems} class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold outline-none">All</button>
                 {#each data.locations as location}
                     <button on:click={() => filterByLocation(location)} class:selected={shownLocation === location} class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold outline-none">{location}</button>
                 {/each}
+                <button on:click={filterByWanted} class:toggled={showWantedItems} class="bg-red-100 px-2 py-1 rounded brutal hovers font-bold outline-none">Wanted</button>
             </div>
         </div>
         {#key shownThings}
@@ -75,5 +87,9 @@
 <style>
     button.selected {
         @apply bg-green-200;
+    }
+
+    button.toggled {
+        @apply bg-red-300;
     }
 </style>

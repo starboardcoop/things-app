@@ -13,7 +13,7 @@
             <Card style="h-24 w-24 lg:h-48 lg:w-48">
                 <Image height="full" src={thing.image} alt={thing.name} />
             </Card>
-            <div class="pl-1 pt-2 w-24 lg:w-48 flex flex-col gap-2 space-between">
+            <div class="pl-1 pt-2 w-24 lg:w-48 flex flex-col gap-2 justify-between flex-grow">
                 <Text bold smallauto>{thing.name}</Text>
                 <div class="flex flex-col lg:flex-row gap-2">
                     {#if thing.location}
