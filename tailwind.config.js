@@ -19,7 +19,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['IBM Plex Sans']
+        display: ['IBM Plex Sans', 'Arial'],
+        sans: ['IBM Plex Sans', 'Arial'],
+        body: ['Roboto Slab', 'Courier']
       },
       colors: {
         primary: "#ffde59",

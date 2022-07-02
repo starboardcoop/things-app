@@ -50,7 +50,7 @@
                 </svg>
             </a>
         </Row>
-        <Text light center>
+        <Text body light center>
             A project by <Link to="https://starboard.coop">Starboard Co-op</Link>
         </Text>
     </Column>

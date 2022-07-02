@@ -6,6 +6,10 @@
     export let smallauto = false
     export let large = false
     export let light = false
+    export let display = false
+    export let body = true
+
+    if (display) body = false
 </script>
 
 <div
@@ -15,7 +19,9 @@
     class:smallauto
     class:bold
     class:large 
-    class:light 
+    class:light
+    class:display
+    class:body
     class="text-lg text-gray-800"
 >
     <slot />
@@ -45,5 +51,13 @@
 
     div.light {
         @apply text-gray-200;
+    }
+
+    div.display {
+        @apply font-display;
+    }
+
+    div.body {
+        @apply font-body;
     }
 </style>
