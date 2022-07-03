@@ -24,7 +24,7 @@
     }
 
     function filterThings(category) {
-        return shownThings.filter(thing => thing.categories.includes(category));
+        return shownThings.filter(thing => thing.categories?.includes(category));
     }
 
     function filtered() {
