@@ -53,8 +53,8 @@
                 placeholder="Search..."
             />
             <div class="flex flex-row flex-wrap gap-4">
-                <button on:click={showAll} class:selected={!showWantedItems} class="bg-indigo-100 px-2 py-1 rounded brutal hovers font-bold outline-none">All</button>
-                <button on:click={filterByWanted} class:toggled={showWantedItems} class="bg-red-100 px-2 py-1 rounded brutal hovers font-bold outline-none">Wanted</button>
+                <button on:click={showAll} class:selected={!showWantedItems} class="bg-indigo-100 px-3 py-1 rounded brutal hovers font-bold font-display outline-none">All</button>
+                <button on:click={filterByWanted} class:toggled={showWantedItems} class="bg-red-100 px-3 py-1 rounded brutal hovers font-bold font-display outline-none">Wanted</button>
             </div>
         </div>
         {#key shownThings}
