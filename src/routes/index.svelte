@@ -86,7 +86,7 @@
 
 <style>
     button.selected {
-        @apply bg-green-200;
+        @apply bg-green-300;
     }
 
     button.toggled {
