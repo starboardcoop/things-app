@@ -14,7 +14,7 @@
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="15 6 9 12 15 18" />
                     </svg>
-                    <div class="text-xl lg:text-2xl font-bold hover:underline">BACK</div>
+                    <div class="text-xl lg:text-2xl font-bold font-display hover:underline">BACK</div>
                 </a>
             </div>
         </div>
