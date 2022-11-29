@@ -1,8 +1,5 @@
 <script>
-	import Text from "../Text.svelte";
-	import Row from "../Row.svelte";
-    import Column from "../Column.svelte";
-    import Link from "../Link.svelte";
+	import { Column, Link, Row, Text } from '../foundation';
 </script>
 
 <footer class="bg-bg py-10 relative z-40">

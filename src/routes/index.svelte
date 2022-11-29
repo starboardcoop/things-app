@@ -4,7 +4,7 @@
     import { filter } from '../lib/filters';
     import Header from "../components/Header.svelte";
     import Things from '../components/Things';
-    import TextInput from "../components/TextInput.svelte";
+    import { TextInput } from '../components/foundation';
     import LoadingIndicator from "../components/LoadingIndicator.svelte";
 
     let data;
