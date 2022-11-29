@@ -59,7 +59,7 @@
     {/if}
 </div>
 
-<style>
+<style lang="postcss">
     button.selected {
         @apply bg-green-300;
     }

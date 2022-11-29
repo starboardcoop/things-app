@@ -1,8 +1,8 @@
 <script>
-	import Text from "../components/Text.svelte";
-	import Row from "../components/Row.svelte";
-    import Column from "./Column.svelte";
-    import Link from "./Link.svelte";
+	import Text from "../Text.svelte";
+	import Row from "../Row.svelte";
+    import Column from "../Column.svelte";
+    import Link from "../Link.svelte";
 </script>
 
 <footer class="bg-bg py-10 relative z-40">
