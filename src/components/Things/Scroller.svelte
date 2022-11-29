@@ -1,7 +1,7 @@
 <script>
-    import Card from "./Card.svelte";
-    import Image from "./Image.svelte";
-    import Text from "./Text.svelte";
+    import Card from "../Card.svelte";
+    import Image from "../Image.svelte";
+    import Text from "../Text.svelte";
 
     export let things = [];
     things = things.sort((a, b) => b.stock - a.stock);

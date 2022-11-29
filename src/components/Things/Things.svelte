@@ -1,5 +1,5 @@
 <script>
-    import Scroller from '../Scroller.svelte';
+    import Scroller from './Scroller.svelte';
     import { filterThings } from './filter';
 
     export let things;
