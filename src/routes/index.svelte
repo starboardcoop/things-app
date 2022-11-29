@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import things from "../lib/things.js"
+    import * as things from '../lib/things';
+    import { filter } from '../lib/filters';
     import Header from "../components/Header.svelte";
     import Things from '../components/Things';
     import TextInput from "../components/TextInput.svelte";
@@ -9,7 +10,7 @@
     let data;
     let shownThings;
     let searchText = "";
-    let showWantedItems = false;
+    let showWantedThings = false;
 
     const buttonStyle = 'px-3 py-1 rounded brutal hovers font-bold font-display outline-none';
 
@@ -18,24 +19,21 @@
         shownThings = data.things;
     });
 
-    function showAll() {
-        showWantedItems = false;
-        shownThings = filtered();
+    const filterThings = () => {
+        shownThings = filter(data.things, {
+            keyword: searchText,
+            showWantedThings: showWantedThings
+        });
     }
 
-    function filtered() {
-        let filtered = data.things;
-        if (searchText.length > 0)
-            filtered = filtered.filter(thing => thing.name.toLowerCase().includes(searchText.toLowerCase()));
-        if (showWantedItems)
-            filtered = filtered.filter(thing => thing.stock < 1);
-
-        return filtered;
+    const showAll = () => {
+        showWantedThings = false;
+        filterThings();
     }
 
-    function filterByWanted() {
-        showWantedItems = true;
-        shownThings = filtered();
+    const showWanted = () => {
+        showWantedThings = true;
+        filterThings();
     }
 </script>
 
@@ -47,12 +45,12 @@
         <div class="flex flex-col md:flex-row flex-wrap px-4 mb-8 gap-4">
             <TextInput
                 bind:value={searchText}
-                on:input={() => shownThings = filtered()}
+                on:input={filterThings}
                 placeholder="Search..."
             />
             <div class="flex flex-row flex-wrap gap-4">
-                <button on:click={showAll} class:selected={!showWantedItems} class="bg-indigo-100 {buttonStyle}">All</button>
-                <button on:click={filterByWanted} class:toggled={showWantedItems} class="bg-red-100 {buttonStyle}">Wanted</button>
+                <button on:click={showAll} class:selected={!showWantedThings} class="bg-indigo-100 {buttonStyle}">All</button>
+                <button on:click={showWanted} class:toggled={showWantedThings} class="bg-red-100 {buttonStyle}">Wanted</button>
             </div>
         </div>
         <Things things={shownThings} categories={data.categories} />
