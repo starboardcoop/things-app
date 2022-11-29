@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import things from "../lib/things.js"
     import Header from "../components/Header.svelte";
-    import Scroller from "../components/Scroller.svelte";
+    import Things from '../components/Things';
     import TextInput from "../components/TextInput.svelte";
     import LoadingIndicator from "../components/LoadingIndicator.svelte";
 
@@ -19,10 +19,6 @@
     function showAll() {
         showWantedItems = false;
         shownThings = filtered();
-    }
-
-    function filterThings(category) {
-        return shownThings.filter(thing => thing.categories?.includes(category));
     }
 
     function filtered() {
@@ -57,16 +53,7 @@
                 <button on:click={filterByWanted} class:toggled={showWantedItems} class="bg-red-100 px-3 py-1 rounded brutal hovers font-bold font-display outline-none">Wanted</button>
             </div>
         </div>
-        {#key shownThings}
-            {#each data.categories as category}
-                {#if filterThings(category).length > 0}
-                    <div>
-                        <div class="pl-4 text-4xl lg:text-5xl font-display font-bold text-black">{category}</div>
-                        <Scroller things={filterThings(category)} />
-                    </div>
-                {/if}
-            {/each}
-        {/key}
+        <Things things={shownThings} categories={data.categories} />
     {/if}
 </div>
 
