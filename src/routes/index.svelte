@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import things from "./_api/things.js"
+    import things from "../lib/things.js"
     import Header from "../components/Header.svelte";
     import Scroller from "../components/Scroller.svelte";
     import TextInput from "../components/TextInput.svelte";
