@@ -8,7 +8,7 @@
     <slot />
 </div>
 
-<style>
+<style lang="postcss">
     div.right {
         @apply justify-end;
     }

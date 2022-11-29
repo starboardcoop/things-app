@@ -27,7 +27,7 @@
     <slot />
 </div>
 
-<style>
+<style lang="postcss">
     div.center {
         @apply text-center;
     }
