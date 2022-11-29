@@ -1,1 +1,2 @@
-export { default as Things } from './Things.svelte'
+import Things from './Things.svelte';
+export default Things;

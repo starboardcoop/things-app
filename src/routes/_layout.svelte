@@ -1,6 +1,5 @@
 <script>
-	import Layout from "../components/Layout/Layout.svelte";
-	import Footer from "../components/Layout/Footer.svelte";
+	import Layout from "../components/Layout";
 	import Head from "../components/Head.svelte";
 </script>
 
@@ -13,10 +12,7 @@
 	twitterHandle="@pvdthings"
 />
 <Layout>
-	<div class="flex-grow">
-		<slot />
-	</div>
-	<Footer />
+	<slot />
 </Layout>
 
 <style global lang="postcss">
