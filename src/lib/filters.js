@@ -7,3 +7,7 @@ export const filter = (things, { keyword, showWantedThings }) => {
 
     return filtered;
 }
+
+export const filterByCategory = (things, category) => {
+    return things.filter(thing => thing.categories?.includes(category));
+}
