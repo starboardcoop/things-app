@@ -1,6 +1,6 @@
 <script>
-    import Scroller from './Scroller.svelte';
-    import { filterByCategory } from '../../lib/filters';
+    import Scroller from "./Scroller.svelte";
+    import { filterByCategory } from "$lib/filters";
 
     export let things;
     export let categories;
@@ -9,14 +9,15 @@
 <div>
   {#key things}
     {#each categories as category}
-      {#if filterByCategory(things, category).length > 0}
+      {@const filteredThings = filterByCategory(things, category)}
+      {#if filteredThings.length > 0}
         <div>
           <div
             class="pl-4 text-4xl lg:text-5xl font-display font-bold text-black"
           >
             {category}
           </div>
-          <Scroller things={filterByCategory(things, category)} />
+          <Scroller things={filteredThings} />
         </div>
       {/if}
     {/each}

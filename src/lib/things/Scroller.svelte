@@ -1,5 +1,5 @@
 <script>
-    import { Card, Image, Text } from "../foundation";
+    import { Card, Image, Text } from "$lib/foundation";
 
     export let things = [];
     things = things.sort((a, b) => b.stock - a.stock);
