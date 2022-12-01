@@ -1,6 +1,5 @@
 <script>
     import { filter } from "$lib/filters";
-    import Header from "$lib/Header.svelte";
     import Things from "$lib/things/Things.svelte";
     import { Button, ButtonTheme, TextInput } from "$lib/Foundation.svelte";
     import LoadingIndicator from "$lib/LoadingIndicator.svelte";
@@ -29,7 +28,6 @@
     }
 </script>
 
-<Header />
 <div class="pt-4 lg:w-3/4 mx-auto">
     {#if !data}
         <LoadingIndicator />
