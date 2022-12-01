@@ -13,7 +13,7 @@
     const filterThings = () => {
         shownThings = filter(data.things, {
             keyword: searchText,
-            showWantedThings: showingOnlyWishList
+            onlyWishList: showingOnlyWishList
         });
     }
 
