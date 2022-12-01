@@ -2,7 +2,7 @@
     import { filter } from "$lib/filters";
     import Header from "$lib/Header.svelte";
     import Things from "$lib/things/Things.svelte";
-    import { TextInput } from "$lib/foundation";
+    import { Button, ButtonTheme, TextInput } from "$lib/Foundation.svelte";
     import LoadingIndicator from "$lib/LoadingIndicator.svelte";
 
     export let data;
@@ -10,8 +10,6 @@
     let shownThings = data.things;
     let searchText = "";
     let showWantedThings = false;
-
-    const buttonStyle = 'px-3 py-1 rounded brutal hovers font-bold font-display outline-none';
 
     const filterThings = () => {
         shownThings = filter(data.things, {
@@ -43,20 +41,12 @@
                 placeholder="Search..."
             />
             <div class="flex flex-row flex-wrap gap-4">
-                <button on:click={showAll} class:selected={!showWantedThings} class="bg-indigo-100 {buttonStyle}">All</button>
-                <button on:click={showWanted} class:toggled={showWantedThings} class="bg-red-100 {buttonStyle}">Wanted</button>
+                {#key showWantedThings}
+                    <Button on:click={showAll} theme={ButtonTheme.default} text="All" selected={!showWantedThings} />
+                    <Button on:click={showWanted} theme={ButtonTheme.alert} text="Wanted" selected={showWantedThings} />
+                {/key}
             </div>
         </div>
         <Things things={shownThings} categories={data.categories} />
     {/if}
 </div>
-
-<style lang="postcss">
-    button.selected {
-        @apply bg-green-300;
-    }
-
-    button.toggled {
-        @apply bg-red-300;
-    }
-</style>
