@@ -41,7 +41,7 @@
             <div class="flex flex-row flex-wrap gap-4">
                 {#key showingOnlyWishList}
                     <Button on:click={showAll} theme={ButtonTheme.default} text="All" selected={!showingOnlyWishList} />
-                    <Button on:click={showOnlyWishList} theme={ButtonTheme.alert} text="Wish List" selected={showingOnlyWishList} />
+                    <Button on:click={showOnlyWishList} theme={ButtonTheme.default} text="Wish List" selected={showingOnlyWishList} />
                 {/key}
             </div>
         </div>
