@@ -32,7 +32,7 @@
     }
 
     button.defaultToggled {
-        @apply bg-green-300 !important;
+        @apply bg-yellow-400 !important;
     }
 
     button.alert {

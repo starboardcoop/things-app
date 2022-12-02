@@ -8,22 +8,22 @@
 
     let shownThings = data.things;
     let searchText = "";
-    let showWantedThings = false;
+    let showingOnlyWishList = false;
 
     const filterThings = () => {
         shownThings = filter(data.things, {
             keyword: searchText,
-            showWantedThings: showWantedThings
+            onlyWishList: showingOnlyWishList
         });
     }
 
     const showAll = () => {
-        showWantedThings = false;
+        showingOnlyWishList = false;
         filterThings();
     }
 
-    const showWanted = () => {
-        showWantedThings = true;
+    const showOnlyWishList = () => {
+        showingOnlyWishList = true;
         filterThings();
     }
 </script>
@@ -39,9 +39,9 @@
                 placeholder="Search..."
             />
             <div class="flex flex-row flex-wrap gap-4">
-                {#key showWantedThings}
-                    <Button on:click={showAll} theme={ButtonTheme.default} text="All" selected={!showWantedThings} />
-                    <Button on:click={showWanted} theme={ButtonTheme.alert} text="Wanted" selected={showWantedThings} />
+                {#key showingOnlyWishList}
+                    <Button on:click={showAll} theme={ButtonTheme.default} text="All" selected={!showingOnlyWishList} />
+                    <Button on:click={showOnlyWishList} theme={ButtonTheme.default} text="Wish List" selected={showingOnlyWishList} />
                 {/key}
             </div>
         </div>
