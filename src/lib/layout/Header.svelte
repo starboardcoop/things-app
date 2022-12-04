@@ -1,6 +1,5 @@
 <script>
-    import Row from "./Row.svelte";
-    import Title from "./Title.svelte";
+    import { Row, Title } from "$lib/Foundation.svelte";
     
     export let title = null;
 </script>

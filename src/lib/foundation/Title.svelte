@@ -8,7 +8,7 @@
     <slot />
 </h1>
 
-<style>
+<style lang="postcss">
     .bold {
         @apply font-bold;
     }

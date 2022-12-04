@@ -23,7 +23,7 @@
     class="px-4 py-2 brutal hovers outline-none {customClass}"
 />
 
-<style>
+<style lang="postcss">
     .invalid {
         @apply bg-red-200;
     }
