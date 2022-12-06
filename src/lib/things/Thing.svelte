@@ -11,9 +11,11 @@
     <div class="pl-1 pt-2 w-24 lg:w-48 flex flex-col gap-2 justify-between flex-grow">
         <Text display bold smallauto>{thing.name}</Text>
         <div class="flex flex-col lg:flex-row gap-2">
-            <div class="px-2 py-1 rounded bg-black">
-                <Text body small light>{thing.stock > 0 ? `${thing.stock} in stock` : 'Wish List'}</Text>
-            </div>
+            {#if thing.stock > 0}
+                <div class="px-2 py-1 rounded bg-green-300">Available</div>
+            {:else}
+                <div class="px-2 py-1 rounded bg-yellow-300">Wish List</div>
+            {/if}
         </div>
     </div>
 </div>
