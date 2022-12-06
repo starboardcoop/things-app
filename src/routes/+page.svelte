@@ -3,17 +3,20 @@
     import Things from "$lib/things/Things.svelte";
     import { Button, ButtonTheme, TextInput } from "$lib/Foundation.svelte";
     import LoadingIndicator from "$lib/LoadingIndicator.svelte";
+	import Chooser from "$lib/foundation/Chooser.svelte";
 
     export let data;
 
     let shownThings = data.things;
+    let shownCategory = "DIY";
     let searchText = "";
     let showingOnlyWishList = false;
 
     const filterThings = () => {
         shownThings = filter(data.things, {
             keyword: searchText,
-            onlyWishList: showingOnlyWishList
+            onlyWishList: showingOnlyWishList,
+            category: shownCategory
         });
     }
 
@@ -24,6 +27,11 @@
 
     const showOnlyWishList = () => {
         showingOnlyWishList = true;
+        filterThings();
+    }
+
+    const filterThingsByCategory = (event) => {
+        shownCategory = event.detail;
         filterThings();
     }
 </script>
@@ -43,6 +51,7 @@
                     <Button on:click={showAll} theme={ButtonTheme.default} text="All" selected={!showingOnlyWishList} />
                     <Button on:click={showOnlyWishList} theme={ButtonTheme.default} text="Wish List" selected={showingOnlyWishList} />
                 {/key}
+                <Chooser on:chosen={filterThingsByCategory} options={data.categories} />
             </div>
         </div>
         <Things things={shownThings} categories={data.categories} />
