@@ -20,16 +20,6 @@
         });
     }
 
-    const showAll = () => {
-        showingOnlyWishList = false;
-        filterThings();
-    }
-
-    const showOnlyWishList = () => {
-        showingOnlyWishList = true;
-        filterThings();
-    }
-
     const filterThingsByCategory = (event) => {
         shownCategory = event.detail;
         filterThings();
@@ -40,19 +30,13 @@
     {#if !data}
         <LoadingIndicator />
     {:else}
-        <div class="flex flex-col md:flex-row flex-wrap px-4 mb-8 gap-4">
+        <div class="flex flex-col-reverse md:h-11 md:flex-row px-4 mb-8 gap-4">
+            <Chooser on:chosen={filterThingsByCategory} options={data.categories} />
             <TextInput
                 bind:value={searchText}
                 on:input={filterThings}
                 placeholder="Search..."
             />
-            <div class="flex flex-row flex-wrap gap-4">
-                {#key showingOnlyWishList}
-                    <Button on:click={showAll} theme={ButtonTheme.default} text="All" selected={!showingOnlyWishList} />
-                    <Button on:click={showOnlyWishList} theme={ButtonTheme.default} text="Wish List" selected={showingOnlyWishList} />
-                {/key}
-                <Chooser on:chosen={filterThingsByCategory} options={data.categories} />
-            </div>
         </div>
         <Things things={shownThings} categories={data.categories} />
     {/if}
