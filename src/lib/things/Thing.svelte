@@ -2,9 +2,12 @@
 	import { Card, Image, Text } from "$lib/Foundation.svelte";
 
     export let thing;
+
+    let className = "";
+    export { className as class };
 </script>
 
-<div class="pr-3 lg:pr-6 lg:pb-6 flex flex-col">
+<div class="flex flex-col {className}">
     <Card style="h-24 w-24 lg:h-48 lg:w-48">
         <Image height="full" src={thing.image} alt={thing.name} />
     </Card>

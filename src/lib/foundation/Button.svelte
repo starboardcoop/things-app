@@ -11,7 +11,6 @@
     const dispatch = createEventDispatcher();
 
     const onClick = () => {
-        if (selected) return;
         dispatch('click', `"${text}" Button clicked`);
     }
 </script>
