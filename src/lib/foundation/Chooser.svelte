@@ -23,9 +23,9 @@
 
 <div class="relative h-11" on:click|stopPropagation={() => {}} on:keypress={() => {}}>
     <button on:click={toggleDropdown} class="bg-indigo-100 hover:bg-indigo-50 px-3 py-1 h-full w-44 rounded brutal hovers font-bold font-display text-left outline-none"><span class="text-lg mr-1">🛠</span> {chosenOption}</button>
-    <div class:dropdownHidden class="fixed top-0 left-0 w-full h-full md:h-fit md:absolute md:top-14 bg-indigo-50 md:brutal p-4 md:rounded-md flex flex-col gap-y-2 z-50">
+    <div class:dropdownHidden class="fixed top-0 left-0 w-full h-full md:h-fit md:absolute md:top-14 bg-indigo-50 md:brutal p-4 md:rounded-md flex flex-col gap-y-4 md:gap-y-2 z-50">
         {#each options as option}
-            <button on:click={() => optionChosen(option)} class="text-lg text-left active:underline hover:underline hover:underline-offset-2 hover:decoration-2">{option}</button>
+            <button on:click={() => optionChosen(option)} class="text-2xl md:text-lg text-left active:underline hover:underline hover:underline-offset-2 hover:decoration-2">{option}</button>
         {/each}
     </div>
 </div>
