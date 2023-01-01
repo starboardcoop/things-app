@@ -31,12 +31,12 @@
     }
 </script>
 
-<div class="pt-4 lg:w-3/4 mx-auto">
+<div class="mx-3 md:mx-auto lg:w-3/4">
     {#if !data}
         <LoadingIndicator />
     {:else}
-        <div class="flex flex-col-reverse gap-y-2 md:h-11 md:w-full md:flex-row md:justify-between px-4 mb-8">
-            <div class="flex flex-row gap-4">
+        <div class="flex flex-col-reverse mt-4 mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
+            <div class="flex flex-row gap-4 justify-between md:justify-start">
                 <Chooser on:chosen={filterThingsByCategory} options={data.categories} />
                 {#key showingOnlyWishList}
                     <Button on:click={toggleWishList} theme={ButtonTheme.default} text="Wish List" selected={showingOnlyWishList} />
@@ -48,6 +48,8 @@
                 placeholder="Search..."
             />
         </div>
-        <Things things={shownThings} categories={data.categories} {shownCategory} />
+        <div class="mb-8">
+            <Things things={shownThings} categories={data.categories} {shownCategory} />
+        </div>
     {/if}
 </div>

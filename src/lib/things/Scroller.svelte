@@ -2,14 +2,14 @@
     import Thing from "./Thing.svelte";
 
     export let wrap = false;
-    const wrapStyle = wrap ? "flex-wrap" : "flex-row lg:flex-wrap";
+    const style = wrap ? "grid grid-cols-3 md:grid-cols-5 gap-4 place-content-between" : "flex flex-row overflow-auto";
 
     export let things = [];
     things = things.sort((a, b) => b.stock - a.stock);
 </script>
 
-<div class="flex overflow-auto pl-4 py-7 {wrapStyle}">
+<div class={style}>
     {#each things as thing}
-        <Thing {thing} class="pr-3 lg:pr-6 mb-6" />
+        <Thing {thing} />
     {/each}
 </div>
