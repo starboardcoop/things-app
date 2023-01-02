@@ -15,9 +15,9 @@
         <Text display bold smallauto>{thing.name}</Text>
         <div class="flex flex-col lg:flex-row gap-2">
             {#if thing.stock > 0}
-                <div class="px-2 py-1 rounded bg-green-300">Available</div>
+                <div class="px-2 py-1 rounded bg-green-300 w-max font-medium text-sm">Available</div>
             {:else}
-                <div class="px-2 py-1 rounded bg-yellow-300">Wish List</div>
+                <div class="px-2 py-1 rounded bg-yellow-300 w-max font-medium text-sm">Wish List</div>
             {/if}
         </div>
     </div>
