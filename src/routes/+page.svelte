@@ -31,11 +31,11 @@
     }
 </script>
 
-<div class="mx-3 md:mx-auto lg:w-3/4">
+<div class="mx-3 lg:mx-auto lg:w-3/4">
     {#if !data}
         <LoadingIndicator />
     {:else}
-        <div class="flex flex-col-reverse mt-4 mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
+        <div class="flex flex-col-reverse mb-8 gap-3 md:h-11 md:w-full md:flex-row md:justify-between">
             <div class="flex flex-row gap-4 justify-between md:justify-start">
                 <Chooser on:chosen={filterThingsByCategory} options={data.categories} />
                 {#key showingOnlyWishList}
