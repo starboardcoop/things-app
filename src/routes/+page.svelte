@@ -4,6 +4,8 @@
     import { Button, ButtonTheme, TextInput } from "$lib/Foundation.svelte";
     import LoadingIndicator from "$lib/LoadingIndicator.svelte";
 	import Chooser from "$lib/foundation/Chooser.svelte";
+    import EyeOffIcon from "$lib/icons/eye-off.svg";
+    import EyeIcon from "$lib/icons/eye.svg";
 
     export let data;
 
@@ -39,7 +41,7 @@
             <div class="flex flex-row gap-4 justify-between md:justify-start">
                 <Chooser on:chosen={filterThingsByCategory} options={data.categories} />
                 {#key showingOnlyWishList}
-                    <Button on:click={toggleWishList} theme={ButtonTheme.default} text="Wish List" selected={showingOnlyWishList} />
+                    <Button icon={EyeOffIcon} selectedIcon={EyeIcon} on:click={toggleWishList} theme={ButtonTheme.default} text="Wish List" selected={showingOnlyWishList} />
                 {/key}
             </div>
             <TextInput
