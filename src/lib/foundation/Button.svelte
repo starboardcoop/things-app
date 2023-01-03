@@ -31,7 +31,7 @@
     }
 
     button.defaultToggled {
-        @apply bg-yellow-400 !important;
+        @apply bg-primary !important;
     }
 
     button.alert {
