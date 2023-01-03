@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from "svelte";
     import { filter } from "$lib/filters";
     import Things from "$lib/things/Things.svelte";
     import { Button, ButtonTheme, TextInput } from "$lib/Foundation.svelte";
@@ -13,6 +14,8 @@
     let shownCategory = "DIY";
     let searchText = "";
     let showingOnlyWishList = false;
+
+    onMount(() => filterThings());
 
     const filterThings = () => {
         shownThings = filter(data.things, {
