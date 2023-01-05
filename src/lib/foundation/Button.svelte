@@ -3,6 +3,8 @@
     import ButtonTheme from './buttonTheme';
 
     export let text: string = 'Button';
+    export let icon: string = null;
+    export let selectedIcon: string = null;
     export let selected: boolean = false;
     export let theme: ButtonTheme = ButtonTheme.default;
 
@@ -11,7 +13,6 @@
     const dispatch = createEventDispatcher();
 
     const onClick = () => {
-        if (selected) return;
         dispatch('click', `"${text}" Button clicked`);
     }
 </script>
@@ -23,6 +24,12 @@
     class:alert={theme === ButtonTheme.alert}
     class:alertToggled={isToggled(ButtonTheme.alert)}
     class="px-3 py-1 rounded brutal hovers font-bold font-display outline-none">
+        {#if icon && !selected}
+            <img class="icon" src={icon} alt={text} />
+        {/if}
+        {#if selectedIcon && selected}
+            <img class="icon" src={selectedIcon} alt={text} />
+        {/if}
         {text}
 </button>
 
@@ -32,7 +39,7 @@
     }
 
     button.defaultToggled {
-        @apply bg-yellow-400 !important;
+        @apply bg-primary !important;
     }
 
     button.alert {
@@ -41,5 +48,9 @@
 
     button.alertToggled {
         @apply bg-red-300 !important;
+    }
+
+    img.icon {
+        @apply inline h-5 w-5 mr-1;
     }
 </style>

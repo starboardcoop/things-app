@@ -1,7 +1,9 @@
 <script>
     export let src = "";
     export let alt = "";
-    export let height = "40";
+
+    let className = "";
+    export { className as class };
 </script>
 
-<img {src} {alt} class="w-full h-{height} object-contain" />
+<img {src} {alt} class="object-contain {className}" />
