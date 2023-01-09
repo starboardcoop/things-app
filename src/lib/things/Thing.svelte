@@ -5,6 +5,8 @@
 
     let className = "";
     export { className as class };
+
+    const donateURL = `https://airtable.com/shrwMSrzvSLpQgQWC?prefill_Description=${encodeURIComponent(thing.name)}`;
 </script>
 
 <div class="flex flex-col {className}">
@@ -17,7 +19,7 @@
             {#if thing.stock > 0}
                 <div class="px-2 py-1 rounded bg-green-300 w-max font-medium text-sm">Available</div>
             {:else}
-                <div class="px-2 py-1 rounded bg-yellow-300 w-max font-medium text-sm">Wish List</div>
+                <a class="px-2 py-1 rounded brutal hover:hovers-static bg-primary w-max font-bold font-display text-sm" href={donateURL} target="_blank" rel="noreferrer">Donate</a>
             {/if}
         </div>
     </div>
