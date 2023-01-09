@@ -19,7 +19,7 @@
             {#if thing.stock > 0}
                 <div class="px-2 py-1 rounded bg-green-300 w-max font-medium text-sm">Available</div>
             {:else}
-                <a class="px-2 py-1 rounded brutal hover:hovers-static bg-indigo-100 w-max font-bold font-display text-sm" href={donateURL} target="_blank" rel="noreferrer">Donate</a>
+                <a class="px-2 py-1 rounded brutal hover:hovers-static bg-primary w-max font-bold font-display text-sm" href={donateURL} target="_blank" rel="noreferrer">Donate</a>
             {/if}
         </div>
     </div>
