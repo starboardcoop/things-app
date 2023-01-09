@@ -2,18 +2,25 @@
 	import { Card, Image, Text } from "$lib/Foundation.svelte";
 
     export let thing;
+
+    let className = "";
+    export { className as class };
+
+    const donateURL = `https://airtable.com/shrwMSrzvSLpQgQWC?prefill_Description=${encodeURIComponent(thing.name)}`;
 </script>
 
-<div class="pr-3 lg:pr-6 lg:pb-6 flex flex-col">
-    <Card style="h-24 w-24 lg:h-48 lg:w-48">
-        <Image height="full" src={thing.image} alt={thing.name} />
+<div class="flex flex-col {className}">
+    <Card>
+        <Image src={thing.image} alt={thing.name} class="aspect-square" />
     </Card>
-    <div class="pl-1 pt-2 w-24 lg:w-48 flex flex-col gap-2 justify-between flex-grow">
+    <div class="pl-1 pt-2 flex flex-col gap-2 justify-between flex-grow">
         <Text display bold smallauto>{thing.name}</Text>
         <div class="flex flex-col lg:flex-row gap-2">
-            <div class="px-2 py-1 rounded bg-black">
-                <Text body small light>{thing.stock > 0 ? `${thing.stock} in stock` : 'Wish List'}</Text>
-            </div>
+            {#if thing.stock > 0}
+                <div class="px-2 py-1 rounded bg-green-300 w-max font-medium text-sm">Available</div>
+            {:else}
+                <a class="px-2 py-1 rounded brutal hover:hovers-static bg-primary w-max font-bold font-display text-sm" href={donateURL} target="_blank" rel="noreferrer">Donate</a>
+            {/if}
         </div>
     </div>
 </div>

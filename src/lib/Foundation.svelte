@@ -1,7 +1,5 @@
 <script context="module">
     export { default as Button } from "./foundation/Button.svelte";
-    export { default as ButtonTheme } from "./foundation/buttonTheme";
-
     export { default as Card } from "./foundation/Card.svelte";
     export { default as Column } from "./foundation/Column.svelte";
     export { default as Image } from "./foundation/Image.svelte";

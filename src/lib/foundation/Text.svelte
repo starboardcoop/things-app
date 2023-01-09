@@ -41,7 +41,7 @@
     }
     
     div.smallauto {
-        @apply text-xs;
+        @apply text-sm;
         @apply lg:text-lg;
     }
 
