@@ -1,12 +1,16 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
-    import ButtonTheme from './buttonTheme';
+    import { ButtonSize, ButtonTheme } from './button';
 
     export let text: string = 'Button';
     export let icon: string = null;
     export let selectedIcon: string = null;
     export let selected: boolean = false;
     export let theme: ButtonTheme = ButtonTheme.default;
+    export let size: ButtonSize = ButtonSize.normal;
+    export let flat: boolean = false;
+
+    const padding = size === ButtonSize.normal ? 'px-3 py-1' : 'px-2';
 
     const isToggled = (providedTheme: ButtonTheme) => theme === providedTheme && selected;
 
@@ -21,16 +25,16 @@
     on:click={onClick}
     class:default={theme === ButtonTheme.default}
     class:defaultToggled={isToggled(ButtonTheme.default)}
-    class:alert={theme === ButtonTheme.alert}
-    class:alertToggled={isToggled(ButtonTheme.alert)}
-    class="px-3 py-1 rounded brutal hovers font-bold font-display outline-none">
+    class:primary={theme === ButtonTheme.primary}
+    class:primaryToggled={isToggled(ButtonTheme.primary)}
+    class="{padding} rounded brutal {!flat && 'hovers'} font-bold font-display outline-none">
         {#if icon && !selected}
             <img class="icon" src={icon} alt={text} />
         {/if}
         {#if selectedIcon && selected}
             <img class="icon" src={selectedIcon} alt={text} />
         {/if}
-        {text}
+        <slot />
 </button>
 
 <style lang="postcss">
@@ -42,12 +46,12 @@
         @apply bg-primary !important;
     }
 
-    button.alert {
-        @apply bg-red-100;
+    button.primary {
+        @apply bg-primary;
     }
 
-    button.alertToggled {
-        @apply bg-red-300 !important;
+    button.primaryToggled {
+        @apply bg-primary;
     }
 
     img.icon {
