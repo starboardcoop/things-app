@@ -2,7 +2,6 @@
     export { default as Button } from "./foundation/Button.svelte";
     export { default as Card } from "./foundation/Card.svelte";
     export { default as Column } from "./foundation/Column.svelte";
-    export { default as Image } from "./foundation/Image.svelte";
     export { default as Link } from "./foundation/Link.svelte";
     export { default as Row } from "./foundation/Row.svelte";
     export { default as Text } from "./foundation/Text.svelte";
