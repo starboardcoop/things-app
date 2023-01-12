@@ -1,3 +1,7 @@
+<script>
+    import { t } from "$lib/language/translate"
+</script>
+
 <header class="w-full p-4 flex flex-col space-y-8 justify-center">
     <div class="grid grid-cols-3">
         <div class="flex flex-row justify-start">
@@ -7,7 +11,7 @@
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="15 6 9 12 15 18" />
                     </svg>
-                    <div class="text-xl font-bold font-display hover:underline">HOME</div>
+                    <div class="text-xl font-bold font-display hover:underline uppercase">{$t("Button.Home")}</div>
                 </a>
             </div>
         </div>

@@ -8,6 +8,7 @@
 	import Chooser from "$lib/foundation/Chooser.svelte";
     import EyeOffIcon from "$lib/icons/eye-off.svg";
     import EyeIcon from "$lib/icons/eye.svg";
+    import { t } from "$lib/language/translate";
 
     export let data;
 
@@ -50,16 +51,16 @@
                         selectedIcon={EyeIcon} 
                         on:click={toggleWishList} 
                         theme={ButtonTheme.default} 
-                        text="Wish List" 
+                        text={$t("Button.WishList")}
                         selected={showingOnlyWishList}>
-                        Wish List
+                        {$t("Button.WishList")}
                     </Button>
                 {/key}
             </div>
             <TextInput
                 bind:value={searchText}
                 on:input={filterThings}
-                placeholder="Search..."
+                placeholder={$t("Input.Search")}
             />
         </div>
         <div class="mb-8">

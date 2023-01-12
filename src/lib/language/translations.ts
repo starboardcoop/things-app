@@ -1,10 +1,11 @@
 export default {
-    english: {
+    en: {
         "Button.Home": "Home",
         "Button.Donate": "Donate",
         "Button.WishList": "Wish List",
         "Input.Search": "Search...",
-        "Thing.Tags.Available": "Available"
+        "Thing.Tags.Available": "Available",
+        "A project by": "A project by"
     },
-    spanish: {}
+    es: {}
 }

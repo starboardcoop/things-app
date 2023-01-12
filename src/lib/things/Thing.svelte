@@ -1,5 +1,6 @@
 <script>
 	import { Card, Image, Text } from "$lib/Foundation.svelte";
+    import { t } from "$lib/language/translate";
 
     export let thing;
 
@@ -17,9 +18,9 @@
         <Text display bold smallauto>{thing.name}</Text>
         <div class="flex flex-col lg:flex-row gap-2">
             {#if thing.stock > 0}
-                <div class="px-2 py-1 rounded bg-green-300 w-max font-medium text-sm">Available</div>
+                <div class="px-2 py-1 rounded bg-green-300 w-max font-medium text-sm">{$t("Thing.Tags.Available")}</div>
             {:else}
-                <a class="px-2 py-1 rounded brutal hover:hovers-static bg-primary w-max font-bold font-display text-sm" href={donateURL} target="_blank" rel="noreferrer">Donate</a>
+                <a class="px-2 py-1 rounded brutal hover:hovers-static bg-primary w-max font-bold font-display text-sm" href={donateURL} target="_blank" rel="noreferrer">{$t("Button.Donate")}</a>
             {/if}
         </div>
     </div>
