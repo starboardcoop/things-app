@@ -1,5 +1,5 @@
 <script>
-    import { t } from "$lib/language/translate"
+    import { t, locale, locales } from "$lib/language/translate"
 </script>
 
 <header class="w-full p-4 flex flex-col space-y-8 justify-center">
@@ -20,7 +20,16 @@
                 <img src="/PVD_Things_Logo_White.png" alt="PVD Things" class="h-16 lg:h-20"/>
             </a>
         </div>
-        <div class="flex flex-row justify-end"></div>
+        <div class="flex flex-row gap-x-3 justify-end align-top">
+            {#each locales as localeKey}
+                <button
+                    class="text-xl font-bold font-display h-fit {($locale === localeKey) && 'underline'} hover:underline uppercase"
+                    on:click={() => locale.set(localeKey)}
+                >
+                    {localeKey}
+                </button>
+            {/each}
+        </div>
     </div>
     <h1 hidden>PVD Things</h1>
 </header>
