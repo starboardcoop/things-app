@@ -1,5 +1,6 @@
 <script>
 	import { Column, Link, Row, Text } from "$lib/Foundation.svelte";
+    import { t } from "$lib/language/translate";
 </script>
 
 <footer class="bg-bg py-10 relative z-40">
@@ -42,7 +43,7 @@
             </a>
         </Row>
         <Text body light center>
-            A project by <Link to="https://starboard.coop">Starboard Co-op</Link>
+            {$t("A project by")} <Link to="https://starboard.coop">Starboard Co-op</Link>
         </Text>
     </Column>
 </footer>

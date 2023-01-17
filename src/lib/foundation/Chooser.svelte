@@ -1,5 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
+    import { t } from "$lib/language/translate";
 
     export let options = [];
 
@@ -29,7 +30,7 @@
         <span>{chosenOption}</span>
     </button>
     <div class:dropdownHidden class="fixed top-0 left-0 w-full h-full overflow-y-scroll md:h-fit md:absolute md:top-14 bg-indigo-50 md:brutal md:hovers-static p-4 md:rounded-md flex flex-col gap-y-4 md:gap-y-2 z-50">
-        <div class="text-xl font-bold md:hidden">Choose a category&colon;</div>
+        <div class="text-xl font-bold md:hidden">{$t('Chooser.CategoryPrompt')}</div>
         {#each options as option}
             <button on:click={() => optionChosen(option)} class="text-2xl md:text-lg text-left active:underline hover:underline hover:underline-offset-2 hover:decoration-2">{option}</button>
         {/each}
