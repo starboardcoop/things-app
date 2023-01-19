@@ -6,7 +6,8 @@ export default {
         "Chooser.CategoryPrompt": "Choose a category:",
         "Input.Search": "Search...",
         "Thing.Tags.Available": "Available",
-        "A project by": "A project by"
+        "A project by": "A project by",
+        "No Results": "No Results"
     },
     es: {
         "Button.Home": "Inicio",
@@ -15,6 +16,7 @@ export default {
         "Chooser.CategoryPrompt": "Elija una categoría:",
         "Input.Search": "Buscar...",
         "Thing.Tags.Available": "Disponible",
-        "A project by": "Un proyecto de"
+        "A project by": "Un proyecto de",
+        "No Results": "No hay resultados"
     }
 }
