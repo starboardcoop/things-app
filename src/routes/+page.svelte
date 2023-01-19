@@ -13,7 +13,7 @@
     export let data;
 
     let shownThings = data.things;
-    let shownCategory = "DIY";
+    let shownCategory = data.categories[0];
     let searchText = "";
     let showingOnlyWishList = false;
 
