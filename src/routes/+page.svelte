@@ -13,7 +13,7 @@
     export let data;
 
     let shownThings = data.things;
-    let shownCategory = "DIY";
+    let shownCategory = data.categories[0];
     let searchText = "";
     let showingOnlyWishList = false;
 
@@ -64,7 +64,11 @@
             />
         </div>
         <div class="mb-8">
-            <Things things={shownThings} categories={data.categories} {shownCategory} />
+            {#if shownThings.length > 0}
+                <Things things={shownThings} categories={data.categories} {shownCategory} />
+            {:else}
+                <div class="text-lg text-center font-bold uppercase">{$t("No Results")}</div>
+            {/if}
         </div>
     {/if}
 </div>
