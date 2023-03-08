@@ -17,6 +17,20 @@ export default {
         "Input.Search": "Buscar...",
         "Thing.Tags.Available": "Disponible",
         "A project by": "Un proyecto de",
-        "No Results": "No hay resultados"
+        "No Results": "No hay resultados",
+        "All": "Todas",
+        "DIY": "Bricolaje",
+        "Media": "Media",
+        "Games": "Juegos",
+        "Outdoors": "Aire libre",
+        "Sports": "Deportes",
+        "Entertainment": "Diversión",
+        "Yard": "Patio",
+        "Cleaning": "Limpia",
+        "Cooking": "Cocina",
+        "Crafts": "Artesanía",
+        "Pet": "Mascotas",
+        "Automotive": "Automotor",
+        "Health": "Salud"
     }
 }
