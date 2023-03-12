@@ -8,7 +8,7 @@
     let chosenOption = defaultFilterCategory;
     let dropdownHidden = true;
 
-    const isEnglish = $locale === "en";
+    $: isEnglish = $locale === "en";
 
     const dispatch = createEventDispatcher();
 
