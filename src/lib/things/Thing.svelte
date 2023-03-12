@@ -1,5 +1,5 @@
 <script>
-	import { Card, Image, Text } from "$lib/Foundation.svelte";
+	import { Card, Text } from "$lib/Foundation.svelte";
     import { t } from "$lib/language/translate";
 
     export let thing;
@@ -12,7 +12,7 @@
 
 <div class="flex flex-col {className}">
     <Card>
-        <Image src={thing.image} alt={thing.name} class="aspect-square" />
+        <img src={thing.image} alt={thing.name} class="h-full w-full object-contain" />
     </Card>
     <div class="pl-1 pt-2 flex flex-col gap-2 justify-between flex-grow">
         <Text display bold smallauto>{thing.name}</Text>
