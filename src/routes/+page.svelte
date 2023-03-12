@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from "svelte";
-    import { filter } from "$lib/filters";
+    import { defaultFilterCategory, filter } from "$lib/filters";
     import Things from "$lib/things/Things.svelte";
     import { Button, TextInput } from "$lib/Foundation.svelte";
     import { ButtonTheme } from "$lib/foundation/button";
@@ -8,11 +8,12 @@
 	import Chooser from "$lib/foundation/Chooser.svelte";
     import EyeOffIcon from "$lib/icons/eye-off.svg";
     import EyeIcon from "$lib/icons/eye.svg";
+    import { t } from "$lib/language/translate";
 
     export let data;
 
     let shownThings = data.things;
-    let shownCategory = "DIY";
+    let shownCategory = defaultFilterCategory;
     let searchText = "";
     let showingOnlyWishList = false;
 
@@ -50,20 +51,24 @@
                         selectedIcon={EyeIcon} 
                         on:click={toggleWishList} 
                         theme={ButtonTheme.default} 
-                        text="Wish List" 
+                        text={$t("Button.WishList")}
                         selected={showingOnlyWishList}>
-                        Wish List
+                        {$t("Button.WishList")}
                     </Button>
                 {/key}
             </div>
             <TextInput
                 bind:value={searchText}
                 on:input={filterThings}
-                placeholder="Search..."
+                placeholder={$t("Input.Search")}
             />
         </div>
         <div class="mb-8">
-            <Things things={shownThings} categories={data.categories} {shownCategory} />
+            {#if shownThings.length > 0}
+                <Things things={shownThings} categories={data.categories} {shownCategory} />
+            {:else}
+                <div class="text-lg text-center font-bold uppercase">{$t("No Results")}</div>
+            {/if}
         </div>
     {/if}
 </div>
