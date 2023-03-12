@@ -1,3 +1,7 @@
+<script>
+    import { t, locale, locales } from "$lib/language/translate"
+</script>
+
 <header class="w-full p-4 flex flex-col space-y-8 justify-center">
     <div class="grid grid-cols-3">
         <div class="flex flex-row justify-start">
@@ -7,7 +11,7 @@
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <polyline points="15 6 9 12 15 18" />
                     </svg>
-                    <div class="text-xl font-bold font-display hover:underline">HOME</div>
+                    <div class="text-xl font-bold font-display hover:underline uppercase">{$t("Button.Home")}</div>
                 </a>
             </div>
         </div>
@@ -16,7 +20,16 @@
                 <img src="/PVD_Things_Logo_White.png" alt="PVD Things" class="h-16 lg:h-20"/>
             </a>
         </div>
-        <div class="flex flex-row justify-end"></div>
+        <div class="flex flex-row gap-x-3 justify-end align-top">
+            {#each locales as localeKey}
+                <button
+                    class="text-xl font-bold font-display h-fit {($locale === localeKey) && 'underline'} hover:underline uppercase"
+                    on:click={() => locale.set(localeKey)}
+                >
+                    {localeKey}
+                </button>
+            {/each}
+        </div>
     </div>
     <h1 hidden>PVD Things</h1>
 </header>
