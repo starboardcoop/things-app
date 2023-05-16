@@ -1,13 +1,14 @@
 export default {
     en: {
         "Button.Home": "Home",
-        "Button.Donate": "Donate",
         "Button.WishList": "Wish List",
         "Chooser.CategoryPrompt": "Choose a category:",
         "Input.Search": "Search...",
-        "Thing.Tags.Available": "Available",
-        "A project by": "A project by",
-        "No Results": "No Results"
+        "No Results": "No Results",
+        "Donate": "Donate",
+        "Click to Donate": "Click to Donate",
+        "Available": "Available",
+        "Unavailable": "Unavailable"
     },
     es: {
         "Button.Home": "Inicio",
@@ -15,9 +16,11 @@ export default {
         "Button.WishList": "Donaciones",
         "Chooser.CategoryPrompt": "Elija una categoría:",
         "Input.Search": "Buscar...",
-        "Thing.Tags.Available": "Disponible",
-        "A project by": "Un proyecto de",
         "No Results": "No hay resultados",
+        "Donate": "Donar",
+        "Click to Donate": "Clic para donar",
+        "Available": "Disponible",
+        "Unavailable": "Indisponible",
         "All": "Todas",
         "DIY": "Bricolaje",
         "Media": "Media",

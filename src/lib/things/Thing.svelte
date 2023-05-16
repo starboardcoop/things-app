@@ -1,28 +1,53 @@
 <script>
-	  import { Card, Text } from "$lib/Foundation.svelte";
     import BoxIcon from "$lib/icons/box.svg";
     import { t } from "$lib/language/translate";
 
     export let thing;
 
-    let className = "";
-    export { className as class };
+    let innerWidth = 0;
+    $: isMobile = innerWidth < 600;
+    $: fontSize = thing.name.length > 13 || isMobile ? 'text-sm' : 'text-base';
 
     const donateURL = `https://airtable.com/shrwMSrzvSLpQgQWC?prefill_Description=${encodeURIComponent(thing.name)}`;
+    const hasZeroStock = thing.stock < 1;
+    const noneAvailable = !hasZeroStock && (!thing.available || thing.available < 1);
+
+    const backgroundColor = noneAvailable
+        ? 'bg-red-300'
+        : hasZeroStock
+        ? 'bg-yellow-300'
+        : 'bg-green-400';
+
+    const getShortName = () => {
+        if (thing.name.length < 30) return thing.name;
+        return thing.name.substring(0, 29) + '...';
+    };
+
+    const onClick = () => {
+        if (!hasZeroStock) return;
+        window.open(donateURL, '_blank').focus();
+    };
 </script>
 
-<div class="flex flex-col {className}">
-    <Card>
-      <img src={thing.image ?? BoxIcon} alt={thing.name} class="h-full w-full object-contain" />
-    </Card>
-    <div class="pl-1 pt-2 flex flex-col gap-2 justify-between flex-grow">
-        <Text display bold smallauto>{thing.name}</Text>
-        <div class="flex flex-col lg:flex-row gap-2">
-            {#if thing.stock > 0}
-                <div class="px-2 py-1 rounded bg-green-300 w-max font-medium text-sm">{$t("Thing.Tags.Available")}</div>
-            {:else}
-                <a class="px-2 py-1 rounded brutal hover:hovers-static bg-primary w-max font-bold font-display text-sm" href={donateURL} target="_blank" rel="noreferrer">{$t("Button.Donate")}</a>
-            {/if}
+<svelte:window bind:innerWidth />
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="flex flex-col justify-between bg-white rounded-md overflow-hidden brutal hovers-static {hasZeroStock && 'cursor-pointer'}" on:click={onClick}>
+    <div class="p-2">
+        <img src={thing.image ?? BoxIcon} alt={thing.name} class="w-full aspect-square object-contain rounded" />
+        <div class="mt-3">
+            <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName()}</div>
         </div>
+    </div>
+    <div class="{backgroundColor} py-1 text-center font-medium border-t border-black">
+        {#if hasZeroStock}
+            {isMobile ? $t('Donate') : $t('Click to Donate')}
+        {:else if noneAvailable}
+            {isMobile ? `${thing.available} / ${thing.stock}` : $t('Unavailable')}
+        {:else}
+            {isMobile 
+                ? `${thing.available} / ${thing.stock}`
+                : `${thing.available} / ${thing.stock} ${$t('Available')}`}
+        {/if}
     </div>
 </div>

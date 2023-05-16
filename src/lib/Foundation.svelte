@@ -1,6 +1,5 @@
 <script context="module">
     export { default as Button } from "./foundation/Button.svelte";
-    export { default as Card } from "./foundation/Card.svelte";
     export { default as Column } from "./foundation/Column.svelte";
     export { default as Link } from "./foundation/Link.svelte";
     export { default as Row } from "./foundation/Row.svelte";
