@@ -39,8 +39,7 @@
 
     const toggleWishList = () => {
         showingOnlyWishList = !showingOnlyWishList;
-        const newQueryParam = showingOnlyWishList ? 'true' : 'false';
-        goto(`?showWishList=${newQueryParam}`);
+        goto(`?showWishList=${showingOnlyWishList}`);
         filterThings();
     }
 </script>
