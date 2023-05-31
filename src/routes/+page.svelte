@@ -9,6 +9,7 @@
     import EyeOffIcon from "$lib/icons/eye-off.svg";
     import EyeIcon from "$lib/icons/eye.svg";
     import { t } from "$lib/language/translate";
+    import { goto } from '$app/navigation';
 
     export let data;
 
@@ -17,7 +18,11 @@
     let searchText = "";
     let showingOnlyWishList = false;
 
-    onMount(() => filterThings());
+    onMount(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        showingOnlyWishList = urlParams.get('showWishList') === 'true';
+        filterThings();
+     });
 
     const filterThings = () => {
         shownThings = filter(data.things, {
@@ -34,6 +39,8 @@
 
     const toggleWishList = () => {
         showingOnlyWishList = !showingOnlyWishList;
+        const newQueryParam = showingOnlyWishList ? 'true' : 'false';
+        goto(`?showWishList=${newQueryParam}`);
         filterThings();
     }
 </script>
