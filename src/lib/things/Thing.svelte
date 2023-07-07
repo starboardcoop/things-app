@@ -1,10 +1,12 @@
 <script>
     import BoxIcon from "$lib/icons/box.svg";
-    import { t } from "$lib/language/translate";
+    import { t, locale } from "$lib/language/translate";
 
     export let thing;
 
     let innerWidth = 0;
+    let language;
+
     $: isMobile = innerWidth < 600;
     $: fontSize = thing.name.length > 13 || isMobile ? 'text-sm' : 'text-base';
 
@@ -18,15 +20,19 @@
         ? 'bg-yellow-300'
         : 'bg-green-400';
 
-    const getShortName = () => {
-        if (thing.name.length < 30) return thing.name;
-        return thing.name.substring(0, 29) + '...';
-    };
+    function getShortName(name){
+        if (name.length < 30) return name;
+        return name.substring(0, 29) + '...';
+    }
 
     const onClick = () => {
         if (!hasZeroStock) return;
         window.open(donateURL, '_blank').focus();
     };
+
+    locale.subscribe((value) => {
+        language = value;
+    });
 </script>
 
 <svelte:window bind:innerWidth />
@@ -36,7 +42,11 @@
     <div class="p-2">
         <img src={thing.image ?? BoxIcon} alt={thing.name} class="w-full aspect-square object-contain rounded" />
         <div class="mt-3">
-            <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName()}</div>
+            {#if language === "en"}
+                <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName(thing.name)}</div>
+            {:else}
+                <div class="{fontSize} uppercase font-bold font-sans text-center">{getShortName(thing.spanish ?? thing.name)}</div>
+            {/if}
         </div>
     </div>
     <div class="{backgroundColor} py-1 text-center font-medium border-t border-black">
